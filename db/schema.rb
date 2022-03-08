@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_08_023627) do
+ActiveRecord::Schema.define(version: 2022_03_08_204218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_023627) do
     t.string "reward_category"
     t.integer "reward_rate"
     t.integer "interest_free_period"
-    t.integer "annual_fee"
+    t.integer "annual_fee_init"
     t.integer "bonus_point_spend"
     t.integer "bonus_point_time"
     t.integer "bonus_point_reward"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_023627) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "annual_fee_after"
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
