@@ -13,9 +13,12 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= render 'shared/flashes' %>
+<!-- below is for user login if required -->
+    <% if false %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= render 'shared/flashes' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
