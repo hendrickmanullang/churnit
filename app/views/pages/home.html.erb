@@ -1,4 +1,17 @@
 <!-- TODO: Render header here -->
+<!-- The whole 'long' homepage exists within the 'fullpage' div -->
+<div id="fullpage">
+  <!-- Then each'section' within the longer page has a 'section' div -->
+	<div class="section" id="section0">
+    <%= form_tag(compare_cards_path, method: :get) do |f| %>
+      <%= label_tag :income, "What's your annual income?" %>
+      <%= text_field_tag :income, '10000' %>
+      <%= label_tag :spending, "What's your annual spending?" %>
+      <%= text_field_tag :spending, '5000' %>
+      <%= submit_tag 'Continue' %>
+    <% end %>
+    Landing page
+    <div class="text-box">
 <!-- The whole 'long' homepage exists within this 'fullpage' div -->
 <div id="fullpage">
   <!-- Then each'section' within the longer page has a 'section' div -->
