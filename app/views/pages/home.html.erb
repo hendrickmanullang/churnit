@@ -1,9 +1,15 @@
 <!-- TODO: Render header here -->
-
 <!-- The whole 'long' homepage exists within the 'fullpage' div -->
 <div id="fullpage">
   <!-- Then each'section' within the longer page has a 'section' div -->
 	<div class="section" id="section0">
+    <%= form_tag(compare_cards_path, method: :get) do |f| %>
+      <%= label_tag :income, "What's your annual income?" %>
+      <%= text_field_tag :income, '10000' %>
+      <%= label_tag :spending, "What's your annual spending?" %>
+      <%= text_field_tag :spending, '5000' %>
+      <%= submit_tag 'Continue' %>
+    <% end %>
     Landing page
     <div class="text-box">
       <a href="#" class="btn btn-white btn- animate">Discover</a>
@@ -12,6 +18,9 @@
 	<div class="section" id="section1">
     How it works
     <div class="text-box">
+      <%= link_to "Login", new_user_session_path %>
+      <%= link_to "Logout", destroy_user_session_path, method: 'delete'%>
+      <%= link_to "update account", edit_user_registration_path %>
       <a href="#" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
@@ -19,7 +28,7 @@
 	<div class="section" id="section2">
     Which card do you currently use?
     <div class="text-box">
-     <a href="#" class="btn btn-white btn- animate">Next</a>
+      <a href="#" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
   <div class="section" id="section3">

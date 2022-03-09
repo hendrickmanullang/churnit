@@ -8,3 +8,13 @@
 <div>
 <i class="fa-solid fa-calendar-day" style="height:100px"></i>
 </div>
+
+<h4>income</h4>
+<p><%= session[:onboarding][:income] %></p>
+<h4>spending</h4>
+<p><%= session[:onboarding][:spending] %></p>
+
+<h2>Cards</h2>
+<% @recommended_cards.each do |card| %>
+  <%= render 'card', card: card %>
+<% end %>
