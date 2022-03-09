@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :compare
+  # skip_before_action :authenticate_user!, only: :compare
 
   def index
     @cards = Card.all
