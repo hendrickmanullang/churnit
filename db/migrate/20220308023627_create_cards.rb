@@ -5,17 +5,16 @@ class CreateCards < ActiveRecord::Migration[6.1]
       t.string :card_image_url
       t.string :card_type
       t.string :reward_category
-      t.integer :reward_rate
-      t.integer :interest_free_period
-      t.integer :annual_fee
-      t.integer :bonus_point_spend
-      t.integer :bonus_point_time
-      t.integer :bonus_point_reward
-      t.integer :interest_rate
-      t.integer :late_payment_fee
-      t.integer :foreign_transaction_fee
-      t.integer :minimum_income
-      t.references :user, null: false, foreign_key: true
+      t.decimal :reward_rate
+      t.decimal :interest_free_period
+      t.decimal :annual_fee
+      t.decimal :bonus_point_spend
+      t.decimal :bonus_point_time
+      t.decimal :bonus_point_reward
+      t.decimal :interest_rate
+      t.decimal :late_payment_fee
+      t.decimal :foreign_transaction_fee
+      t.decimal :minimum_income
 
       t.timestamps
     end
