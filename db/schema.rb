@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_003208) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "annual_fee_after"
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,4 +62,5 @@ ActiveRecord::Schema.define(version: 2022_03_09_003208) do
 
   add_foreign_key "card_sessions", "cards"
   add_foreign_key "card_sessions", "users"
+  add_foreign_key "cards", "users"
 end
