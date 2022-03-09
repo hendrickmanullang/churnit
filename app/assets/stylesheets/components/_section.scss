@@ -10,3 +10,13 @@
 #section0 {
   background-image: '../images/backgrounds/section-1-background.svg';
 }
+
+.center-content {
+  width: 900px;
+  margin: auto;
+}
+
+.icon {
+  display: flex;
+  justify-content: space-between;
+}
