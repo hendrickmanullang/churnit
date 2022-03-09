@@ -3,19 +3,11 @@
 <div id="fullpage">
   <!-- Then each'section' within the longer page has a 'section' div -->
 	<div class="section" id="section0">
-    <%= form_tag(compare_cards_path, method: :get) do |f| %>
-      <%= label_tag :income, "What's your annual income?" %>
-      <%= text_field_tag :income, '10000' %>
-      <%= label_tag :spending, "What's your annual spending?" %>
-      <%= text_field_tag :spending, '5000' %>
-      <%= submit_tag 'Continue' %>
-    <% end %>
     Landing page
-    <div class="text-box">
 <!-- The whole 'long' homepage exists within this 'fullpage' div -->
-<div id="fullpage">
+
   <!-- Then each'section' within the longer page has a 'section' div -->
-	<div class="section" id="section0">
+
     <h1>ChurnIt</h1>
     <h2>Credit cards made simple.</h2>
     <div>
@@ -51,10 +43,16 @@
 	<div class="section" id="section2">
     Which card do you currently use?
      <a href="#" class="btn btn-white btn- animate">Next</a>
-    </div>
   </div>
   <div class="section" id="section3">
     What's your annual income?
+    <%= form_tag(compare_cards_path, method: :get) do |f| %>
+      <%= label_tag :income, "What's your annual income?" %>
+      <%= text_field_tag :income, '10000' %>
+      <%= label_tag :spending, "What's your annual spending?" %>
+      <%= text_field_tag :spending, '5000' %>
+      <%= submit_tag 'Continue' %>
+    <% end %>
     <div>
       <a href="#" class="btn btn-white btn- animate">Next</a>
     </div>
