@@ -1,0 +1,4 @@
+card_name,card_type,reward_category,reward_rate,interest_free_period,annual_fee_init,annual_fee_after,interest_rate,late_payment_fee,foreign_transaction_fee,minimum_income,bonus_point_reward,bonus_point_spend,bonus_point_time,card_image_url
+Citi Premier Qantas credit card,Mastercard,Qantas Frequent Flyer,0.5,55,175,350,0.2149,30,0.034,75000,100000,4000,90,https://www.finder.com.au/niche-builder/611c9bc77a3f8.jpg?fit=900&webp=1
+Virgin No Annual Fee Credit Card,VISA,N/A,0,55,0,0,0.1899,30,0.033,25000,0,0,0,https://www.finder.com.au/niche-builder/5dc911ce16c68.jpg?fit=900&webp=1
+Virgin Australia Velocity Flyer Card,VISA,Velocity Frequent Flyer,0.66,55,64,129,0.2074,10,0.033,35000,100000,6000,120,https://www.finder.com.au/niche-builder/5dc911ce16c68.jpg?fit=900&webp=1
