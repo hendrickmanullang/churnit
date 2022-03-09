@@ -1,0 +1,12 @@
+// This page is for styling each section of the app.
+
+// Home page
+// Backgrounds will cover each section
+#section0, #section1, #section2, #section3, #section4, #section5, #section6{
+    background-size: cover;
+    background-position: center 80%;
+}
+
+#section1 {
+  background-image: '/app/assets/images/backgrounds/section-1-background';
+}
