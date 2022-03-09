@@ -14,3 +14,15 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+import "@fortawesome/fontawesome-free/js/all";
+
+// Importing fullpage.js
+import fullpage from 'fullpage.js';
+
+// Initializing fullpage.js
+document.addEventListener('turbolinks:load', () => {
+  const fullPageInstance = new fullpage('#fullpage', {
+      navigation: true,
+      // sectionsColor:[, '#480ca8', '#4895ef', '#560bad', '#4361ee', '#480ca8']
+  });
+})
