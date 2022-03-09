@@ -1,12 +1,23 @@
-// This page is for styling each section of the app.
+// This page is for styling each fullpage.js section in the app.
 
-// Home page
 // Backgrounds will cover each section
-#section0, #section1, #section2, #section3, #section4, #section5 {
-    background-size: cover;
-    background-position: center 80%;
+.section {
+  background-size: cover;
 }
 
+// Homepage
 #section0 {
-  background-image: '../images/backgrounds/section-1-background.svg';
+  background-image: url(https://res.cloudinary.com/fantastic-four/image/upload/v1646806242/gradient_good_2_rmkpbb.png);
+  color: white;
+  text-align: center;
+}
+
+#section0 h1 {
+  top: 88px;
+  font-size: 80px;
+  padding: 20px;
+}
+
+#section0 a {
+  top: 40px;
 }
