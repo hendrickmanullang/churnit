@@ -1,8 +1,3 @@
-.text-box {
-  margin-left: 44vw;
-margin-top: 42vh;
-}
-
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -11,7 +6,7 @@ margin-top: 42vh;
   display: inline-block;
   border-radius: 100px;
   transition: all .2s;
-  position: absolute;
+  position: relative;
 }
 
 .btn:hover {
