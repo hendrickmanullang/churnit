@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_08_204218) do
+ActiveRecord::Schema.define(version: 2022_03_09_003208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "card_sessions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["card_id"], name: "index_card_sessions_on_card_id"
+    t.index ["user_id"], name: "index_card_sessions_on_user_id"
+  end
 
   create_table "cards", force: :cascade do |t|
     t.string "card_name"
@@ -30,11 +39,9 @@ ActiveRecord::Schema.define(version: 2022_03_08_204218) do
     t.integer "late_payment_fee"
     t.integer "foreign_transaction_fee"
     t.integer "minimum_income"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "annual_fee_after"
-    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,9 +53,12 @@ ActiveRecord::Schema.define(version: 2022_03_08_204218) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
+    t.integer "income"
+    t.integer "spend"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cards", "users"
+  add_foreign_key "card_sessions", "cards"
+  add_foreign_key "card_sessions", "users"
 end
