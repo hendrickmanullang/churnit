@@ -15,7 +15,7 @@ class CreateCards < ActiveRecord::Migration[6.1]
       t.integer :late_payment_fee
       t.integer :foreign_transaction_fee
       t.integer :minimum_income
-      t.references :user, null: false, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
