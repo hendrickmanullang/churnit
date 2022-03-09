@@ -8,9 +8,9 @@
 
 # require 'csv'
 
-# CSV.read(Rails.root.join('lib', 'seeds', 'credit_card_info.csv'), headers: true, encoding: 'ISO-8859-1').each do |row|
-#   t = Card.create(row.to_h)
-#   puts "#{t.card_name} is saved"
-# end
+CSV.read(Rails.root.join('lib', 'seeds', 'credit_card_info.csv'), headers: true, encoding: 'ISO-8859-1').each do |row|
+  t = Card.create(row.to_h)
+  puts "#{t.card_name} is saved"
+end
 
-# puts "There are now #{Card.count} cards in the database table"
+puts "There are now #{Card.count} cards in the database table"
