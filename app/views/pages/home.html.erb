@@ -41,16 +41,18 @@
   </div>
 <!-- NOTE: The 'personalisation' part will be one form. The form will wrap AROUND the four question sections. -->
 	<div class="section" id="section2">
-    Which card do you currently use?
-     <a href="#" class="btn btn-white btn- animate">Next</a>
+      <a href="#" class="btn btn-white btn- animate">Next</a>
   </div>
   <div class="section" id="section3">
     What's your annual income?
-    <%= form_tag(compare_cards_path, method: :get) do |f| %>
-      <%= label_tag :income, "What's your annual income?" %>
-      <%= text_field_tag :income, '10000' %>
-      <%= label_tag :spending, "What's your annual spending?" %>
-      <%= text_field_tag :spending, '5000' %>
+
+      <%= form_tag(compare_cards_path, method: :get) do |f| %>
+        <%= label_tag :income, "What's your annual income?" %>
+        <%= text_field_tag :income, '10000' %>
+        <%= label_tag :spending, "What's your annual spending?" %>
+        <%= text_field_tag :spending, '5000' %>
+        <%= label_tag :card_selected, "Which card?" %>
+        <%= select_tag :card_selected, options_for_select(@cards.map {|card| [card.card_name, card.id, { 'data-url' => cards_path(card.id)}]}) %>
       <%= submit_tag 'Continue' %>
     <% end %>
     <div>
