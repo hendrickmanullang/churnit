@@ -23,9 +23,13 @@
 <%= @card.interest_free_period %>
 <%= @card.annual_fee_init %>
 <h2>Cards we recommended</h2>
+<% @recommended_cards.each do |card| %>
+  <%= render 'card', card: card %>
+<% end %>
+<%# comment out  %>
+<% if false %>
   <% @recommended_cards.each do |card| %>
     <%= render 'card', card: card %>
   <% end %>
-<div>
-
-</div>
+<% end %>
+<%# comment out %>
