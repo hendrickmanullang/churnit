@@ -1,5 +1,8 @@
 // This page is for styling each fullpage.js section in the app.
-
+@font-face {
+  font-family: 'Akzidenz';
+  src: url('Akzidenz-grotesk-black.ttf');
+}
 // Backgrounds will cover each section
 .section {
   background-size: cover;
@@ -16,6 +19,7 @@
   top: 88px;
   font-size: 80px;
   padding: 20px;
+  font-family: "Akzidenz";
 }
 
 #section0 a {
@@ -25,10 +29,11 @@
 #section1 {
   background-color: rgb(23,25,36);
   text-shadow: 2px 2px 4px #949494;
+  color: white;
 }
 
-#section1 h2 {
-  color: white;
+#section1 a {
+  text-shadow: none;
 }
 
 #section1 svg {
