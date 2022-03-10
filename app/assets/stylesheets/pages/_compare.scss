@@ -1,8 +1,8 @@
 .line {
-  background-color: black;
-  height: 8px;
+  border-bottom: 5px solid black;
 }
 
 .compare-container {
-  margin: 130px;
+  display: flex;
+  justify-content: space-between;
 }
