@@ -8,7 +8,8 @@ class CardSelector
   def call
     # run algorithm and return card ids
     # sort taking variables of spending and income
-    return Card.all
+    Card.all
+    # Card.where('minimum_income < ?', params[:income])
   end
 
   def sort
