@@ -1,4 +1,10 @@
-card_name,card_type,reward_category,reward_rate,interest_free_period,annual_fee_init,annual_fee_after,interest_rate,late_payment_fee,foreign_transaction_fee,minimum_income,bonus_point_reward,bonus_point_spend,bonus_point_time,card_image_url
-Citi Premier Qantas credit card,Mastercard,Qantas Frequent Flyer,0.5,55,175,350,0.2149,30,0.034,75000,100000,4000,90,https://www.finder.com.au/niche-builder/611c9bc77a3f8.jpg?fit=900&webp=1
-Virgin No Annual Fee Credit Card,VISA,N/A,0,55,0,0,0.1899,30,0.033,25000,0,0,0,https://www.finder.com.au/niche-builder/5dc911ce16c68.jpg?fit=900&webp=1
-Virgin Australia Velocity Flyer Card,VISA,Velocity Frequent Flyer,0.66,55,64,129,0.2074,10,0.033,35000,100000,6000,120,https://www.finder.com.au/niche-builder/5dc911ce16c68.jpg?fit=900&webp=1
+card_name,card_type,reward_category,reward_rate,interest_free_period,annual_fee_init,annual_fee_after,interest_rate,late_payment_fee,foreign_transaction_fee,minimum_income,bonus_point_reward,bonus_point_spend,bonus_point_time,cashback_reward,cashback_spend,cashback_time,card_image_url
+Kogan Money Black Card,Visa,Kogan Rewards Program,1,55,0,0,0.2099,30,0.034,35000,0,0,0,30,1000,60,https://www.finder.com.au/niche-builder/601b39c3d6e09.jpg
+Citi Clear Card,Mastercard,N/A,0,55,99,99,0.1499,30,0.034,35000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5e83d4fc9d775.jpg
+Citi Premier Qantas Card,Mastercard,Qantas Frequent Flyer,0.5,55,175,350,0.2149,30,0.034,75000,100000,4000,90,0,0,0,https://www.finder.com.au/niche-builder/611c9bc77a3f8.jpg
+humm90 Mastercard,Mastercard,N/A,0,110,99,99,0.2399,35,0,25000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60c8201961628.png
+Coles Low Rate Mastercard,Mastercard,Flybuys,0.5,55,58,58,0.1299,30,0.025,25000,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/coles-low-rate-tbl-27-feb-2018.jpg
+Virgin Australia Velocity Flyer Card,Visa,Velocity Frequent Flyer,0.66,55,64,129,0.2074,10,0.033,35000,100000,6000,120,0,0,0,https://www.finder.com.au/niche-builder/60fe6b6c19cf5.jpg
+Qantas Premier Platinum Mastercard,Mastercard,Qantas Frequent Flyer,1,55,225,299,0.1999,30,0.03,35000,80000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/5dc3b6bda9729.jpg
+Virgin Australia Velocity Flyer Card,Visa,Velocity Frequent Flyer,0.66,55,64,129,0.2074,10,0.033,35000,100000,6000,120,0,0,0,https://www.finder.com.au/niche-builder/60fe6aa4ec17b.jpg
+Qantas American Express Ultimate Card,American Express,Qantas Frequent Flyer,1.25,44,450,450,0.2074,30,0.03,65000,120000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/5d9d4be92a5f6.jpg
