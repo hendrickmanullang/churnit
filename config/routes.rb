@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :cards, only: [:show, :index] do
     collection do
-      get :compare, :analysis
+      get :compare, :analysis, :select
     end
   end
   resources :users
