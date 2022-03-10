@@ -1,15 +1,31 @@
 <div class="compare-container">
-  <h1>Card Facts</h1>
-  <h2><i>Based on avg. spend of $3,000 per month</i></h2>
-  <div class="line"></div>
+  <div>
+    <h1>Card Facts</h1>
+    <h2><i>"Based on avg. spend of <%= session[:onboarding][:spending] %> per month"</i></h2>
+  </div>
+  <div>
+    <h2>_ChurnIt</h2>
+    <span>Methodology</span>|<span>Card Rank</span>|<span>About Us</span>
+  </div>
 </div>
+  <div class="line"></div>
 
-<h4>income</h4>
+<h4>Your input income</h4>
 <p><%= session[:onboarding][:income] %></p>
-<h4>spending</h4>
+<h4>Your input spending</h4>
 <p><%= session[:onboarding][:spending] %></p>
+<h4>Your card</h4>
+<% @card = Card.find(session[:onboarding][:card_selected]) %>
+<%= @card.card_name %>
+<%= image_tag @card.card_image_url %>
+<p></p>
+<%= @card.interest_rate%>
+<%= @card.interest_free_period %>
+<%= @card.annual_fee_init %>
+<h2>Cards we recommended</h2>
+  <% @recommended_cards.each do |card| %>
+    <%= render 'card', card: card %>
+  <% end %>
+<div>
 
-<h2>Cards</h2>
-<% @recommended_cards.each do |card| %>
-  <%= render 'card', card: card %>
-<% end %>
+</div>

@@ -1,4 +1,10 @@
 // This page is for styling each fullpage.js section in the app.
+@font-face {
+  font-family: 'Akzidenz';
+  src: url('Akzidenz-grotesk-black.ttf');
+  font-family: 'Rubik';
+  src: url('Rubik-VariableFont_wght.ttf');
+}
 
 // Backgrounds will cover each section
 .section {
@@ -45,10 +51,29 @@
   top: 88px;
   font-size: 80px;
   padding: 20px;
+  font-family: "Rubik";
 }
 
 #section0 a {
   top: 40px;
+}
+
+#section1 h2 {
+  font-family: "Rubik";
+}
+
+#section1 {
+  background-color: rgb(23,25,36);
+  text-shadow: 2px 2px 4px #949494;
+  color: white;
+}
+
+#section1 a {
+  text-shadow: none;
+}
+
+#section1 svg {
+  filter: drop-shadow(2px 2px 40px #949494);
 }
 
 .center-content {
@@ -64,10 +89,11 @@
 .icon {
   width: 200px;
   border-radius: 3px;
-  box-shadow: 0 0 5px rgb(230, 230, 230);
+  // box-shadow: 0 0 5px rgb(230, 230, 230);
+  color: white;
   text-align: center;
   padding: 20px;
-  border: 1px solid rgb(230, 230, 230);
+  // border: 1px solid rgb(230, 230, 230);
 }
 
 .icon h4 {
