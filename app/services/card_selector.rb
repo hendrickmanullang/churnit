@@ -1,15 +1,13 @@
 class CardSelector
-  def initialize(income, spending, card_selected)
+  def initialize(income, spending)
     @income = income
     @spending = spending
-    @card_selected = card_selected
   end
 
   def call
     # run algorithm and return card ids
     # sort taking variables of spending and income
-    Card.all
-    # Card.where('minimum_income < ?', params[:income])
+    # Card.where('minimum_income <= ?', params[@income])
   end
 
   def sort
