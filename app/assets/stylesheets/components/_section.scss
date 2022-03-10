@@ -2,7 +2,10 @@
 @font-face {
   font-family: 'Akzidenz';
   src: url('Akzidenz-grotesk-black.ttf');
+  font-family: 'Rubik';
+  src: url('Rubik-VariableFont_wght.ttf');
 }
+
 // Backgrounds will cover each section
 .section {
   background-size: cover;
@@ -19,11 +22,15 @@
   top: 88px;
   font-size: 80px;
   padding: 20px;
-  font-family: "Akzidenz";
+  font-family: "Rubik";
 }
 
 #section0 a {
   top: 40px;
+}
+
+#section1 h2 {
+  font-family: "Rubik";
 }
 
 #section1 {
