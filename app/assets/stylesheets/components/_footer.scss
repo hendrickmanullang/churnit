@@ -1,0 +1,38 @@
+.footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #3a0ca3;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: fill;
+}
+
+.footer a {
+  font-size: 30px;
+  color: #4cc9f0;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+  text-decoration: none;
+}
+
+.footer p {
+  color: #6B6C6C;
+}
+
+.footer .fas {
+  color: #BF0F12;
+}
+
+.footer-content {
+  justify-content: space-between;
+  display: flex;
+  height: 180px;
+}
+
+.vert-links {
+  display: list-item;
+}
+
+.footer-logo {
+  height: 100px;
+}

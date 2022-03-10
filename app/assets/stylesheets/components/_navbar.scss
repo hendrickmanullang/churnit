@@ -1,3 +1,8 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -42,7 +47,7 @@
   position: absolute;
   z-index: 151;
   top: 0;
-  transform: translateY(85px);
+  transform: translateY(-80px) translateX(-50px);
   left: 9%;
 }
 
@@ -54,6 +59,6 @@
 .logo img {
   height: 377px;
     width: auto;
-    margin-top: -162px;
-    margin-left: -174px;
+    // margin-top: -162px;
+    // margin-left: -174px;
 }
