@@ -11,11 +11,40 @@
   background-size: cover;
 }
 
+.flex-wrapper {
+  display: flex;
+  object-fit: cover;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 // Homepage
 #section0 {
-  background-image: url(https://res.cloudinary.com/fantastic-four/image/upload/v1646806242/gradient_good_2_rmkpbb.png);
+  // background-image: url(https://res.cloudinary.com/fantastic-four/image/upload/v1646806242/gradient_good_2_rmkpbb.png);
+  // background-image: url(https://res.cloudinary.com/fantastic-four/image/upload/v1646885527/ales-nesetril-ex_p4AaBxbs-unsplash_wkrnge.jpg);
+  background-color: rgb(44, 43, 43);
   color: white;
   text-align: center;
+}
+
+#section0 #img-container {
+  display: flex;
+  align-self: flex-start;
+  margin-left: -200px;
+  height: 400px;
+  top: 50%;
+}
+
+#section0 #text-container {
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+}
+
+#section0 img {
+  width: auto;
+  max-height: 100%;
+  filter: brightness(80%);
 }
 
 #section0 h1 {
