@@ -29,6 +29,7 @@
   transform: translate3d(-20%, -50%, 0);
   animation: morph 20s ease-in-out infinite both alternate;
   transition: 0.5s all ease;
+  border-radius: 20%;
 }
 
 .navbar .blob {
