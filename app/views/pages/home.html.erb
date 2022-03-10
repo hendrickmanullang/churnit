@@ -1,19 +1,38 @@
+      <%= render 'shared/navbar' %>
+<%# <script src="./app/javascript/packs/application.js"></script> %>
 <!-- TODO: Render header here -->
 <!-- The whole 'long' homepage exists within the 'fullpage' div -->
 <div id="fullpage">
   <!-- Then each'section' within the longer page has a 'section' div -->
 	<div class="section" id="section0">
-    Landing page
+
 <!-- The whole 'long' homepage exists within this 'fullpage' div -->
 
   <!-- Then each'section' within the longer page has a 'section' div -->
-
     <h1>ChurnIt</h1>
-    <h2>Credit cards made simple.</h2>
+    <h2 id="demo"></h2>
+    <%# <button onclick="typeWriter()">Click me</button> %>
+    <p></p>
+
+    <script>
+    let i = 0;
+    const txt = 'Credit cards made simple.';
+    const speed = 60;
+    document.addEventListener("load", typeWriter())
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    </script>
+
     <div>
       <a href="#" class="btn btn-white btn- animate">Discover</a>
     </div>
   </div>
+  <!-- section 1 how it works -->
 	<div class="section" id="section1">
     <div class="center-content">
       <h2 class="text-center">How it works</h2>
@@ -43,6 +62,7 @@
 	<div class="section" id="section2">
       <a href="#" class="btn btn-white btn- animate">Next</a>
   </div>
+  <!-- section 3 -->
   <div class="section" id="section3">
     What's your annual income?
 
@@ -59,12 +79,14 @@
       <a href="#" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
+  <!-- section 4 -->
   <div class="section" id="section4">
     How much do you spend each month?
     <div>
       <a href="#" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
+  <!-- section 5 -->
 	<div class="section" id="section5">
     What do you look for in a card?
     <div>
