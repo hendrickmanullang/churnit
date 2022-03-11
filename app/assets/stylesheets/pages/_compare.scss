@@ -1,8 +1,31 @@
+.compare-container {
+  margin: 60px;
+}
+
+.compare-headers {
+  display: flex;
+  justify-content: space-between;
+}
+
 .line {
   border-bottom: 5px solid black;
 }
 
-.compare-container {
-  display: flex;
-  justify-content: space-between;
+.right-text {
+  text-align: right;
+}
+
+.right-text h2 {
+  margin-bottom: 30px;
+}
+
+.container-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin: 56px 0px;
+}
+
+.line-sml {
+
 }
