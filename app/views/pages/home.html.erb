@@ -86,7 +86,7 @@
   <!-- section 3 -->
   <%= form_tag(compare_cards_path, method: :get) do |f| %>
   <div class="section" id="section3" data-anchor='anchor3'>
-    <div class="section white-centered-text">
+    <div class="white-centered-text">
       <%= label_tag :income, "What's your annual income?" %>
       <%= text_field_tag :income, '10000' %>
       <a href="#anchor4" target="_parent" class="btn btn-white btn- animate">Next</a>
@@ -94,7 +94,7 @@
   </div>
   <!-- section 4 -->
   <div class="section" id="section4" data-anchor='anchor4'>
-    <div class="center-content text-center">
+    <div class="black-centered-text">
       <%= label_tag :spending, "What's your monthly spend?" %>
       <%= text_field_tag :spending, '5000' %>
       <a href="#anchor5" target="_parent" class="btn btn-white btn- animate">Next</a>
@@ -102,7 +102,7 @@
   </div>
   <!-- section 5 -->
 	<div class="section" id="section5" data-anchor='anchor5'>
-    <div class="center-content text-center">
+    <div class="white-centered-text">
       <%= label_tag :card_selected, "Do you currently have a credit card?" %>
       <%= select_tag :card_selected, options_for_select(@cards.map {|card| [card.card_name, card.id, { 'data-url' => cards_path(card.id)}]}) %>
       <%= submit_tag 'Continue' %>
