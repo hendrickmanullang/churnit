@@ -3,11 +3,13 @@
   <div class="compare-headers">
     <div>
       <h1>Card Facts</h1>
-      <h2><i>"Based on avg. spend of $  <%= session[:onboarding][:spending] %> per month"</i></h2>
+      <h4><i>Based on avg. spend of $  <%= session[:onboarding][:spending] %> per month</i></h4>
     </div>
     <div class="right-text">
-      <h2>_ChurnIt</h2>
-      <span>Methodology</span>|<span>Card Rank</span>|<span>About Us</span>
+      <div>
+        <img src="https://res.cloudinary.com/fantastic-four/image/upload/v1646970819/ChurnIt-logos_black_eguxks.png" alt="ChurnIt logo" class="header-img">
+      </div>
+        <span>Methodology</span> | <span>Card Rank</span> | <span>About Us</span>
     </div>
   </div>
 
@@ -15,14 +17,19 @@
 
   <div class="container-cards">
     <div class="card-index mb-3">
-      <h4>Your card</h4>
+      <h4>Your current card</h4>
       <% @card = Card.find(session[:onboarding][:card_selected]) %>
-      <%= image_tag @card.card_image_url %>
+      <div class="card-img">
+        <%= image_tag @card.card_image_url %>
+      </div>
       <div class="card-index-infos">
         <div>
-          <h4><%= @card.card_name %></h4>
+          <h4 class="card-h4"><%= @card.card_name %></h4>
+          <div class="line-sml"></div>
           <p>%<%= @card.interest_rate*100%></p>
+          <div class="line-sml"></div>
           <p><%= @card.interest_free_period.to_i %> days interest free</p>
+          <div class="line-sml"></div>
           <p>$<%= @card.annual_fee_init %> annual fee</p>
         </div>
       </div>
@@ -30,13 +37,13 @@
 
     <% @recommended_cards.each do |card| %>
         <div class="card-index mb-3">
-          <h4>Reccomendation</h4>
-          <%= image_tag card.card_image_url %>
-          <div class="lins-sml"></div>
+          <h4>Recomendation</h4>
+          <div class="card-img">
+            <%= image_tag card.card_image_url %>
+          </div>
             <div class="card-index-infos">
               <div>
-              <div class="line-sml"></div>
-                <h4><%= card.card_name %></h4>
+                <h4 class="card-h4"><%= card.card_name %></h4>
                 <div class="line-sml"></div>
                 <p>%<%= card.interest_rate*100 %></p>
                 <div class="line-sml"></div>
@@ -52,6 +59,9 @@
 
   </div>
 
+
+</div>
+<% if false %>
         <h2>Cards we recommended</h2>
           <% @recommended_cards.each do |card| %>
             <%= card.interest_rate%>
@@ -60,9 +70,8 @@
             <%= render 'card', card: card %>
           <% end %>
 
-</div>
-
 <h4>Your input income</h4>
 <p><%= session[:onboarding][:income] %></p>
 <h4>Your input spending</h4>
 <p><%= session[:onboarding][:spending] %></p>
+<% end %>

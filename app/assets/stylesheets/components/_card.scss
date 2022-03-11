@@ -88,4 +88,17 @@
 
 .card-index img {
   width: 250px;
+  height: 155px;
+}
+
+.card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-index-infos h4, p {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }

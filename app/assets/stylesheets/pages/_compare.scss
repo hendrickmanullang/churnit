@@ -8,7 +8,7 @@
 }
 
 .line {
-  border-bottom: 5px solid black;
+  border-bottom: 6px solid black;
 }
 
 .right-text {
@@ -26,6 +26,18 @@
   margin: 56px 0px;
 }
 
-.line-sml {
+.header-img {
+  width: 200px;
+  margin-bottom: 0px;
+  align-items: center;
+}
 
+.line-sml {
+  border-bottom: 2px solid black;
+  z-index: -1;
+  display: flex;
+}
+
+.card-h4 {
+  height: 55px;
 }
