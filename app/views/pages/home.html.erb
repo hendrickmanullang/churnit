@@ -2,6 +2,7 @@
 <%# <script src="./app/javascript/packs/application.js"></script> %>
 <!-- TODO: Render header here -->
 <!-- The whole 'long' homepage exists within the 'fullpage' div -->
+
 <div id="fullpage">
   <!-- Then each'section' within the longer page has a 'section' div -->
 	<div class="section flex" id="section0">
@@ -12,25 +13,25 @@
       <div class="text-container">
         <h1>ChurnIt</h1>
         <h2 id="demo"></h2>
-        <script>
-          let i = 0;
-          const txt = 'Credit cards made simple.';
-          const speed = 60;
-          document.addEventListener("load", typeWriter())
-          function typeWriter() {
-            if (i < txt.length) {
-              document.getElementById("demo").innerHTML += txt.charAt(i);
-              i++;
-              setTimeout(typeWriter, speed);
+          <script>
+            let i = 0;
+            const txt = 'Credit cards made simple.';
+            const speed = 60;
+            document.addEventListener("load", typeWriter())
+            function typeWriter() {
+              if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+              }
             }
-          }
-        </script>
-        <a href="#" class="btn btn-white btn- animate">Discover</a>
+          </script>
       </div>
     </div>
+    <a href="#anchor1" target="_parent" class="btn btn-white btn- animate">Discover</a>
   </div>
   <!-- section 1 how it works -->
-	<div class="section" id="section1">
+	<div class="section" id="section1" data-anchor="anchor1">
     <div class="center-content">
       <h2 class="text-center">How it works</h2>
       <div class="icons">
@@ -52,15 +53,15 @@
       </div>
     </div>
     <div class="how-it-works-button">
-      <a href="#" class="btn btn-white btn- animate">Next</a>
+      <a href="#anchor2" target="_parent" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
 <!-- NOTE: The 'personalisation' part will be one form. The form will wrap AROUND the four question sections. -->
-	<div class="section" id="section2">
-      <a href="#" class="btn btn-white btn- animate">Next</a>
+	<div class="section" id="section2" data-anchor='anchor2'>
+      <a href="#anchor3" target="_parent" class="btn btn-white btn- animate">Discover</a>
   </div>
   <!-- section 3 -->
-  <div class="section" id="section3">
+  <div class="section" id="section3" data-anchor='anchor3'>
     What's your annual income?
 
       <%= form_tag(compare_cards_path, method: :get) do |f| %>
@@ -73,14 +74,14 @@
       <%= submit_tag 'Continue' %>
     <% end %>
     <div>
-      <a href="#" class="btn btn-white btn- animate">Next</a>
+      <a href="#anchor4" target="_parent" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
   <!-- section 4 -->
-  <div class="section" id="section4">
+  <div class="section" id="section4" data-anchor='anchor4'>
     How much do you spend each month?
     <div>
-      <a href="#" class="btn btn-white btn- animate">Next</a>
+      <a href="#anchor5" target="_partent" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
   <!-- section 5 -->
