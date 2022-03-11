@@ -23,6 +23,6 @@ import fullpage from 'fullpage.js';
 document.addEventListener('turbolinks:load', () => {
   const fullPageInstance = new fullpage('#fullpage', {
       navigation: true,
-      sectionsColor:['', '#171924', '#faf8f3', '#171924', '#faf8f3', '#171924']
+      sectionsColor:['#006a6f', '#171924', '#faf8f3', '#171924', '#faf8f3', '#171924']
   });
 })
