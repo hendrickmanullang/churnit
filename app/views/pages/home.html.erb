@@ -1,36 +1,37 @@
-      <%= render 'shared/navbar' %>
+<%= render 'shared/navbar' %>
 <%# <script src="./app/javascript/packs/application.js"></script> %>
 <!-- TODO: Render header here -->
 <!-- The whole 'long' homepage exists within the 'fullpage' div -->
+
 <div id="fullpage">
   <!-- Then each'section' within the longer page has a 'section' div -->
-	<div class="section flex" id="section0">
-    <div class="flex-wrapper">
+	<div class="section" id="section0">
+    <div width=100%>
       <div id="img-container">
         <img src="https://res.cloudinary.com/fantastic-four/image/upload/v1646878248/hand-card-nobackground_totgfi.png" alt="Hand reaching for credit card">
       </div>
       <div class="text-container">
         <h1>ChurnIt</h1>
         <h2 id="demo"></h2>
-        <script>
-          let i = 0;
-          const txt = 'Credit cards made simple.';
-          const speed = 60;
-          document.addEventListener("load", typeWriter())
-          function typeWriter() {
-            if (i < txt.length) {
-              document.getElementById("demo").innerHTML += txt.charAt(i);
-              i++;
-              setTimeout(typeWriter, speed);
+          <script>
+            let i = 0;
+            const txt = 'Credit cards made simple.';
+            const speed = 60;
+            document.addEventListener("load", typeWriter())
+            function typeWriter() {
+              if (i < txt.length) {
+                document.getElementById("demo").innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+              }
             }
-          }
-        </script>
-        <a href="#" class="btn btn-white btn- animate">Discover</a>
+          </script>
       </div>
     </div>
+    <a href="#anchor1" target="_parent" class="btn btn-white btn- animate">Discover</a>
   </div>
   <!-- section 1 how it works -->
-	<div class="section" id="section1">
+	<div class="section" id="section1" data-anchor="anchor1">
     <div class="center-content">
       <h2 class="text-center">How it works</h2>
       <div class="icons">
@@ -52,60 +53,60 @@
       </div>
     </div>
     <div class="how-it-works-button">
-      <a href="#" class="btn btn-white btn- animate">Next</a>
+      <a href="#anchor2" target="_parent" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
 <!-- NOTE: The 'personalisation' part will be one form. The form will wrap AROUND the four question sections. -->
-	<div class="section" id="section2">
-      <a href="#" class="btn btn-white btn- animate">Next</a>
-  </div>
-  <!-- section 3 -->
-  <div class="section" id="section3">
-    What's your annual income?
+	<div class="section" id="section2" data-anchor='anchor2'>
+    <div class="center-content text-center">
+      <h1>What do you look for in a card?</h1>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
-      <%= form_tag(compare_cards_path, method: :get) do |f| %>
-        <%= label_tag :income, "What's your annual income?" %>
-        <%= text_field_tag :income, '10000' %>
-        <%= label_tag :spending, "What's your annual spending?" %>
-        <%= text_field_tag :spending, '5000' %>
-        <%= label_tag :card_selected, "Which card?" %>
-        <%= select_tag :card_selected, options_for_select(@cards.map {|card| [card.card_name, card.id, { 'data-url' => cards_path(card.id)}]}) %>
-      <%= submit_tag 'Continue' %>
-    <% end %>
-    <div>
-      <a href="#" class="btn btn-white btn- animate">Next</a>
+        <script>
+          $( function() {
+            $( "#sortable" ).sortable();
+          } );
+        </script>
+
+          ⬆️ Most important
+          <ul id="sortable" style="list-style: none;">
+            <li id="fee" class="ui-state-default">Low Annual Card Fee</li>
+            <li id="cashback" class="ui-state-default">Cashback</li>
+            <li id="reward" class="ui-state-default">Reward Points</li>
+            <li id="foreign" class="ui-state-default">Low International Transaction Fee</li>
+          </ul>
+          ⬇️ Least important
+
+        <div class >
+          <a href="#anchor3" target="_parent" class="btn btn-white btn- animate">Next</a>
+        </div>
+      </div>
+    </div>
+  <!-- section 3 -->
+  <%= form_tag(compare_cards_path, method: :get) do |f| %>
+  <div class="section" id="section3" data-anchor='anchor3'>
+    <div class="white-centered-text">
+      <%= label_tag :income, "What's your annual income?" %>
+      <%= text_field_tag :income, '10000' %>
+      <a href="#anchor4" target="_parent" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
   <!-- section 4 -->
-  <div class="section" id="section4">
-    How much do you spend each month?
-    <div>
-      <a href="#" class="btn btn-white btn- animate">Next</a>
+  <div class="section" id="section4" data-anchor='anchor4'>
+    <div class="black-centered-text">
+      <%= label_tag :spending, "What's your monthly spend?" %>
+      <%= text_field_tag :spending, '5000' %>
+      <a href="#anchor5" target="_parent" class="btn btn-white btn- animate">Next</a>
     </div>
   </div>
   <!-- section 5 -->
-	<div class="section" id="section5">
-    <div class="container">
-    <h1>What do you look for in a card?</h1>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <script>
-    $( function() {
-      $( "#sortable" ).sortable();
-    } );
-    </script>
-    ⬆️ Most important
-    <ul id="sortable" style="list-style: none;">
-      <li id="fee" class="ui-state-default">Low Annual Card Fee</li>
-      <li id="cashback" class="ui-state-default">Cashback</li>
-      <li id="reward" class="ui-state-default">Reward Points</li>
-      <li id="foreign" class="ui-state-default">Low International Transaction Fee</li>
-    </ul>
-    ⬇️ Least important
-    <div>
-    <!-- convert the sort to an array using $( "#sortable" ).sortable('toArray'); -->
-      <a href="#" class="btn btn-white btn- animate">Next</a>
-    </div>
+	<div class="section" id="section5" data-anchor='anchor5'>
+    <div class="white-centered-text">
+      <%= label_tag :card_selected, "Do you currently have a credit card?" %>
+      <%= select_tag :card_selected, options_for_select(@cards.map {|card| [card.card_name, card.id, { 'data-url' => cards_path(card.id)}]}) %>
+      <%= submit_tag 'Continue' %>
+      <% end %>
     </div>
   </div>
 </div>

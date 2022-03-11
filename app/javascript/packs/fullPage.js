@@ -108,7 +108,7 @@
       options = deepExtend({
           //navigation
           menu: false,
-          anchors:[],
+          anchors:['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5' ],
           lockAnchors: false,
           navigation: false,
           navigationPosition: 'right',
