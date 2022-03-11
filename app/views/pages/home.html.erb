@@ -61,9 +61,7 @@
       <a href="#anchor3" target="_parent" class="btn btn-white btn- animate">Discover</a>
   </div>
   <!-- section 3 -->
-  <div class="section" id="section3" data-anchor='anchor3'>
-    What's your annual income?
-
+  <div class="section white-centered-text" id="section3" data-anchor='anchor3'>
       <%= form_tag(compare_cards_path, method: :get) do |f| %>
         <%= label_tag :income, "What's your annual income?" %>
         <%= text_field_tag :income, '10000' %>
@@ -86,28 +84,28 @@
   </div>
   <!-- section 5 -->
 	<div class="section" id="section5">
-    <div class="container">
-    <h1>What do you look for in a card?</h1>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-    <script>
-    $( function() {
-      $( "#sortable" ).sortable();
-    } );
-    </script>
-    ⬆️ Most important
-    <ul id="sortable" style="list-style: none;">
-      <li id="fee" class="ui-state-default">Low Annual Card Fee</li>
-      <li id="cashback" class="ui-state-default">Cashback</li>
-      <li id="reward" class="ui-state-default">Reward Points</li>
-      <li id="foreign" class="ui-state-default">Low International Transaction Fee</li>
-    </ul>
-    ⬇️ Least important
-    <div>
-    <!-- convert the sort to an array using $( "#sortable" ).sortable('toArray'); -->
-      <a href="#" class="btn btn-white btn- animate">Next</a>
-    </div>
-    </div>
+    <div class="container white-centered-text">
+      <h1>What do you look for in a card?</h1>
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+      <script>
+      $( function() {
+        $( "#sortable" ).sortable();
+      } );
+      </script>
+      ⬆️ Most important
+      <ul id="sortable" style="list-style: none;">
+        <li id="fee" class="ui-state-default">Low Annual Card Fee</li>
+        <li id="cashback" class="ui-state-default">Cashback</li>
+        <li id="reward" class="ui-state-default">Reward Points</li>
+        <li id="foreign" class="ui-state-default">Low International Transaction Fee</li>
+      </ul>
+      ⬇️ Least important
+      <div>
+      <!-- convert the sort to an array using $( "#sortable" ).sortable('toArray'); -->
+        <a href="#" class="btn btn-white btn- animate">Next</a>
+      </div>
+      </div>
   </div>
 </div>
 
