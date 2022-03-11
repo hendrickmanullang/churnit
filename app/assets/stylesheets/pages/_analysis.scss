@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.analysis {
+  border: 1px solid black;
+
+}
+.header {
+  display: flex;
+  justify-items: flex-start;
+  align-items: center;
+  height: 100em;
+  border: 1px solid black;
+}
+.analysis-left {
+  border: 1px solid black;
+}
+.analysis-right {
+  border: 1px solid black
+}
