@@ -28,6 +28,25 @@
       </div>
     </div>
 
+    <% @recommended_cards.each do |card| %>
+        <div class="card-index mb-3">
+          <h4>Reccomendation</h4>
+          <%= image_tag card.card_image_url %>
+          <div class="lins-sml"></div>
+            <div class="card-index-infos">
+              <div>
+              <div class="line-sml"></div>
+                <h4><%= card.card_name %></h4>
+                <div class="line-sml"></div>
+                <p>%<%= card.interest_rate*100 %></p>
+                <div class="line-sml"></div>
+                <p><%= card.interest_free_period.to_i %> days interest free</p>
+                <div class="line-sml"></div>
+                <p>$<%= card.annual_fee_init %> annual fee</p>
+              </div>
+            </div>
+        </div>
+      <% end %>
 
 
 
@@ -44,6 +63,6 @@
 </div>
 
 <h4>Your input income</h4>
-  <p><%= session[:onboarding][:income] %></p>
-  <h4>Your input spending</h4>
-  <p><%= session[:onboarding][:spending] %></p>
+<p><%= session[:onboarding][:income] %></p>
+<h4>Your input spending</h4>
+<p><%= session[:onboarding][:spending] %></p>
