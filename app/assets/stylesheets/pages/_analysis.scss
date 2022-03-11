@@ -2,11 +2,34 @@
   margin: 0;
   padding: 0;
 }
+
 .analysis {
+  background-color: beige;
+  display: flex;
   margin:50px auto;
+  justify-content: center;
+  align-items: flex-end;
+}
+.analysis-left {
+  border: 1px dotted black;
+  border-radius: 2em;
+}
+.analysis-left > h5 {
+  margin-top: 2em;
+}
+.analysis-left .header :nth-child(2) {
+  color: aquamarine;
+  font-size: 2rem;
+}
+
+.analysis-left .factors {
+  display: flex;
+  justify-content: space-around;
+}
+.analysis-right {
+  border: 1px dotted papayawhip;
+  border-radius: 2em;
 }
 .factors {
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
+  margin-top: 3em;
 }
