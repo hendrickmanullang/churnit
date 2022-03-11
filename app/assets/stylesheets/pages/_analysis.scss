@@ -3,19 +3,10 @@
   padding: 0;
 }
 .analysis {
-  border: 1px solid black;
-
+  margin:50px auto;
 }
-.header {
+.factors {
   display: flex;
-  justify-items: flex-start;
-  align-items: center;
-  height: 100em;
-  border: 1px solid black;
-}
-.analysis-left {
-  border: 1px solid black;
-}
-.analysis-right {
-  border: 1px solid black
+  justify-content: left;
+  align-items: flex-start;
 }
