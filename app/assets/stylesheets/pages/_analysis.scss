@@ -2,11 +2,80 @@
   margin: 0;
   padding: 0;
 }
+
 .analysis {
-  margin:50px auto;
-}
-.factors {
+  background-color: pink;
   display: flex;
-  justify-content: left;
-  align-items: flex-start;
+  margin:20px auto;
+  align-items: stretch;
+  flex-grow: 6;
+}
+.analysis-left {
+  margin-right: 20px;
+}
+.analysis-header {
+  font-size: 1rem;
+}
+.analysis-header p {
+  font-size: 2em;
+}
+
+.analysis-left > h5 {
+  margin-top: 1em;
+}
+.analysis-left .factors {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1rem;
+}
+.analysis-left .factors-container {
+  border: 1px solid black;
+  border-radius: 1em;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content:center;
+}
+.analysis-right {
+  border: 1px solid black;
+  border-radius:1em ;
+  margin: 10px auto;
+}
+.right-header {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.right-header .links {
+  margin-left: 0.5rem;
+}
+.right-header h5 {
+  margin-right: 0.5rem;
+}
+
+.right-content {
+  border: 1px solid black;
+  border-radius: 1em;
+  list-style-type: none;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.right-content ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.right-content li {
+  margin: auto;
+}
+.right-content p {
+  white-space: pre-wrap;
+}
+.right-content div {
+  border-bottom: 1px solid black;
 }
