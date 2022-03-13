@@ -48,8 +48,9 @@
   display: flex;
   justify-content: space-between;
 }
-.right-header .links {
+.right-header .links a {
   margin-left: 0.5rem;
+  text-decoration: none;
 }
 .right-header h5 {
   margin-right: 0.5rem;
