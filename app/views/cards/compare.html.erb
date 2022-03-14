@@ -15,18 +15,35 @@
 
   <div class="line"></div>
 
-  <div class="container-cards">
+<div class="container-cards">
+    <div class="card-index mb-3" id="headers-card">
+      <h4>Your options:</h4>
+      <div class="card-img">
+      </div>
+      <div class="card-index-infos">
+        <div>
+          <h4 class="card-h4">Card name</h4>
+          <div class="line-sml"></div>
+          <p>Interest rate</p>
+          <div class="line-sml"></div>
+          <p>Interest free period</p>
+          <div class="line-sml"></div>
+          <p>Annual fee</p>
+        </div>
+      </div>
+    </div>
+
     <div class="card-index mb-3">
       <h4>Your current card</h4>
       <% @card = Card.find(session[:onboarding][:card_selected]) %>
       <div class="card-img">
-        <%= image_tag @card.card_image_url %>
+          <%= image_tag @card.card_image_url %>
       </div>
       <div class="card-index-infos">
         <div>
           <h4 class="card-h4"><%= @card.card_name %></h4>
           <div class="line-sml"></div>
-          <p>%<%= @card.interest_rate*100%></p>
+          <p><%= @card.interest_rate*100%>%</p>
           <div class="line-sml"></div>
           <p><%= @card.interest_free_period.to_i %> days interest free</p>
           <div class="line-sml"></div>
@@ -34,45 +51,189 @@
         </div>
       </div>
     </div>
+    <%# 1st comparison card %>
+    <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
+        <div class="card-index mb-3">
+          <h4>Recommendation</h4>
+          <div class="card-img">
+            <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                <div class="carousel-item active">
+                  <%= image_tag carousel_one.first.card_image_url, class:"d-block w-100" %>
+                  <div class="card-index-infos">
+                    <div>
+                      <h4 class="card-h4"><%= carousel_one.first.card_name %></h4>
+                      <div class="line-sml"></div>
+                      <p>%<%= carousel_one.first.interest_rate*100 %></p>
+                      <div class="line-sml"></div>
+                      <p><%= carousel_one.first.interest_free_period.to_i %> days interest free</p>
+                      <div class="line-sml"></div>
+                      <p>$<%= carousel_one.first.annual_fee_init %> annual fee</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <%= image_tag carousel_one.second.card_image_url, class:"d-block w-100" %>
+                  <div class="card-index-infos">
+                    <div>
+                      <h4 class="card-h4"><%= carousel_one.second.card_name %></h4>
+                      <div class="line-sml"></div>
+                      <p>%<%= carousel_one.second.interest_rate*100 %></p>
+                      <div class="line-sml"></div>
+                      <p><%= carousel_one.second.interest_free_period.to_i %> days interest free</p>
+                      <div class="line-sml"></div>
+                      <p>$<%= carousel_one.second.annual_fee_init %> annual fee</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <%= image_tag carousel_one.third.card_image_url, class:"d-block w-100" %>
+                  <div class="card-index-infos">
+                    <div>
+                      <h4 class="card-h4"><%= carousel_one.first.card_name %></h4>
+                      <div class="line-sml"></div>
+                      <p>%<%= carousel_one.first.interest_rate*100 %></p>
+                      <div class="line-sml"></div>
+                      <p><%= carousel_one.first.interest_free_period.to_i %> days interest free</p>
+                      <div class="line-sml"></div>
+                      <p>$<%= carousel_one.first.annual_fee_init %> annual fee</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselControls1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+          </div>
+        </div>
+    <%# 1st comparison card end%>
 
-    <% @recommended_cards.each do |card| %>
+    <%# 2nd comparison card %>
+    <% carousel_two = @recommended_cards.each_slice(3).to_a.second.take(3) %>
         <div class="card-index mb-3">
           <h4>Recomendation</h4>
           <div class="card-img">
-            <%= image_tag card.card_image_url %>
-          </div>
-            <div class="card-index-infos">
-              <div>
-                <h4 class="card-h4"><%= card.card_name %></h4>
-                <div class="line-sml"></div>
-                <p>%<%= card.interest_rate*100 %></p>
-                <div class="line-sml"></div>
-                <p><%= card.interest_free_period.to_i %> days interest free</p>
-                <div class="line-sml"></div>
-                <p>$<%= card.annual_fee_init %> annual fee</p>
+            <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </button>
+                <div class="carousel-item active">
+                  <%= image_tag carousel_two.first.card_image_url, class:"d-block w-100" %>
+                  <div class="card-index-infos">
+                    <div>
+                      <h4 class="card-h4"><%= carousel_two.first.card_name %></h4>
+                      <div class="line-sml"></div>
+                      <p>%<%= carousel_two.first.interest_rate*100 %></p>
+                      <div class="line-sml"></div>
+                      <p><%= carousel_two.first.interest_free_period.to_i %> days interest free</p>
+                      <div class="line-sml"></div>
+                      <p>$<%= carousel_two.first.annual_fee_init %> annual fee</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <%= image_tag carousel_two.second.card_image_url, class:"d-block w-100" %>
+                  <div class="card-index-infos">
+                    <div>
+                      <h4 class="card-h4"><%= carousel_two.second.card_name %></h4>
+                      <div class="line-sml"></div>
+                      <p>%<%= carousel_two.second.interest_rate*100 %></p>
+                      <div class="line-sml"></div>
+                      <p><%= carousel_two.second.interest_free_period.to_i %> days interest free</p>
+                      <div class="line-sml"></div>
+                      <p>$<%= carousel_two.second.annual_fee_init %> annual fee</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <%= image_tag carousel_two.third.card_image_url, class:"d-block w-100" %>
+                  <div class="card-index-infos">
+                    <div>
+                      <h4 class="card-h4"><%= carousel_two.third.card_name %></h4>
+                      <div class="line-sml"></div>
+                      <p>%<%= carousel_two.third.interest_rate*100 %></p>
+                      <div class="line-sml"></div>
+                      <p><%= carousel_two.third.interest_free_period.to_i %> days interest free</p>
+                      <div class="line-sml"></div>
+                      <p>$<%= carousel_two.third.annual_fee_init %> annual fee</p>
+                    </div>
+                  </div>
+                </div>
               </div>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselControls2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
             </div>
+          </div>
         </div>
-      <% end %>
+    <%# 2nd comparison card end%>
 
-
-
+    <%# 3rd comparison card %>
+    <% carousel_three = @recommended_cards.each_slice(3).to_a.third.take(3) %>
+      <div class="card-index mb-3">
+        <h4>Recomendation</h4>
+        <div class="card-img">
+          <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls3" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+              <div class="carousel-item active">
+                <%= image_tag carousel_three.first.card_image_url, class:"d-block w-100" %>
+                <div class="card-index-infos">
+                  <div>
+                    <h4 class="card-h4"><%= carousel_three.first.card_name %></h4>
+                    <div class="line-sml"></div>
+                    <p>%<%= carousel_three.first.interest_rate*100 %></p>
+                    <div class="line-sml"></div>
+                    <p><%= carousel_three.first.interest_free_period.to_i %> days interest free</p>
+                    <div class="line-sml"></div>
+                    <p>$<%= carousel_three.first.annual_fee_init %> annual fee</p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag carousel_three.second.card_image_url, class:"d-block w-100" %>
+                <div class="card-index-infos">
+                  <div>
+                    <h4 class="card-h4"><%= carousel_three.second.card_name %></h4>
+                    <div class="line-sml"></div>
+                    <p>%<%= carousel_three.second.interest_rate*100 %></p>
+                    <div class="line-sml"></div>
+                    <p><%= carousel_three.second.interest_free_period.to_i %> days interest free</p>
+                    <div class="line-sml"></div>
+                    <p>$<%= carousel_three.second.annual_fee_init %> annual fee</p>
+                  </div>
+              </div>
+              </div>
+              <div class="carousel-item">
+                <%= image_tag carousel_three.third.card_image_url, class:"d-block w-100" %>
+                <div class="card-index-infos">
+                  <div>
+                    <h4 class="card-h4"><%= carousel_three.third.card_name %></h4>
+                    <div class="line-sml"></div>
+                    <p>%<%= carousel_three.third.interest_rate*100 %></p>
+                    <div class="line-sml"></div>
+                    <p><%= carousel_three.third.interest_free_period.to_i %> days interest free</p>
+                    <div class="line-sml"></div>
+                    <p>$<%= carousel_three.third.annual_fee_init %> annual fee</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselControls3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <%# 3rd comparison card end %>
   </div>
-
-
 </div>
-<% if false %>
-  <h2>Cards we recommended</h2>
-    <% @recommended_cards.each do |card| %>
-      <%= card.interest_rate%>
-      <%= @card.interest_free_period %>
-      <%= @card.annual_fee_init %>
-      <%= render 'card', card: card %>
-    <% end %>
 
-<h4>Your input income</h4>
-<p><%= session[:onboarding][:income] %></p>
-<h4>Your input spending</h4>
-<p><%= session[:onboarding][:spending] %></p>
-<% end %>
 <%= link_to "analysis", analysis_cards_path %>

@@ -86,19 +86,47 @@
   width: 40px;
 }
 
-.card-index img {
-  width: 250px;
-  height: 155px;
-}
 
 .card-img {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 155px;
 }
 
-.card-index-infos h4, p {
+.card-img img {
+  width: 250px;
+  height: 155px;
+}
+
+.card-img-center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-index h4, p {
   display: flex;
   text-align: center;
   justify-content: center;
+}
+
+.card-h4 {
+  height: 55px;
+}
+
+.select {
+  display: flex;
+  margin:0 auto;
+  display:block;
+}
+
+.button {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#headers-card {
+  width: 250px;
 }
