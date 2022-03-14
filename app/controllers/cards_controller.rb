@@ -17,12 +17,10 @@ class CardsController < ApplicationController
     # Truncate the list of cards by excluding cards where minimum income exceeds user's income
     @truncated_list = Card.where('minimum_income <= ?', params[:income])
 
-    # Apply a DYNAMIC SORT (user determined):
+    # Call order of drag & drop result from home page that was used in preference
+    order = params[:preference].split(",")
 
-    ## Call order of drag & drop result from home page that was used in preference
-    ## This should result in an array of string consisting: ['fee', 'cashback', 'reward', 'foreign']
-    ## Take the index of each string, and use active record queries to sort recommended cards
-
+    # Take the index of each string, and use active record queries to sort recommended cards
     queries = {
       'fee' => "annual_fee_init ASC",
       'cashback' => "cashback_reward DESC",
@@ -30,16 +28,15 @@ class CardsController < ApplicationController
       'foreign' => "foreign_transaction_fee ASC"
     }
 
-    order = params[:preference].split(",")
     ordered_queries = [queries[order[0]], queries[order[1]], queries[order[2]], queries[order[3]]]
 
-    ### apply the order of preference below:
-    @sortedcards = @truncated_list.order(ordered_queries[0]).order(ordered_queries[1]).order(ordered_queries[2]).order(ordered_queries[3])
+    # apply the order of preference to sort card query, append reward_rate at the end to account for differences in earning rate:
+    @sortedcards = @truncated_list.order(ordered_queries[0]).order(ordered_queries[1]).order(ordered_queries[2]).order(ordered_queries[3]).order('reward_rate DESC')
 
-    ### Determine ChurnIT score (this will need to be reworked to take into account user's spending)
+    # Determine ChurnIT score
     @churnit_score = 'interest_free_period - annual_fee_after - interest_rate * 100 - late_payment_fee - foreign_transaction_fee * 100'
 
-    # Apply ChurnIT score and STATIC SORT:
+    # Apply ChurnIT score sort by ChurnIT score (static):
     @recommended_cards = @sortedcards.order(Arel.sql(@churnit_score)).limit(3)
 
     # think about making a carousel for the cards
