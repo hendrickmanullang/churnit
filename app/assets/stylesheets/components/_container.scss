@@ -1,0 +1,17 @@
+// This page is for generic containers including flex wrappers etc.
+
+// main container
+.main {
+  padding: 20px;
+}
+
+// flex container only used on non-mobile devices (content stacks by default for mobile):
+@media screen and (min-width: 640px){
+  .flex-container {
+    display: flex;
+  }
+
+// content for within flexbox
+.content {
+  flex: 1
+}

@@ -4,7 +4,7 @@
 .hero {
   display: flex;
   position: relative;
-  height: 60vh;
+  height: 65vh;
   width: 100%;
   overflow: hidden;
   background-color: #007373;
@@ -21,7 +21,7 @@
   filter: brightness(60%)
 }
 
-.banner-text-container {
+.hero-text-container {
   position: relative;
   display: flex;
   width: 100vw;
@@ -36,8 +36,8 @@
   z-index: 1;
 }
 
-.content {
-  height: 45vh;
+#landing-content {
+  height: 35vh;
   padding: 40px;
 }
 
