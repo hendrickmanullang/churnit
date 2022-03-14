@@ -15,18 +15,35 @@
 
   <div class="line"></div>
 
-  <div class="container-cards">
+<div class="container-cards">
+    <div class="card-index mb-3" id="headers-card">
+      <h4>Your options:</h4>
+      <div class="card-img">
+      </div>
+      <div class="card-index-infos">
+        <div>
+          <h4 class="card-h4">Card name</h4>
+          <div class="line-sml"></div>
+          <p>Interest rate</p>
+          <div class="line-sml"></div>
+          <p>Interest free period</p>
+          <div class="line-sml"></div>
+          <p>Annual fee</p>
+        </div>
+      </div>
+    </div>
+
     <div class="card-index mb-3">
       <h4>Your current card</h4>
       <% @card = Card.find(session[:onboarding][:card_selected]) %>
       <div class="card-img">
-        <%= image_tag @card.card_image_url %>
+          <%= image_tag @card.card_image_url %>
       </div>
       <div class="card-index-infos">
         <div>
           <h4 class="card-h4"><%= @card.card_name %></h4>
           <div class="line-sml"></div>
-          <p>%<%= @card.interest_rate*100%></p>
+          <p><%= @card.interest_rate*100%>%</p>
           <div class="line-sml"></div>
           <p><%= @card.interest_free_period.to_i %> days interest free</p>
           <div class="line-sml"></div>
@@ -37,7 +54,7 @@
     <%# 1st comparison card %>
     <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
         <div class="card-index mb-3">
-          <h4>Recomendation</h4>
+          <h4>Recommendation</h4>
           <div class="card-img">
             <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
