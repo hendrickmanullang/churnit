@@ -22,13 +22,21 @@
       </div>
       <div class="card-index-infos">
         <div>
-          <h4 class="card-h4">Card name</h4>
+          <h4 class="card-h4">Card Name</h4>
           <div class="line-sml"></div>
-          <p>Interest rate</p>
+          <p>Card Type</p>
           <div class="line-sml"></div>
-          <p>Interest free period</p>
+          <p>Reward Category</p>
           <div class="line-sml"></div>
-          <p>Annual fee</p>
+          <p>Sign up Bonus</p>
+          <div class="line-sml"></div>
+          <p>Bonus Eligibility</p>
+          <div class="line-sml"></div>
+          <p>Ongoing Rewards</p>
+          <div class="line-sml"></div>
+          <p>Foreign Transaction Fee</p>
+          <div class="line-sml"></div>
+          <p>Annual Fee</p>
         </div>
       </div>
     </div>
@@ -43,11 +51,19 @@
         <div>
           <h4 class="card-h4"><%= @card.card_name %></h4>
           <div class="line-sml"></div>
-          <p><%= @card.interest_rate*100%>%</p>
+          <p><%= @card.card_type%></p>
           <div class="line-sml"></div>
-          <p><%= @card.interest_free_period.to_i %> days interest free</p>
+          <p><%= @card.reward_category %></p>
           <div class="line-sml"></div>
-          <p>$<%= @card.annual_fee_init %> annual fee</p>
+          <p>Up to <%= @card.bonus_point_reward.to_i %> points</p>
+          <div class="line-sml"></div>
+          <p>Spend $<%= @card.bonus_point_spend.to_i %> within <%= @card.bonus_point_time %> days</p>
+          <div class="line-sml"></div>
+          <p>Up to <%= @card.reward_rate %> points per $1 spent</p>
+          <div class="line-sml"></div>
+          <p><%= format('%<num>0.2f', num: @card.foreign_transaction_fee)%>%</p>
+          <div class="line-sml"></div>
+          <p>$<%= format('%<num>0.2f', num: @card.annual_fee_init)%></p>
         </div>
       </div>
     </div>
@@ -62,11 +78,19 @@
               <div>
                 <h4 class="card-h4"><%= card.card_name %></h4>
                 <div class="line-sml"></div>
-                <p><%= card.interest_rate*100 %>%</p>
+                <p><%= card.card_type%></p>
                 <div class="line-sml"></div>
-                <p><%= card.interest_free_period.to_i %> days interest free</p>
+                <p><%= card.reward_category %></p>
                 <div class="line-sml"></div>
-                <p>$<%= card.annual_fee_init %> annual fee</p>
+                <p>Up to <%= card.bonus_point_reward.to_i %> points</p>
+                <div class="line-sml"></div>
+                <p>Spend $<%= card.bonus_point_spend.to_i %> within <%= @card.bonus_point_time %> days</p>
+                <div class="line-sml"></div>
+                <p>Up to <%= card.reward_rate %> points per $1 spent</p>
+                <div class="line-sml"></div>
+                <p><%= format('%<num>0.2f', num: card.foreign_transaction_fee)%>%</p>
+                <div class="line-sml"></div>
+                <p>$<%= format('%<num>0.2f', num: card.annual_fee_init)%></p>
                 <div class="select">
                   <div class="button">
                     <a href="<%=analysis_cards_path%>" target="" class="btn btn-white btn- animate" id="select">Select</a>
