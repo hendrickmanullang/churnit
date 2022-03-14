@@ -1,0 +1,72 @@
+// Specific CSS for the home-page
+// Note: section background colours set in /app/javascript/packs/application.js
+
+.hero {
+  display: flex;
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #007373;
+}
+
+.hero img {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  align-self: center;
+  justify-self: left;
+  z-index: 0;
+  padding: 40px 20px 40px 0;
+  filter: brightness(60%)
+}
+
+.banner-text-container {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero h1 {
+  color: white;
+  padding: 20px;
+  font-size: 12vw;
+  z-index: 1;
+}
+
+.content {
+  height: 45vh;
+  padding: 40px;
+}
+
+// Below are media queries to make landing page responsive
+// Smallish devices (landscape phones)
+@media screen and (min-width: 576px) {
+  .hero img {
+    max-width: 80%;
+    height: auto;
+  }
+}
+
+// Medium devices (tablets)
+@media (min-width: 768px) {
+  .hero img {
+    max-width: 70%;
+    height: auto;
+  }
+}
+
+// Large devices (desktops)
+@media (min-width: 992px) {
+  .hero img {
+    max-width: 60%;
+    height: auto;
+  }
+}
+
+// Extra large devices (large desktops)
+@media (min-width: 1200px) {
+
+}
