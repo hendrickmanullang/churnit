@@ -1,63 +1,72 @@
-<%= render 'shared/navbar' %>
-<%# <script src="./app/javascript/packs/application.js"></script> %>
-<!-- TODO: Render header here -->
-<!-- The whole 'long' homepage exists within the 'fullpage' div -->
+<%# <%= render 'shared/navbar' %>
+<script src="./app/javascript/packs/application.js"></script>
 
 <div id="fullpage">
-  <!-- Then each'section' within the longer page has a 'section' div -->
-	<div class="section" id="section0">
-    <div width=100%>
-      <div id="img-container">
-        <img src="https://res.cloudinary.com/fantastic-four/image/upload/v1646974068/hand-card-red_ywrrvn.png" alt="Hand reaching for credit card">
-      </div>
-      <div class="text-container">
-        <h1>ChurnIt</h1>
-        <h2 id="demo"></h2>
-          <script>
-            let i = 0;
-            const txt = 'Credit cards made simple.';
-            const speed = 60;
-            document.addEventListener("load", typeWriter())
-            function typeWriter() {
-              if (i < txt.length) {
-                document.getElementById("demo").innerHTML += txt.charAt(i);
-                i++;
-                setTimeout(typeWriter, speed);
-              }
-            }
-          </script>
+  <!-- Landing page -->
+  <div class="section" id="section0">
+    <!-- hero banner -->
+    <div class="hero">
+      <img src="https://res.cloudinary.com/fantastic-four/image/upload/v1647078307/landing-banner-desktop-purple_yoytsa.png" alt="Person reaching for credit card">
+      <!-- title -->
+        <div class="hero-text-container">
+          <h1>ChurnIt</h1>
+        </div>
+    </div>
+    <!-- h2 and button -->
+    <div class="text-center" id="landing-content">
+      <h2 id="demo"></h2>
+      <script>
+        let i = 0;
+        const txt = 'Credit cards made simple.';
+        const speed = 60;
+        document.addEventListener("load", typeWriter())
+        function typeWriter() {
+          if (i < txt.length) {
+            document.getElementById("demo").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+      </script>
+      <div id="landing-content">
+        <a href="#anchor1" target="_parent" class="btn btn-white btn- animate">Discover</a>
+        <br>
+        <button class="btn-link" data-bs-toggle="modal" data-bs-target="#howItWorksModal">
+          How does it work?
+        </button>
       </div>
     </div>
-    <a href="#anchor1" target="_parent" class="btn btn-white btn- animate">Discover</a>
   </div>
-  <!-- section 1 how it works -->
+  <!-- How It Works page -->
 	<div class="section" id="section1" data-anchor="anchor1">
-    <div class="center-content">
-      <h2 class="text-center">How it works</h2>
-      <div class="icons">
-        <div class="icon">
-          <i class="fa-regular fa-credit-card" style="height:100px"></i>
-          <h4>Set</h4>
-          <p>Tell us which card you have</p>
+    <div class="main">
+      <!-- Title -->
+        <div>
+          <h2 class="text-center text-white">How it works</h2>
         </div>
-        <div class="icon">
-          <i class="fa-solid fa-chart-column" style="height:100px"></i>
-          <h4>Compare</h4>
-          <p>Compare your card with others</p>
+      <div class="flex-container">
+        <!-- Explanations -->
+        <div class="text-center text-white content">
+            <div class="icon"><i class="fa-regular fa-credit-card"></i></div>
+            <p>Select your current card</p>
         </div>
-        <div class="icon">
-          <i class="fa-solid fa-calendar-day" style="height:100px"></i>
-          <h4>Churn!</h4>
-          <p>Set calendar reminders when to change card</p>
+        <div class="text-center text-white content">
+          <div class="icon"><i class="fa-solid fa-chart-column"></i></div>
+          <p>Tell us how you use your card</p>
+        </div>
+        <div class="text-center text-white content">
+            <div class="icon"><i class="fa-solid fa-calendar-day"></i></div>
+            <p>ChurnIt finds the best cards for you</p>
         </div>
       </div>
-    </div>
-    <div class="how-it-works-button">
-      <a href="#anchor2" target="_parent" class="btn btn-white btn- animate">Next</a>
+      <!-- next button -->
+      <div class="text-center">
+        <a href="#anchor2" target="_parent" class="btn btn-white btn- animate">Next</a>
+      </div>
     </div>
   </div>
-<!-- NOTE: The 'personalisation' part will be one form. The form will wrap AROUND the four question sections. -->
-	<div class="section" id="section2" data-anchor='anchor2'>
+<!-- personalisation questions -->
+  <div class="section" id="section2" data-anchor='anchor2'>
     <div class="center-content text-center">
       <h1>What do you look for in a card?</h1>
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -122,5 +131,5 @@
     </div>
   </div>
 </div>
-
-<!-- TODO: Render footer here -->
+<!-- for how it works popup -->
+<%= render "components/how_it_works_modal" %>

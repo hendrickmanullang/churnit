@@ -1,0 +1,29 @@
+// This page is for generic containers including flex wrappers etc.
+
+// main container
+.main {
+  padding: 20px;
+  height: 100vh;
+}
+
+.flex-container {
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+// flex container arranges content horizonatally on larger devices
+@media screen and (min-width: 900px){
+  .flex-container {
+    flex-direction: row;
+  }
+}
+
+// content for within flexbox
+.content {
+  flex: 1;
+  padding: 20px;
+  width: 24vw;
+}

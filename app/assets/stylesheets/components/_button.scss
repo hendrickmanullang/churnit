@@ -19,10 +19,11 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
-  background-color: #F72585 ;
-  color: rgb(0, 0, 0);
+.btn {
+  background-color: $teal;
+  color: white;
   font-weight: 600;
+  padding: 40px;
 }
 
 .btn::after {
@@ -39,7 +40,7 @@
 }
 
 .btn-white::after {
-  background-color: #F72585 ;
+  // background-color: #F72585 ;
 }
 
 .btn:hover::after {
@@ -62,4 +63,8 @@
       opacity: 1;
       transform: translateY(0px);
   }
+}
+
+.btn-link {
+  box-shadow: none !important;
 }
