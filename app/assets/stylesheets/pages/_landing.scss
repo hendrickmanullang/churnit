@@ -7,7 +7,7 @@
   height: 65vh;
   width: 100%;
   overflow: hidden;
-  background-color: #007373;
+  background-color: $teal;
 }
 
 .hero img {
@@ -30,7 +30,7 @@
 }
 
 .hero h1 {
-  color: white;
+  color: $white;
   padding: 20px;
   font-size: 12vw;
   z-index: 1;
@@ -41,7 +41,7 @@
   padding: 40px;
 }
 
-// Below are media queries to make landing page responsive
+// Media queries to make landing page responsive
 // Smallish devices (landscape phones)
 @media screen and (min-width: 576px) {
   .hero img {
