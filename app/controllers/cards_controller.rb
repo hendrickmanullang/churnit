@@ -40,7 +40,7 @@ class CardsController < ApplicationController
     @churnit_score = 'interest_free_period - annual_fee_after - interest_rate * 100 - late_payment_fee - foreign_transaction_fee * 100'
 
     # Apply ChurnIT score and STATIC SORT:
-    @recommended_cards = @sortedcards4.order(Arel.sql(@churnit_score)).limit(3)
+    @recommended_cards = @sortedcards4.order(Arel.sql(@churnit_score))
 
     # once completed, refactor using the Card Selector service
     # below is a sample syntax
