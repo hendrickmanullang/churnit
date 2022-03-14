@@ -77,7 +77,18 @@
             <li id="foreign" class="ui-state-default">Low International Transaction Fee</li>
           </ul>
           ⬇️ Least important
-
+          <script>
+          $( "#sortable" ).sortable(
+          {
+            stop: function( event, ui )
+            {
+              var idsInOrder = $("#sortable").sortable('toArray', { attribute: 'id' });
+              console.log(idsInOrder);
+              const hidden_field = document.getElementById('preference')
+              hidden_field.value = idsInOrder
+            }
+          });
+          </script>
         <div class >
           <a href="#anchor3" target="_parent" class="btn btn-white btn- animate">Next</a>
         </div>
@@ -87,6 +98,7 @@
   <%= form_tag(compare_cards_path, method: :get) do |f| %>
   <div class="section" id="section3" data-anchor='anchor3'>
     <div class="white-centered-text">
+      <%= hidden_field_tag :preference, '' %>
       <%= label_tag :income, "What's your annual income?" %>
       <%= text_field_tag :income, '10000' %>
       <a href="#anchor4" target="_parent" class="btn btn-white btn- animate">Next</a>

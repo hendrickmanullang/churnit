@@ -19,28 +19,31 @@ class CardsController < ApplicationController
 
     # Apply a DYNAMIC SORT (user determined):
 
-    ## Call order of drag & drop result from home page using $( "#sortable" ).sortable('toArray');
+    ## Call order of drag & drop result from home page that was used in preference
     ## This should result in an array of string consisting: ['fee', 'cashback', 'reward', 'foreign']
     ## Take the index of each string, and use active record queries to sort recommended cards
-    ## The active record syntax will be be:
 
-    ### fee = .order(annual_fee_after: :asc)
-    ### cashback = .order(cashback_reward: :desc)
-    ### reward = .order(bonus_point_reward: :desc)  -> need to find a way to standardise this value across all reward programs
-    ### foreign = .order(foreign_transaction_fee: :asc)
+    queries = {
+      'fee' => "annual_fee_init ASC",
+      'cashback' => "cashback_reward DESC",
+      'reward' => "bonus_point_reward DESC",
+      'foreign' => "foreign_transaction_fee ASC"
+    }
 
-    ### apply the order of preference below (will need to rewrite this code):
+    order = params[:preference].split(",")
+    ordered_queries = [queries[order[0]], queries[order[1]], queries[order[2]], queries[order[3]]]
 
-    @sortedcards1 = @truncated_list.order(annual_fee_init: :asc)
-    @sortedcards2 = @sortedcards1.order(cashback_reward: :desc)
-    @sortedcards3 = @sortedcards2.order(bonus_point_reward: :desc)
-    @sortedcards4 = @sortedcards3.order(foreign_transaction_fee: :asc)
+    ### apply the order of preference below:
+    @sortedcards = @truncated_list.order(ordered_queries[0]).order(ordered_queries[1]).order(ordered_queries[2]).order(ordered_queries[3])
 
     ### Determine ChurnIT score (this will need to be reworked to take into account user's spending)
     @churnit_score = 'interest_free_period - annual_fee_after - interest_rate * 100 - late_payment_fee - foreign_transaction_fee * 100'
 
     # Apply ChurnIT score and STATIC SORT:
-    @recommended_cards = @sortedcards4.order(Arel.sql(@churnit_score)).limit(3)
+    @recommended_cards = @sortedcards.order(Arel.sql(@churnit_score)).limit(3)
+
+    # think about making a carousel for the cards
+    # https://swiperjs.com/
 
     # once completed, refactor using the Card Selector service
     # below is a sample syntax
