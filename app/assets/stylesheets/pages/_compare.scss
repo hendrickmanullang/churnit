@@ -1,3 +1,8 @@
+body {
+  background: url('https://neufeldinstitute.org/wp-content/uploads/2022/01/white-paper-background-cardboard-texture-hd1.jpg') no-repeat center fixed;
+  background-size: cover;
+}
+
 .compare-container {
   margin: 60px;
 }
@@ -21,7 +26,7 @@
 
 .container-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   margin: 56px 0px;
 }
@@ -36,8 +41,4 @@
   border-bottom: 2px solid black;
   z-index: -1;
   display: flex;
-}
-
-.card-h4 {
-  height: 55px;
 }
