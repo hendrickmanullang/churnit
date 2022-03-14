@@ -37,7 +37,7 @@ class CardsController < ApplicationController
     @churnit_score = 'interest_free_period - annual_fee_after - interest_rate * 100 - late_payment_fee - foreign_transaction_fee * 100'
 
     # Apply ChurnIT score and STATIC SORT:
-    @recommended_cards = @sortedcards4.order(Arel.sql(@churnit_score))
+    @recommended_cards = @sortedcards.order(Arel.sql(@churnit_score))
 
     # think about making a carousel for the cards
     # https://swiperjs.com/
