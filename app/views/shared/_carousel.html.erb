@@ -1,0 +1,65 @@
+  <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
+  <% carousel_two = @recommended_cards.each_slice(3).to_a.second.take(3) %>
+  <% carousel_three = @recommended_cards.each_slice(3).to_a.third.take(3) %>
+  <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+      <div class="carousel-item active">
+        <%= image_tag carousel_one.first.card_image_url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag carousel_one.second.card_image_url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag carousel_one.third.card_image_url, class:"d-block w-100" %>
+      </div>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselControls1" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+<div class="card-index mb-3">
+    <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+      <div class="carousel-item active">
+        <%= image_tag carousel_two.first.card_image_url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag carousel_two.second.card_image_url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag carousel_two.third.card_image_url, class:"d-block w-100" %>
+      </div>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselControls2" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="card-index mb-3">
+    <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls3" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+      <div class="carousel-item active">
+        <%= image_tag carousel_three.first.card_image_url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag carousel_three.second.card_image_url, class:"d-block w-100" %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag carousel_three.third.card_image_url, class:"d-block w-100" %>
+      </div>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselControls3" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</div>

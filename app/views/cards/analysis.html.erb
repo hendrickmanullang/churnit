@@ -1,55 +1,52 @@
 <h1>Pages#analysis</h1>
 <div class="analysis">
   <div class="analysis-left">
-    <div class="header">
-      <p>Cancel your card before...</p>
-      <p><%= Date.today %></p>
-      <button>Add to Google Calender</button>
+    <div class="analysis-header">
+      <h4>Cancel your card before...</h4>
+      <p><%= Date.today + 365 %></p>
+      <a href='url' class="btn btn-primary hvr-icon-buzz"><i class="fa-solid fa-calendar-days hvr-icon"></i>Add to Google Calender</a>
     </div>
     <h5>Factors</h5>
     <div class="factors">
-        <div>
-          <h5>Annual fee</h5>
-          <sub>Your annual fee are high</sub>
-          <p>more info</p>
-        </div>
-      <div>
+      <div class="factors-container">
         <h5>Annual fee</h5>
-        <sub>Your annual fee are high</sub>
-        <p>more info</p>
+        <p>Your annual fee are high</p>
+        <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i></p>
       </div>
-      <div>
+      <div class="factors-container">
         <h5>Annual fee</h5>
-        <sub>Your annual fee are high</sub>
-        <p>more info</p>
+        <p>Your annual fee are high</p>
+        <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i></p>
+      </div>
+      <div class="factors-container">
+        <h5>Annual fee</h5>
+        <p>Your annual fee are high</p>
+        <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i></p>
       </div>
     </div>
   </div>
   <div class="analysis-right">
     <div class="right-header">
-      <div>
-        <a href="#">Solutions</a>
-        <a href="#">Analysis</a>
-        <a href="#">Forecast</a>
+      <div class="links">
+        <a href="#" class="hvr-pop">Solutions</a>
+        <a href="#" class="hvr-pop">Analysis</a>
+        <a href="#" class="hvr-pop">Forecast</a>
       </div>
       <div>
         <h5>_ChurnIt</h5>
       </div>
-      </div>
-      <div>
+    </div>
+      <div class="right-content">
         <h4>Solutions & Next Steps</h4>
         <p>If you cancel your card before <%= Date.today %>, the following happens</p>
+        <ul>
+          <li>Avoid Fee <br> +$150/yr</li>
+          <li>Avoid Fee <br> +$150/yr</li>
+          <li>Avoid Fee <br> +$150/yr</li>
+        </ul>
+          <div></div>
+          <h4>_ChurnIt Advice</h4>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui impedit soluta architecto laborum harum cupiditate quam reprehenderit, nostrum perspiciatis ex, exercitationem eius illum deserunt.</p>
       </div>
-      <div>
-      <ul>
-        <li>Avoid Fee +$150/yr</li>
-        <li>Avoid Fee +$150/yr</li>
-        <li>Avoid Fee +$150/yr</li>
-      </ul>
-    </div>
-    <div class="right-footer">
-      <h4>_ChurnIt Advice</h4>
-      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui impedit soluta architecto laborum harum cupiditate quam reprehenderit, nostrum perspiciatis ex, exercitationem eius illum deserunt. Nihil asperiores nam voluptas similique iste!</p>
-    </div>
   </div>
 </div>
