@@ -56,7 +56,7 @@
         <div class="card-index mb-3">
           <h4>Recommendation</h4>
           <div class="card-img">
-            <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
               <div class="carousel-inner">
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -93,13 +93,13 @@
                   <%= image_tag carousel_one.third.card_image_url, class:"d-block w-100" %>
                   <div class="card-index-infos">
                     <div>
-                      <h4 class="card-h4"><%= carousel_one.first.card_name %></h4>
+                      <h4 class="card-h4"><%= carousel_one.third.card_name %></h4>
                       <div class="line-sml"></div>
-                      <p>%<%= carousel_one.first.interest_rate*100 %></p>
+                      <p>%<%= carousel_one.third.interest_rate*100 %></p>
                       <div class="line-sml"></div>
-                      <p><%= carousel_one.first.interest_free_period.to_i %> days interest free</p>
+                      <p><%= carousel_one.third.interest_free_period.to_i %> days interest free</p>
                       <div class="line-sml"></div>
-                      <p>$<%= carousel_one.first.annual_fee_init %> annual fee</p>
+                      <p>$<%= carousel_one.third.annual_fee_init %> annual fee</p>
                     </div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@
         <div class="card-index mb-3">
           <h4>Recomendation</h4>
           <div class="card-img">
-            <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
               <div class="carousel-inner">
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls2" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -178,7 +178,7 @@
       <div class="card-index mb-3">
         <h4>Recomendation</h4>
         <div class="card-img">
-          <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
             <div class="carousel-inner">
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls3" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
