@@ -85,10 +85,10 @@
       <div class="wrapper">
         <h1 class="text-center">What's your annual salary?</h1>
         <br><br>
-          <%= hidden_field_tag :preference, '' %>
-          <%# <%= label_tag :income, "What's your annual income?" %>
-          <%= text_field_tag :income, '60000' %>
-          <br><br><br>
+        <%= hidden_field_tag :preference, '' %>
+        <%# <%= label_tag :income, "What's your annual income?" %>
+        <%= text_field_tag :income, '60000' %>
+        <br><br><br>
         <div class="text-center text-white">
           <a href="#anchor3" target="_parent" class="btn-main">Next</a>
         </div>
@@ -100,9 +100,10 @@
     <div class="main">
       <div class="wrapper">
         <h1 class="text-white text-center">What's your typical monthly spend?</h1>
+        <%# <%= label_tag :spending, "What's your typical monthly spend?" %> %>
+        <%= text_field_tag :spending, '3000' %>
         <br><br>
-          <%# <%= label_tag :spending, "What's your typical monthly spend?" %> %>
-          <%= text_field_tag :spending, '3000' %>
+        <div class="text-center text-white">
           <a href="#anchor4" target="_parent" class="btn-main">Next</a>
         </div>
       </div>
@@ -111,11 +112,15 @@
   <!-- Which card do you use -->
   <div class="section" id="section4" data-anchor='anchor4'>
     <div class="main">
-      <div class="white-centered-text">
-        <%= label_tag :card_selected, "Which card do you currently use?" %>
+      <div class="wrapper">
+        <h1 class="text-center">Which card do you currently use?</h1>
+        <br><br>
+        <%# <%= label_tag :card_selected, "Which card do you currently use?" %>
         <%= select_tag :card_selected, options_for_select(@cards.map {|card| [card.card_name, card.id, { 'data-url' => cards_path(card.id)}]}) %>
+        <br>
         <%= submit_tag 'Continue' %>
         <% end %>
+        <br><br>
       </div>
     </div>
   </div>
