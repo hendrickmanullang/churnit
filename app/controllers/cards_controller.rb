@@ -50,6 +50,10 @@ class CardsController < ApplicationController
     #                       ).call
   end
 
-  def select
+  def analysis
+    @card_selected = Card.find(params[:card][:card_selected])
+    @income = params[:card][:income]
+    @spending = params[:card][:spending]
+    @card_compare = Card.find(params[:card][:card_compare])
   end
 end

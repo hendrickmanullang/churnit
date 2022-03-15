@@ -52,7 +52,7 @@
       </div>
     </div>
     <%# 1st comparison card %>
-    <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
+   <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
         <div class="card-index mb-3">
           <h4>Recommendation</h4>
           <div class="card-img">
@@ -110,6 +110,14 @@
             </div>
           </div>
         </div>
+      <%= form_tag(analysis_cards_path, method: :get) do %>
+        <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
+        <%= hidden_field(:card, :income, value: params[:income])%>
+        <%= hidden_field(:card, :spending, value: params[:spending])%>
+        <%= hidden_field(:card, :card_compare, value: 2)%>
+        <%# need to add a stimulus function to change the value of card_compare value to the active card%>
+        <%= submit_tag "Select" %>
+      <% end %>
     <%# 1st comparison card end%>
 
     <%# 2nd comparison card %>
@@ -170,7 +178,16 @@
                 </button>
             </div>
           </div>
+          <%= link_to "select", analysis_cards_path %>
         </div>
+        <%= form_tag(analysis_cards_path, method: :get) do %>
+          <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
+          <%= hidden_field(:card, :income, value: params[:income])%>
+          <%= hidden_field(:card, :spending, value: params[:spending])%>
+          <%= hidden_field(:card, :card_compare, value: 2)%>
+          <%# need to add a stimulus function to change the value of card_compare value to the active card%>
+          <%= submit_tag "Select" %>
+        <% end %>
     <%# 2nd comparison card end%>
 
     <%# 3rd comparison card %>
@@ -231,9 +248,16 @@
             </div>
           </div>
         </div>
+        <%= link_to "select", analysis_cards_path %>
     </div>
+    <%= form_tag(analysis_cards_path, method: :get) do %>
+      <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
+      <%= hidden_field(:card, :income, value: params[:income])%>
+      <%= hidden_field(:card, :spending, value: params[:spending])%>
+      <%= hidden_field(:card, :card_compare, value: 2)%>
+      <%# need to add a stimulus function to change the value of card_compare value to the active card%>
+      <%= submit_tag "Select" %>
+    <% end %>
     <%# 3rd comparison card end %>
   </div>
 </div>
-
-<%= link_to "analysis", analysis_cards_path %>
