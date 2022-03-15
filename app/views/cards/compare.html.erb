@@ -51,12 +51,13 @@
         </div>
       </div>
     </div>
+
     <%# 1st comparison card %>
    <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
         <div class="card-index mb-3">
           <h4>Recommendation</h4>
           <div class="card-img" data-controller="select-card">
-            <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
               <div class="carousel-inner" data-select-card-target="carousel">
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -116,12 +117,10 @@
               <%= hidden_field(:card, :income, value: params[:income])%>
               <%= hidden_field(:card, :spending, value: params[:spending])%>
               <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
-              <%# need to add a stimulus function to change the value of card_compare value to the active card%>
               <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
             <% end %>
           </div>
         </div>
-
     <%# 1st comparison card end%>
 
     <%# 2nd comparison card %>
@@ -129,7 +128,7 @@
         <div class="card-index mb-3">
           <h4>Recomendation</h4>
           <div class="card-img" data-controller="select-card">
-            <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
               <div class="carousel-inner" data-select-card-target="carousel">
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls2" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -189,7 +188,6 @@
               <%= hidden_field(:card, :income, value: params[:income])%>
               <%= hidden_field(:card, :spending, value: params[:spending])%>
               <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
-              <%# need to add a stimulus function to change the value of card_compare value to the active card%>
               <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
             <% end %>
           </div>
@@ -201,7 +199,7 @@
       <div class="card-index mb-3">
         <h4>Recomendation</h4>
         <div class="card-img" data-controller="select-card">
-          <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
             <div class="carousel-inner" data-select-card-target="carousel">
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls3" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -260,13 +258,12 @@
               <%= hidden_field(:card, :income, value: params[:income])%>
               <%= hidden_field(:card, :spending, value: params[:spending])%>
               <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
-              <%# need to add a stimulus function to change the value of card_compare value to the active card%>
               <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
             <% end %>
           </div>
         </div>
     </div>
     <%# 3rd comparison card end %>
-    <%# need to remove remove automatic slider in carousel %>
+
   </div>
 </div>
