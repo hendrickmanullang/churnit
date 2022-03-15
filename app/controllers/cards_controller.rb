@@ -54,6 +54,6 @@ class CardsController < ApplicationController
     @card_selected = Card.find(params[:card][:card_selected])
     @income = params[:card][:income]
     @spending = params[:card][:spending]
-    # @card_compare = Card.find(params[:card][:card_compare])
+    @card_compare = Card.find(params[:card][:card_compare])
   end
 end

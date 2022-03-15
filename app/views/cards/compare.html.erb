@@ -114,7 +114,7 @@
         <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
         <%= hidden_field(:card, :income, value: params[:income])%>
         <%= hidden_field(:card, :spending, value: params[:spending])%>
-        <%= hidden_field(:card, :card_compare, value: nil)%>
+        <%= hidden_field(:card, :card_compare, value: 2)%>
         <%# need to add a stimulus function to change the value of card_compare value to the active card%>
         <%= submit_tag "Select" %>
       <% end %>
@@ -184,7 +184,7 @@
           <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
           <%= hidden_field(:card, :income, value: params[:income])%>
           <%= hidden_field(:card, :spending, value: params[:spending])%>
-          <%= hidden_field(:card, :card_compare, value: nil)%>
+          <%= hidden_field(:card, :card_compare, value: 2)%>
           <%# need to add a stimulus function to change the value of card_compare value to the active card%>
           <%= submit_tag "Select" %>
         <% end %>
@@ -254,7 +254,7 @@
       <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
       <%= hidden_field(:card, :income, value: params[:income])%>
       <%= hidden_field(:card, :spending, value: params[:spending])%>
-      <%= hidden_field(:card, :card_compare, value: nil)%>
+      <%= hidden_field(:card, :card_compare, value: 2)%>
       <%# need to add a stimulus function to change the value of card_compare value to the active card%>
       <%= submit_tag "Select" %>
     <% end %>
