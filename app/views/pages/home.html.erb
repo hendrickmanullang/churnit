@@ -36,11 +36,12 @@
       </button>
     </div>
   </div>
-<!-- personalisation questions -->
-<div class="section" id="section1" data-anchor='anchor1'>
-  <div class="wrapper">
-    <div class="text-white text-center">
-      <h1>What do you look for in a card?</h1>
+  <!-- personalisation questions -->
+  <div class="section" id="section1" data-anchor='anchor1'>
+    <div class="main">
+      <div class="wrapper">
+      <h1 class="text-white text-center">What do you look for in a card?</h1>
+        <!-- sortable -->
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
         <script>
@@ -48,7 +49,7 @@
             $( "#sortable" ).sortable();
           } );
         </script>
-          ⬆️ Most important
+        <!-- drag and drop -->
         <div class="flex-middle">
           <ul class="drag-drop" id="sortable" style="list-style: none;">
             <li id="fee" class="ui-state-default drag-text-container gradient-pink-blue">Low Annual Fee</li>
@@ -57,7 +58,6 @@
             <li id="foreign" class="ui-state-default drag-text-container">Low International Transaction Fee</li>
           </ul>
         </div>
-          ⬇️ Least important
         <script>
           $( "#sortable" ).sortable(
           {
@@ -70,9 +70,9 @@
             }
           });
         </script>
-        <div class="text-center">
-          <a href="#anchor2" target="_parent" class="btn-main">Next</a>
-        </div>
+      <div class="text-center text-white">
+        <a href="#anchor2" target="_parent" class="btn-main">Next</a>
+      </div>
       </div>
     </div>
   </div>
