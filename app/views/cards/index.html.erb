@@ -1,2 +1,31 @@
-<h1>Cards#index</h1>
-<p>Find me in app/views/cards/index.html.erb</p>
+
+<h2>Sorting</h2>
+<div class="button-group sort-by-button-group" id="sorts">
+  <button class="button is-checked" data-sort-value="original-order">original order</button>
+  <button class="button" data-sort-value="name">name</button>
+  <button class="button" data-sort-value="reward_rate">reward_rate</button>
+  <button class="button" data-sort-value="interest_free_period">interest_free_period</button>
+  <button class="button" data-sort-value="annual_fee_init">annual_fee_init</button>
+</div>
+
+<h2>Filtering</h2>
+<div class="button-group filters-button-group" id="filters">
+  <button class="button is-checked" data-filter="*">show all</button>
+  <button class="button" data-filter="card-type">Card Type</button>
+</div>
+<div class="grid">
+  <% @cards.each do |card| %>
+    <div class="credit-card-item" data-category="transition">
+      <div class="card" style="width: 10rem;">
+        <img src="<%= card.card_image_url %>" class="card-img-top" alt="card">
+        <div class="card-body">
+          <h5 class="card-title name"><%= card.card_name %></h5>
+          <p class="card-text card-type" data-category="card-type"><%= card.card_type %></p>
+          <p class="card-text reward_rate">reward rate<%= card.reward_rate.to_i %></p>
+          <p class="card-text interest_free_period text-wrap">interest_free_period <%= card.interest_free_period.to_i %></p>
+          <p class="card-text annual_fee_init text-wrap">annual_fee_init <%= card.annual_fee_init.to_i %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
