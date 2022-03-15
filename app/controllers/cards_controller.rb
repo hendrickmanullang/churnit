@@ -50,6 +50,6 @@ class CardsController < ApplicationController
     #                       ).call
   end
 
-  def select
+  def analysis
   end
 end
