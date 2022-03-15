@@ -1,0 +1,30 @@
+// This page is for styling of personalisation question sections
+
+// What do you look for in a card?
+.drag-drop {
+  list-style-type: none;
+}
+
+.ui-state-default {
+  height: 112px;
+  width: 112px;
+  padding: 20px;
+	border-style: solid;
+	text-align: center;
+  margin: 16px;
+}
+
+// used in drag and drop
+.drag-text-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// drag and drop sections are wider on large devices
+@media screen and (min-width: 900px){
+  .ui-state-default {
+    // height and line-height need to be equally for centering of text
+    height: 280px;
+    width: 280px;
+  }
+}
