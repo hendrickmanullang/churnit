@@ -3900,6 +3900,11 @@ isotope-layout@^3.0.6:
     masonry-layout "^4.1.0"
     outlayer "^2.1.0"
 
+isotope@^1.0.0-alpha.3:
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/isotope/-/isotope-1.0.0-alpha.3.tgz#6668aaf264e78c20cd02463eb5bd6794546bc4ac"
+  integrity sha1-Zmiq8mTnjCDNAkY+tb1nlFRrxKw=
+
 jest-worker@^26.5.0:
   version "26.6.2"
   resolved "https://registry.npmjs.org/jest-worker/-/jest-worker-26.6.2.tgz"
@@ -3916,12 +3921,7 @@ jquery-bridget@^3.0.1:
   dependencies:
     jquery ">=1.4.2 <4"
 
-"jquery@>=1.4.2 <4":
-  version "3.6.0"
-  resolved "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
-  integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
-
-jquery@^3.6.0:
+"jquery@>=1.4.2 <4", jquery@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==

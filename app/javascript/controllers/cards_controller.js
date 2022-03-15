@@ -37,7 +37,6 @@ $('#filters').on( 'click', 'button', function() {
   var filterValue = $( this ).attr('data-filter');
   // use filterFn if matches value
   console.log('filter clicked');
-  debugger
   filterValue = filterFns[ filterValue ] || filterValue;
   $grid.isotope({ filter: filterValue });
 });
