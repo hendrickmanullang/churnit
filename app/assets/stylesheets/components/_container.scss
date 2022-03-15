@@ -8,10 +8,10 @@
 
 .flex-container {
   display: flex;
-  height: 80vh;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 // flex container arranges content horizonatally on larger devices
@@ -25,5 +25,4 @@
 .content {
   flex: 1;
   padding: 20px;
-  width: 24vw;
 }
