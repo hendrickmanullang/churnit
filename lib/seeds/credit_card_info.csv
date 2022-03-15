@@ -1,51 +1,51 @@
 card_name,card_type,reward_category,reward_rate,interest_free_period,annual_fee_init,annual_fee_after,interest_rate,late_payment_fee,foreign_transaction_fee,minimum_income,bonus_point_reward,bonus_point_spend,bonus_point_time,cashback_reward,cashback_spend,cashback_time,card_image_url
-St.George Amplify Signature Credit Card,Visa,Amplify Rewards,1.5,55,279,279,0.1949,15,0.03,0,200000,12000,365,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/stg-amplify-signature-sml-19-jan-2017.jpg
-St.George Amplify Platinum Credit Card,Visa,Amplify Rewards,1,55,29,99,0.1949,15,3,0,100000,3000,90,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/stg-amplify-plat-sml-19-jan-2017.jpg
-Bank of Melbourne Amplify Platinum,Visa,Amplify Rewards,1,55,29,99,0.1949,15,3,0,100000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/609dcb168aeca.png
-ANZ Rewards Platinum,Visa,ANZ Rewards Program,1.5,55,0,95,0.2024,20,0.03,0,50000,1500,90,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-rewards-plat-tbl-14-june-18.jpg
-Citi Rewards Card,Mastercard,Citi Rewards,1,55,49,149,0.2149,30,0.034,35000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5e83f90793e80.jpg
-Citi Premier Card,Mastercard,Citi Rewards,1,55,150,300,0.2149,30,0.034,75000,0,0,0,600,2000,90,https://www.finder.com.au/niche-builder/5e83ce7496ec4.jpg
-Citi Rewards Card,Mastercard,Citi Rewards,1,55,99,149,0.2149,30,0.034,35000,0,0,0,400,2000,90,https://www.finder.com.au/niche-builder/6181e616b8e98.jpg
-Great Southern Bank Platinum Credit Card,Mastercard,CUA Platinum Rewards Program,1,55,0,149,0.1999,12.5,0.034,0,100000,0,0,0,0,0,https://www.finder.com.au/niche-builder/60b57c3e6d854.png
-Coles Low Rate Mastercard,Mastercard,Flybuys,0.5,55,58,58,0.1299,30,0.025,25000,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/coles-low-rate-tbl-27-feb-2018.jpg
-HSBC Platinum Credit Card,Visa,HSBC Rewards Plus,1,55,29,129,0.1999,30,0.03,40000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5f4df6a5ef2ab.jpg
-Kogan Money Black Card,Visa,Kogan Rewards Program,1,55,0,0,0.2099,30,0.034,35000,0,0,0,30,1000,60,https://www.finder.com.au/niche-builder/601b39c3d6e09.jpg
-American Express Explorer Credit Card,American Express,Membership Rewards,2,55,395,395,0.2074,30,0.03,65000,100000,4000,30,0,0,0,https://www.finder.com.au/niche-builder/5f20b81659d8e.jpg
-David Jones American Express Card,American Express,Membership Rewards,1,44,99,99,0.2074,30,3,40000,0,0,0,200,1500,90,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/david-jones-tbl-15-june-2018.jpg
-David Jones American Express Platinum Card,American Express,Membership Rewards,1,44,295,295,0.2074,30,3,65000,0,0,0,450,1500,90,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/david-jones-tbl-15-june-2018.jpg
-American Express Platinum Edge Credit Card,American Express,Membership Rewards,1,55,0,195,0.2074,30,3,50000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/603733da8257a.png
-American Express Platinum Card,American Express,Membership Rewards,2.25,44,1450,1450,0,30,0.03,100000,200000,5000,90,0,0,0,https://www.finder.com.au/niche-builder/5f20c1a4d297b.jpg
-American Express Essential Credit Card,American Express,Membership Rewards,1.25,55,0,0,0.1499,30,3,40000,0,0,0,200,1500,90,https://www.finder.com.au/niche-builder/5f20c475e8318.jpg
-Citi Clear Card,Mastercard,N/A,0,55,99,99,0.1499,30,0.034,35000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5e83d4fc9d775.jpg
-humm90 Mastercard,Mastercard,N/A,0,110,99,99,0.2399,35,0,25000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60c8201961628.png
-Virgin Money No Annual Fee Credit Card,Visa,N/A,0,55,0,0,0.1999,30,0.033,25000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5dc911ce16c68.jpg
-Bankwest Breeze Classic Mastercard,Mastercard,N/A,0,55,0,49,0.2199,25,0.0295,15000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5e3776f769393.jpg
-NAB Low Rate Credit Card,Visa,N/A,0,55,0,59,0.1299,15,0.03,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/616784252d270.png
-Westpac Low Rate Credit Card,Mastercard,N/A,0,55,59,59,0.1374,15,0.03,30000,0,0,0,400,4000,120,https://www.finder.com.au/niche-builder/6077d48d3024f.jpg
-ANZ Low Rate,Visa,N/A,0,55,0,58,0.1249,20,0.03,0,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-low-rate-sml-28-may-2018.jpg
-St.George Vertigo Card,Visa,N/A,0,55,0,55,0.1399,15,0.03,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60efedceed1ae.jpg
-MoneyMe Freestyle Virtual Mastercard,Mastercard,N/A,0,55,0,0,0.1699,15,0.0299,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60498a9942a40.png
-Citi Clear Card,Mastercard,N/A,0,55,49,99,0.1499,30,0.034,35000,0,0,0,250,3000,90,https://www.finder.com.au/niche-builder/5e83d4fc9d775.jpg
-ANZ Platinum Credit Card,Visa,N/A,0,25,0,87,0.2024,20,0.03,0,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-platinum-card-sml-18-jan-2017.jpg
 American Express Cashback Credit Card,American Express,N/A,0,55,0,120,0.2074,0,0,40000,0,0,0,200,4000,90,https://www.finder.com.au/niche-builder/607fc5ca1c97c.png
-Great Southern Bank Low Rate Credit Card,Mastercard,N/A,0,55,0,49,0.1199,12.5,0.034,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60b574514fcf7.png
+American Express Essential Credit Card,American Express,Membership Rewards,1.25,55,0,0,0.1499,30,0.03,40000,0,0,0,200,1500,90,https://www.finder.com.au/niche-builder/5f20c475e8318.jpg
+American Express Explorer Credit Card,American Express,Membership Rewards,2,55,395,395,0.2074,30,0.03,65000,100000,4000,30,0,0,0,https://www.finder.com.au/niche-builder/5f20b81659d8e.jpg
+American Express Low Rate Credit Card,American Express,N/A,0,55,0,0,0.0899,30,0.03,50000,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/amex-low-rate-sml-15-jun-2018.jpg
+American Express Platinum Card,American Express,Membership Rewards,2.25,44,1450,1450,0,30,0.03,100000,200000,5000,90,0,0,0,https://www.finder.com.au/niche-builder/5f20c1a4d297b.jpg
+American Express Platinum Edge Credit Card,American Express,Membership Rewards,1,55,0,195,0.2074,30,0.03,50000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/603733da8257a.png
+American Express Velocity Escape Card,American Express,Velocity Frequent Flyer,0.75,55,0,0,0.2074,30,0.03,40000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5f73df6adf55e.jpg
+ANZ Frequent Flyer Black,Visa,Qantas Frequent Flyer,1,55,425,425,0.2024,20,0.03,0,130000,3000,90,255,3000,90,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-ff-black-optimised.jpg
+ANZ Frequent Flyer Platinum Credit Card,Visa,Qantas Frequent Flyer,0.75,55,0,295,0.2024,20,0.03,0,70000,2500,90,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-frequent-flyer-plat-18-june-2018-optimised-sml1.jpg
+ANZ Low Rate,Visa,N/A,0,55,0,58,0.1249,20,0.03,0,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-low-rate-sml-28-may-2018.jpg
+ANZ Platinum Credit Card,Visa,N/A,0,25,0,87,0.2024,20,0.03,0,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-platinum-card-sml-18-jan-2017.jpg
+ANZ Rewards Platinum,Visa,ANZ Rewards Program,1.5,55,0,95,0.2024,20,0.03,0,50000,1500,90,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-rewards-plat-tbl-14-june-18.jpg
+Bank of Melbourne Amplify Platinum,Visa,Amplify Rewards,1,55,29,99,0.1949,15,0.03,0,100000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/609dcb168aeca.png
 Bank of Melbourne Vertigo Card,Visa,N/A,0,55,0,55,0.1399,15,0.03,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/609dca6683df0.png
 BankSA Vertigo Credit Card,Visa,N/A,0,55,0,55,0.1399,15,0.03,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/609dbcf03d72b.png
-NAB StraightUp card,Visa,N/A,0,0,288,288,0,0,0,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/6167869032f35.png
-St.George No Annual Fee,Visa,N/A,0,55,0,0,0.2074,15,3,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60d4167ad0f02.png
-American Express Low Rate Credit Card,American Express,N/A,0,55,0,0,0.0899,30,3,50000,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/amex-low-rate-sml-15-jun-2018.jpg
-NAB Low Fee Card,Visa,N/A,0,44,30,30,0.1974,15,3,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/61678cd793ebf.png
-NAB Rewards Signature Card,Visa,NAB Rewards,1.25,44,295,295,0.1999,15,0.03,0,140000,3000,60,0,0,0,https://www.finder.com.au/niche-builder/61678e0f88f83.jpeg
+Bankwest Breeze Classic Mastercard,Mastercard,N/A,0,55,0,49,0.2199,25,0.0295,15000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5e3776f769393.jpg
+Citi Clear Card,Mastercard,N/A,0,55,99,99,0.1499,30,0.034,35000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5e83d4fc9d775.jpg
+Citi Clear Card Cashback,Mastercard,N/A,0,55,49,99,0.1499,30,0.034,35000,0,0,0,250,3000,90,https://www.finder.com.au/niche-builder/5e83d4fc9d775.jpg
+Citi Premier Card,Mastercard,Citi Rewards,1,55,150,300,0.2149,30,0.034,75000,0,0,0,600,2000,90,https://www.finder.com.au/niche-builder/5e83ce7496ec4.jpg
 Citi Premier Qantas Card,Mastercard,Qantas Frequent Flyer,0.5,55,175,350,0.2149,30,0.034,75000,100000,4000,90,0,0,0,https://www.finder.com.au/niche-builder/611c9bc77a3f8.jpg
-Qantas Premier Platinum Mastercard,Mastercard,Qantas Frequent Flyer,1,55,225,299,0.1999,30,0.03,35000,80000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/5dc3b6bda9729.jpg
-Qantas American Express Ultimate Card,American Express,Qantas Frequent Flyer,1.25,44,450,450,0.2074,30,0.03,65000,120000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/5d9d4be92a5f6.jpg
-ANZ Frequent Flyer Platinum Credit Card,Visa,Qantas Frequent Flyer,0.75,55,0,295,0.2024,20,0.03,0,70000,2500,90,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-frequent-flyer-plat-18-june-2018-optimised-sml1.jpg
+Citi Rewards Card,Mastercard,Citi Rewards,1,55,49,149,0.2149,30,0.034,35000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5e83f90793e80.jpg
+Citi Rewards Card Cashback,Mastercard,Citi Rewards,1,55,99,149,0.2149,30,0.034,35000,0,0,0,400,2000,90,https://www.finder.com.au/niche-builder/6181e616b8e98.jpg
+Coles Low Rate Mastercard,Mastercard,Flybuys,0.5,55,58,58,0.1299,30,0.025,25000,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/coles-low-rate-tbl-27-feb-2018.jpg
+David Jones American Express Card,American Express,Membership Rewards,1,44,99,99,0.2074,30,0.03,40000,0,0,0,200,1500,90,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/david-jones-tbl-15-june-2018.jpg
+David Jones American Express Platinum Card,American Express,Membership Rewards,1,44,295,295,0.2074,30,0.03,65000,0,0,0,450,1500,90,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/david-jones-tbl-15-june-2018.jpg
+Great Southern Bank Low Rate Credit Card,Mastercard,N/A,0,55,0,49,0.1199,12.5,0.034,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60b574514fcf7.png
+Great Southern Bank Platinum Credit Card,Mastercard,CUA Platinum Rewards Program,1,55,0,149,0.1999,12.5,0.034,0,100000,0,0,0,0,0,https://www.finder.com.au/niche-builder/60b57c3e6d854.png
+HSBC Platinum Credit Card,Visa,HSBC Rewards Plus,1,55,29,129,0.1999,30,0.03,40000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5f4df6a5ef2ab.jpg
+humm90 Mastercard,Mastercard,N/A,0,110,99,99,0.2399,35,0,25000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60c8201961628.png
+Kogan Money Black Card,Visa,Kogan Rewards Program,1,55,0,0,0.2099,30,0.034,35000,0,0,0,30,1000,60,https://www.finder.com.au/niche-builder/601b39c3d6e09.jpg
+MoneyMe Freestyle Virtual Mastercard,Mastercard,N/A,0,55,0,0,0.1699,15,0.0299,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60498a9942a40.png
+NAB Low Fee Card,Visa,N/A,0,44,30,30,0.1974,15,0.03,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/61678cd793ebf.png
+NAB Low Rate Credit Card,Visa,N/A,0,55,0,59,0.1299,15,0.03,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/616784252d270.png
+NAB Qantas Rewards Premium Card,Visa,Qantas Frequent Flyer,0.66,44,250,250,0.1999,15,0.03,0,65000,2500,60,0,0,0,https://www.finder.com.au/niche-builder/61678937d0e1d.png
+NAB Rewards Signature Card,Visa,NAB Rewards,1.25,44,295,295,0.1999,15,0.03,0,140000,3000,60,0,0,0,https://www.finder.com.au/niche-builder/61678e0f88f83.jpeg
+NAB StraightUp card,Visa,N/A,0,0,288,288,0,0,0,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/6167869032f35.png
 Qantas American Express Discovery Card,American Express,Qantas Frequent Flyer,0.75,44,0,0,0.2074,30,0.03,35000,10000,750,90,0,0,0,https://www.finder.com.au/niche-builder/5f20b3fcf006a.jpg
 Qantas American Express Premium Card,American Express,Qantas Frequent Flyer,1,44,249,249,0.2074,30,0.03,40000,70000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/5d9d524d9658c.jpg
-ANZ Frequent Flyer Black,Visa,Qantas Frequent Flyer,1,55,425,425,0.2024,20,0.03,0,130000,3000,90,255,3000,90,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/anz-ff-black-optimised.jpg
-NAB Qantas Rewards Premium Card,Visa,Qantas Frequent Flyer,0.66,44,250,250,0.1999,15,3,0,65000,2500,60,0,0,0,https://www.finder.com.au/niche-builder/61678937d0e1d.png
+Qantas American Express Ultimate Card,American Express,Qantas Frequent Flyer,1.25,44,450,450,0.2074,30,0.03,65000,120000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/5d9d4be92a5f6.jpg
+Qantas Premier Platinum Mastercard,Mastercard,Qantas Frequent Flyer,1,55,225,299,0.1999,30,0.03,35000,80000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/5dc3b6bda9729.jpg
+St.George Amplify Platinum Credit Card,Visa,Amplify Rewards,1,55,29,99,0.1949,15,0.03,0,100000,3000,90,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/stg-amplify-plat-sml-19-jan-2017.jpg
+St.George Amplify Signature Credit Card,Visa,Amplify Rewards,1.5,55,279,279,0.1949,15,0.03,0,200000,12000,365,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/stg-amplify-signature-sml-19-jan-2017.jpg
+St.George No Annual Fee,Visa,N/A,0,55,0,0,0.2074,15,0.03,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60d4167ad0f02.png
+St.George Vertigo Card,Visa,N/A,0,55,0,55,0.1399,15,0.03,0,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/60efedceed1ae.jpg
 Virgin Australia Velocity Flyer Card,Visa,Velocity Frequent Flyer,0.66,55,64,129,0.2074,10,0.033,35000,100000,6000,120,0,0,0,https://www.finder.com.au/niche-builder/60fe6b6c19cf5.jpg
 Virgin Australia Velocity Flyer Card,Visa,Velocity Frequent Flyer,0.66,55,64,129,0.2074,10,0.033,35000,100000,6000,120,0,0,0,https://www.finder.com.au/niche-builder/60fe6aa4ec17b.jpg
-American Express Velocity Escape Card,American Express,Velocity Frequent Flyer,0.75,55,0,0,0.2074,30,3,40000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5f73df6adf55e.jpg
-Westpac Altitude Platinum Card,Mastercard,Westpac Altitude Rewards,1,45,49,150,0.1999,15,0.03,30000,110000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/6077f02fa7a86.png
+Virgin Money No Annual Fee Credit Card,Visa,N/A,0,55,0,0,0.1999,30,0.033,25000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/5dc911ce16c68.jpg
 Westpac Altitude Black,Mastercard,Westpac Altitude Rewards,1.25,45,99,250,0.1999,15,0.03,0,180000,6000,120,0,0,0,https://www.finder.com.au/niche-builder/6077d51455ab2.jpg
+Westpac Altitude Platinum Card,Mastercard,Westpac Altitude Rewards,1,45,49,150,0.1999,15,0.03,30000,110000,3000,90,0,0,0,https://www.finder.com.au/niche-builder/6077f02fa7a86.png
+Westpac Low Rate Credit Card,Mastercard,N/A,0,55,59,59,0.1374,15,0.03,30000,0,0,0,400,4000,120,https://www.finder.com.au/niche-builder/6077d48d3024f.jpg

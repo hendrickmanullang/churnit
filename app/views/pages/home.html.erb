@@ -1,6 +1,5 @@
 <%# <%= render 'shared/navbar' %>
-<script src="./app/javascript/packs/application.js"></script>
-
+<%# <script src="./app/javascript/packs/application.js"></script> %>
 <div id="fullpage">
   <!-- Landing page -->
   <div class="section" id="section0">
@@ -12,7 +11,7 @@
           <h1>ChurnIt</h1>
         </div>
     </div>
-    <!-- h2 and button -->
+    <!-- h2, button, how it works section -->
     <div class="text-center" id="landing-content">
       <h2 id="demo"></h2>
       <script>
@@ -28,65 +27,40 @@
           }
         }
       </script>
-      <div id="landing-content">
-        <a href="#anchor1" target="_parent" class="btn btn-white btn- animate">Discover</a>
-        <br>
-        <button class="btn-link" data-bs-toggle="modal" data-bs-target="#howItWorksModal">
-          How does it work?
-        </button>
-      </div>
+      <br><br>
+      <a href="#anchor1" target="_parent" class="text-white btn-main">Get started</a>
+      <br><br>
+  <!-- How It Works section -->
+      <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#howItWorksModal">
+        How does it work?
+      </button>
     </div>
   </div>
-  <!-- How It Works page -->
-	<div class="section" id="section1" data-anchor="anchor1">
+  <!-- personalisation questions -->
+  <div class="section" id="section1" data-anchor='anchor1'>
     <div class="main">
-      <!-- Title -->
-        <div>
-          <h2 class="text-center text-white">How it works</h2>
-        </div>
-      <div class="flex-container">
-        <!-- Explanations -->
-        <div class="text-center text-white content">
-            <div class="icon"><i class="fa-regular fa-credit-card"></i></div>
-            <p>Select your current card</p>
-        </div>
-        <div class="text-center text-white content">
-          <div class="icon"><i class="fa-solid fa-chart-column"></i></div>
-          <p>Tell us how you use your card</p>
-        </div>
-        <div class="text-center text-white content">
-            <div class="icon"><i class="fa-solid fa-calendar-day"></i></div>
-            <p>ChurnIt finds the best cards for you</p>
-        </div>
-      </div>
-      <!-- next button -->
-      <div class="text-center">
-        <a href="#anchor2" target="_parent" class="btn btn-white btn- animate">Next</a>
-      </div>
-    </div>
-  </div>
-<!-- personalisation questions -->
-  <div class="section" id="section2" data-anchor='anchor2'>
-    <div class="center-content text-center">
-      <h1>What do you look for in a card?</h1>
+      <div class="wrapper">
+        <h1 class="text-white text-center">What do you look for in a card?</h1>
+        <!-- sortable -->
         <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-
         <script>
           $( function() {
             $( "#sortable" ).sortable();
           } );
         </script>
-
-          ⬆️ Most important
-          <ul id="sortable" style="list-style: none;">
-            <li id="fee" class="ui-state-default">Low Annual Card Fee</li>
-            <li id="cashback" class="ui-state-default">Cashback</li>
-            <li id="reward" class="ui-state-default">Reward Points</li>
-            <li id="foreign" class="ui-state-default">Low International Transaction Fee</li>
+        <!-- drag and drop -->
+        <div class="flex-middle">
+          <p class="text-white text-center">More important</p>
+          <ul class="drag-drop text-center" id="sortable" style="list-style: none;">
+            <li id="fee" class="ui-state-default drag-text-container gradient-pink-blue">Low Annual Fee</li>
+            <li id="cashback" class="ui-state-default drag-text-container">Cashback</li>
+            <li id="reward" class="ui-state-default drag-text-container">Reward Points</li>
+            <li id="foreign" class="ui-state-default drag-text-container">Low Foreign Transaction Fee</li>
           </ul>
-          ⬇️ Least important
-          <script>
+          <p class="text-white text-center">Less important</p>
+        </div>
+        <script>
           $( "#sortable" ).sortable(
           {
             stop: function( event, ui )
@@ -97,37 +71,57 @@
               hidden_field.value = idsInOrder
             }
           });
-          </script>
-        <div class >
-          <a href="#anchor3" target="_parent" class="btn btn-white btn- animate">Next</a>
+        </script>
+      <div class="text-center text-white">
+        <a href="#anchor2" target="_parent" class="btn-main">Next</a>
+      </div>
+      </div>
+    </div>
+  </div>
+    <!-- What's your income? -->
+  <%= form_tag(compare_cards_path, method: :get) do |f| %>
+  <div class="section" id="section2" data-anchor='anchor2'>
+    <div class="main">
+      <div class="wrapper">
+        <h1 class="text-center">What's your annual salary?</h1>
+        <br><br>
+        <%= hidden_field_tag :preference, '' %>
+        <%# <%= label_tag :income, "What's your annual income?" %>
+        <%= text_field_tag :income, '60000' %>
+        <br><br><br>
+        <div class="text-center text-white">
+          <a href="#anchor3" target="_parent" class="btn-main">Next</a>
         </div>
       </div>
     </div>
-  <!-- section 3 -->
-  <%= form_tag(compare_cards_path, method: :get) do |f| %>
+  </div>
+  <!-- How much do you spend? -->
   <div class="section" id="section3" data-anchor='anchor3'>
-    <div class="white-centered-text">
-      <%= hidden_field_tag :preference, '' %>
-      <%= label_tag :income, "What's your annual income?" %>
-      <%= text_field_tag :income, '10000' %>
-      <a href="#anchor4" target="_parent" class="btn btn-white btn- animate">Next</a>
+    <div class="main">
+      <div class="wrapper">
+        <h1 class="text-white text-center">What's your typical monthly spend?</h1>
+        <%# <%= label_tag :spending, "What's your typical monthly spend?" %> %>
+        <%= text_field_tag :spending, '3000' %>
+        <br><br>
+        <div class="text-center text-white">
+          <a href="#anchor4" target="_parent" class="btn-main">Next</a>
+        </div>
+      </div>
     </div>
   </div>
-  <!-- section 4 -->
+  <!-- Which card do you use -->
   <div class="section" id="section4" data-anchor='anchor4'>
-    <div class="black-centered-text">
-      <%= label_tag :spending, "What's your monthly spend?" %>
-      <%= text_field_tag :spending, '5000' %>
-      <a href="#anchor5" target="_parent" class="btn btn-white btn- animate">Next</a>
-    </div>
-  </div>
-  <!-- section 5 -->
-	<div class="section" id="section5" data-anchor='anchor5'>
-    <div class="white-centered-text">
-      <%= label_tag :card_selected, "Do you currently have a credit card?" %>
-      <%= select_tag :card_selected, options_for_select(@cards.map {|card| [card.card_name, card.id, { 'data-url' => cards_path(card.id)}]}) %>
-      <%= submit_tag 'Continue' %>
-      <% end %>
+    <div class="main">
+      <div class="wrapper">
+        <h1 class="text-center">Which card do you currently use?</h1>
+        <br><br>
+        <%# <%= label_tag :card_selected, "Which card do you currently use?" %>
+        <%= select_tag :card_selected, options_for_select(@cards.map {|card| [card.card_name, card.id, { 'data-url' => cards_path(card.id)}]}) %>
+        <br>
+        <%= submit_tag 'Continue' %>
+        <% end %>
+        <br><br>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,57 @@
+// This page is for styling of personalisation question sections
+
+// What do you look for in a card?
+.drag-drop {
+  list-style-type: none;
+  border-radius: 20px;
+}
+
+.ui-state-default {
+  height: 104px;
+  width: 154px;
+  padding: 20px;
+  margin: 16px;
+  border-radius: 20px;
+  border: none !important;
+  color: white !important;
+  font-size: 4vw !important;
+  font-weight: bold !important;
+}
+
+// below are specific drag and drop sections
+#fee {
+  background: #e81c8a;
+  background: linear-gradient(45deg, #e81c8a 0%, #516ad0 100%);
+}
+
+#cashback {
+  background: #34beba;
+  background: linear-gradient(45deg, #34beba 0%, #afe076 100%);
+}
+
+#reward {
+  background: #e74b97;
+  background: linear-gradient(45deg, #e74b97 20%, #fcc54a 86%);
+}
+
+#foreign {
+  background-color: hsl(297, 100%, 77%);
+  background-image: linear-gradient(45deg, hsl(297, 100%, 77%) 0%, hsl(193, 100%, 58%) 52%, hsl(146, 100%, 58%) 90%);
+}
+
+// used in drag and drop
+.drag-text-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+// drag and drop sections/text are bigger on large devices
+@media screen and (min-width: 900px){
+  .ui-state-default {
+    // height and line-height need to be equally for centering of text
+    height: 230px;
+    width: 230px;
+    font-size: x-large !important;
+    padding: 48px 20px;
+  }
+}

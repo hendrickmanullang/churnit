@@ -6,24 +6,43 @@
   height: 100vh;
 }
 
-.flex-container {
+// full-page flex wrapper
+.wrapper {
   display: flex;
-  height: 80vh;
   flex-direction: column;
-  justify-content: space-around;
+  height: 100vh;
+  justify-content: center;
   align-items: center;
 }
 
-// flex container arranges content horizonatally on larger devices
+.flex-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+// flex-middle is for forms etc. It doesn't stretch to edges of screen.
+.flex-middle {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// flex main and flex middle arrange content horizonatally on larger devices
 @media screen and (min-width: 900px){
-  .flex-container {
+  .flex-main, .flex-middle {
     flex-direction: row;
+    max-width: 100%;
   }
 }
 
-// content for within flexbox
+// content divs for within flexbox
 .content {
   flex: 1;
   padding: 20px;
-  width: 24vw;
 }
