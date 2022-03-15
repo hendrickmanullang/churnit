@@ -55,5 +55,38 @@ class CardsController < ApplicationController
     @income = params[:card][:income]
     @spending = params[:card][:spending]
     @card_compare = Card.find(params[:card][:card_compare])
+
+    @card_selected_score = 0
+    @card_compare_score = 0
+    if @card_compare.annual_fee_after > @card_selected.annual_fee_after
+      @card_selected_score += 1
+    elsif @card_compare.annual_fee_after < @card_selected.annual_fee_after
+      @card_compare_score += 1
+    end
+
+    if @card_compare.interest_free_period < @card_selected.interest_free_period
+      @card_selected_score += 1
+    elsif @card_compare.interest_free_period > @card_selected.interest_free_period
+      @card_compare_score += 1
+    end
+
+    if @card_compare.late_payment_fee > @card_selected.late_payment_fee
+      @card_selected_score += 1
+    elsif @card_compare.late_payment_fee < @card_selected.late_payment_fee
+      @card_compare_score += 1
+    end
+
+    if @card_compare.interest_rate > @card_selected.interest_rate
+      @card_selected_score += 1
+    elsif @card_compare.interest_rate < @card_selected.interest_rate
+      @card_compare_score += 1
+    end
+
+    if @card_compare.foreign_transaction_fee > @card_selected.foreign_transaction_fee
+      @card_selected_score += 1
+    elsif @card_compare.foreign_transaction_fee < @card_selected.foreign_transaction_fee
+      @card_compare_score += 1
+    end
+    raise
   end
 end
