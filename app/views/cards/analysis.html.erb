@@ -2,53 +2,64 @@
 <div class="analysis">
   <div class="analysis-left">
     <div class="analysis-header">
-      <h4>Cancel your card before...</h4>
+      <h4>If you get this card today, you should look into getting another card before:</h4>
       <p><%= (Date.today + 364).strftime("%d %B %Y") %></p>
       <a href='url' class="btn btn-primary hvr-icon-buzz"><i class="fa-solid fa-calendar-days hvr-icon"></i>Add to Google Calender</a>
     </div>
     <h5>Factors</h5>
     <div class="factors">
-      <div class="factors-container">
-        <h5>Annual fees</h5>
-        <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i></p>
-        <p>This card’s annual fee is $<%= @card_compare.annual_fee_init.to_i %> in the first year.</p>
-        <p>This fee will increase to $<%= @card_compare.annual_fee_after %> after the 1st year.</p>
-        <p>If you cancel before <%= (Date.today + 364).strftime("%d %B %Y") %>, you will avoid the fee increase.</p>
-      </div>
-      <div class="factors-container">
-        <h5>Reward Bonus</h5>
-        <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i></p>
-        <p>You will achieve the card’s maximum bonus benefits of <%= @card_compare.bonus_point_reward %> points after spending $<%= @card_compare.bonus_point_spend %></p>
-      </div>
-      <div class="factors-container">
-        <h5>Annual fee</h5>
-        <p>Your annual fee are high</p>
-        <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i></p>
-      </div>
+      <% if @card_compare.annual_fee_init < @card_compare.annual_fee_after %>
+        <div class="factors-container">
+          <h5>Annual fees</h5>
+          <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i></p>
+          <p>This card’s annual fee is $<%= @card_compare.annual_fee_init.to_i %> in the first year, but will increase to $<%= @card_compare.annual_fee_after.to_i %> in the subsequent years.</p>
+          <p>If you cancel before <%= (Date.today + 364).strftime("%d %B %Y") %>, you will avoid the fee increase.</p>
+        </div>
+      <% end %>
+      <% if @card_compare.bonus_point_reward > 0 && (@spending.to_i/30 * @card_compare.bonus_point_time) > @card_compare.bonus_point_spend %>
+        <div class="factors-container">
+          <h5>Reward Bonus</h5>
+          <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i></p>
+          <p>You can earn up to <%=  number_with_delimiter(@card_compare.bonus_point_reward.to_i) %> <%=  @card_compare.reward_category %>points, provided you spend at least $<%=  number_with_delimiter(@card_compare.bonus_point_spend.to_i) %> within <%= number_with_delimiter(@card_compare.bonus_point_time.to_i) %> days.</p>
+          <p>Based on your stated spending of $<%=  number_with_delimiter(@spending) %> per month, you will achieve this by <%= @card_compare.bonus_point_spend.fdiv(@spending.to_i/30).to_i %> days.</p>
+        </div>
+      <% end %>
+      <% if @card_compare.cashback_reward > 0 && (@spending.to_i/30 * @card_compare.cashback_time) > @card_compare.cashback_spend%>
+        <div class="factors-container">
+          <h5>Cashback</h5>
+          <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i></p>
+          <p>You can earn up to $<%=  number_with_delimiter(@card_compare.cashback_reward.to_i) %> in cashback, provided you spend at least $<%=  number_with_delimiter(@card_compare.cashback_spend.to_i) %> within <%= number_with_delimiter(@card_compare.cashback_time.to_i) %> days.</p>
+          <p>Based on your stated spending of $<%=  number_with_delimiter(@spending) %> per month, you will achieve this by <%= @card_compare.cashback_spend.fdiv(@spending.to_i/30).to_i %> days.</p>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="analysis-right">
     <div class="right-header">
       <div class="links">
-        <a href="#" class="hvr-pop">Solutions</a>
-        <a href="#" class="hvr-pop">Analysis</a>
-        <a href="#" class="hvr-pop">Forecast</a>
+        <a href="#" class="hvr-pop">Fees</a>
+        <a href="#" class="hvr-pop">Rewards</a>
+        <a href="#" class="hvr-pop">Suggestion</a>
       </div>
       <div>
         <h5>_ChurnIt</h5>
       </div>
     </div>
       <div class="right-content">
-        <h4>Solutions & Next Steps</h4>
-        <p>If you cancel your card before <%= Date.today %>, the following happens</p>
+        <h4>Fees _Partial</h4>
+        <p>Here's all you need to know about this card's fees:</p>
         <ul>
-          <li>Avoid Fee <br> +$150/yr</li>
+          <li>Interest Free Period <br> <%= @card_compare.interest_free_period.to_i %> days</li>
           <li>Avoid Fee <br> +$150/yr</li>
           <li>Avoid Fee <br> +$150/yr</li>
         </ul>
           <div></div>
-          <h4>_ChurnIt Advice</h4>
+          <h4>Rewards _Partial</h4>
           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui impedit soluta architecto laborum harum cupiditate quam reprehenderit, nostrum perspiciatis ex, exercitationem eius illum deserunt.</p>
+          <div></div>
+          <h4>Suggestion _Partial</h4>
+          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui impedit soluta architecto laborum harum cupiditate quam reprehenderit, nostrum perspiciatis ex, exercitationem eius illum deserunt.</p>
+          <div></div>
       </div>
   </div>
 </div>
