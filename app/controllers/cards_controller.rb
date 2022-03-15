@@ -87,6 +87,5 @@ class CardsController < ApplicationController
     elsif @card_compare.foreign_transaction_fee < @card_selected.foreign_transaction_fee
       @card_compare_score += 1
     end
-    raise
   end
 end

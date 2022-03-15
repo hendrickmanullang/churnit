@@ -17,7 +17,7 @@
           <li><strong>Ongoing Annual Fees</strong> <br> $<%= number_with_delimiter(@card_compare.annual_fee_after.to_i) %> ($<%= number_with_delimiter(@card_selected.annual_fee_after.to_i) %>)</li>
           <li><strong>Interest Free Period</strong> <br> <%= @card_compare.interest_free_period.to_i %> days (<%= @card_selected.interest_free_period.to_i %> days)</li>
           <li><strong>Late Payment Fees</strong> <br> $<%= @card_compare.late_payment_fee.to_i %> ($<%= @card_selected.late_payment_fee.to_i %>)</li>
-          <li><strong>Interest Rate</strong> <br> <%= @card_compare.interest_rate * 100 %>% (<%= @card_selected.interest_rate.to_f * 100 %>%) </li>
+          <li><strong>Interest Rate</strong> <br> <%= @card_compare.interest_rate * 100 %>% (<%= @card_selected.interest_rate * 100 %>%) </li>
           <li><strong>Foreign Transaction fee</strong> <br> <%= @card_compare.foreign_transaction_fee * 100 %>% (<%= @card_selected.foreign_transaction_fee.to_f * 100 %>%) </li>
         </ul>
           <div></div>
