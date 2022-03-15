@@ -3,6 +3,7 @@
 // What do you look for in a card?
 .drag-drop {
   list-style-type: none;
+  border-radius: 20px;
 }
 
 .ui-state-default {
@@ -12,6 +13,7 @@
 	border-style: solid;
 	text-align: center;
   margin: 16px;
+  border-radius: 20px;
 }
 
 // used in drag and drop
@@ -24,7 +26,7 @@
 @media screen and (min-width: 900px){
   .ui-state-default {
     // height and line-height need to be equally for centering of text
-    height: 280px;
-    width: 280px;
+    height: 230px;
+    width: 230px;
   }
 }

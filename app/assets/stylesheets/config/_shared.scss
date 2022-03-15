@@ -12,3 +12,34 @@
 h1, h2, h3, h4, h5, h6, p, a {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+// Gradients (for analysis page and how you use your card page)
+.gradient-pink-blue {
+  background: #e81c8a;
+  background: linear-gradient(45deg, #e81c8a 0%, #516ad0 100%);
+}
+
+.gradient-blue-green {
+  background: #34beba;
+  background: linear-gradient(45deg, #34beba 0%, #afe076 100%);
+}
+
+.gradient-pink-yellow {
+  background: #e74b97;
+  background: linear-gradient(90deg, #e74b97 20%, #fcc54a 86%);
+}
+
+.gradient-pale-pink-blue {
+  background: #eeaeca;
+  background: linear-gradient(90deg, #eeaeca 0%, #94bbe9 100%);
+}
+
+.gradient-pink-blue-green {
+  background-color: hsl(297, 100%, 77%);
+  background-image: linear-gradient(45deg, hsl(297, 100%, 77%) 0%, hsl(193, 100%, 58%) 52%, hsl(146, 100%, 58%) 90%);
+}
+
+.gradient-green-pink {
+  background-color: #FA8BFF;
+  background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+}
