@@ -1,6 +1,5 @@
 <%# <%= render 'shared/navbar' %>
-<script src="./app/javascript/packs/application.js"></script>
-
+<%# <script src="./app/javascript/packs/application.js"></script> %>
 <div id="fullpage">
   <!-- Landing page -->
   <div class="section" id="section0">
@@ -12,7 +11,7 @@
           <h1>ChurnIt</h1>
         </div>
     </div>
-    <!-- h2 and button -->
+    <!-- h2, button, how it works section -->
     <div class="text-center" id="landing-content">
       <h2 id="demo"></h2>
       <script>
@@ -28,13 +27,12 @@
           }
         }
       </script>
-      <div id="landing-content">
-        <a href="#anchor1" target="_parent" class="btn btn-white btn- animate">Discover</a>
-        <br>
-        <button class="btn-link" data-bs-toggle="modal" data-bs-target="#howItWorksModal">
-          How does it work?
-        </button>
-      </div>
+      <br><br>
+      <a href="#anchor1" target="_parent" class="text-white btn-main">Get started</a>
+      <br><br>
+      <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#howItWorksModal">
+        How does it work?
+      </button>
     </div>
   </div>
   <!-- How It Works page -->
@@ -61,7 +59,7 @@
       </div>
       <!-- next button -->
       <div class="text-center">
-        <a href="#anchor2" target="_parent" class="btn btn-white btn- animate">Next</a>
+        <a href="#anchor2" target="_parent" class="btn-main">Next</a>
       </div>
     </div>
   </div>
@@ -99,7 +97,7 @@
           });
           </script>
         <div class >
-          <a href="#anchor3" target="_parent" class="btn btn-white btn- animate">Next</a>
+          <a href="#anchor3" target="_parent" class="btn-main">Next</a>
         </div>
       </div>
     </div>
@@ -110,7 +108,7 @@
       <%= hidden_field_tag :preference, '' %>
       <%= label_tag :income, "What's your annual income?" %>
       <%= text_field_tag :income, '10000' %>
-      <a href="#anchor4" target="_parent" class="btn btn-white btn- animate">Next</a>
+      <a href="#anchor4" target="_parent" class="btn-main">Next</a>
     </div>
   </div>
   <!-- section 4 -->
@@ -118,7 +116,7 @@
     <div class="black-centered-text">
       <%= label_tag :spending, "What's your monthly spend?" %>
       <%= text_field_tag :spending, '5000' %>
-      <a href="#anchor5" target="_parent" class="btn btn-white btn- animate">Next</a>
+      <a href="#anchor5" target="_parent" class="btn-main">Next</a>
     </div>
   </div>
   <!-- section 5 -->

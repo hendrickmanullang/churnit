@@ -4,10 +4,11 @@
 .hero {
   display: flex;
   position: relative;
-  height: 65vh;
+  height: 60vh;
   width: 100%;
   overflow: hidden;
   background-color: $teal;
+  top: 0;
 }
 
 .hero img {
@@ -37,8 +38,8 @@
 }
 
 #landing-content {
-  height: 35vh;
   padding: 40px;
+  height: 40vh;
 }
 
 // Media queries to make landing page responsive
