@@ -51,12 +51,14 @@
         </script>
         <!-- drag and drop -->
         <div class="flex-middle">
-          <ul class="drag-drop" id="sortable" style="list-style: none;">
+          <p class="text-white text-center">More important</p>
+          <ul class="drag-drop text-center" id="sortable" style="list-style: none;">
             <li id="fee" class="ui-state-default drag-text-container gradient-pink-blue">Low Annual Fee</li>
             <li id="cashback" class="ui-state-default drag-text-container">Cashback</li>
             <li id="reward" class="ui-state-default drag-text-container">Reward Points</li>
-            <li id="foreign" class="ui-state-default drag-text-container">Low International Transaction Fee</li>
+            <li id="foreign" class="ui-state-default drag-text-container">Low Foreign Transaction Fee</li>
           </ul>
+          <p class="text-white text-center">Less important</p>
         </div>
         <script>
           $( "#sortable" ).sortable(

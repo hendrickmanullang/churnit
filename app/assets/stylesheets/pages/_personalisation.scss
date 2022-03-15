@@ -7,13 +7,15 @@
 }
 
 .ui-state-default {
-  height: 112px;
-  width: 112px;
+  height: 104px;
+  width: 154px;
   padding: 20px;
   margin: 16px;
   border-radius: 20px;
   border: none !important;
   color: white !important;
+  font-size: 4vw !important;
+  font-weight: bold !important;
 }
 
 // below are specific drag and drop sections
@@ -41,14 +43,15 @@
 .drag-text-container {
   display: inline-block;
   vertical-align: middle;
-  color: white;
 }
 
-// drag and drop sections are wider on large devices
+// drag and drop sections/text are bigger on large devices
 @media screen and (min-width: 900px){
   .ui-state-default {
     // height and line-height need to be equally for centering of text
     height: 230px;
     width: 230px;
+    font-size: x-large !important;
+    padding: 48px 20px;
   }
 }
