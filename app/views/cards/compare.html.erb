@@ -3,13 +3,13 @@
   <div class="compare-headers">
     <div>
       <h1>Card Facts</h1>
-      <h4><i>Based on avg. spend of $  <%= session[:onboarding][:spending] %> per month</i></h4>
+      <h4><i>Based on avg. spend of $  <%= number_with_delimiter(session[:onboarding][:spending]) %> per month</i></h4>
     </div>
     <div class="right-text">
       <div>
         <img src="https://res.cloudinary.com/fantastic-four/image/upload/v1646970819/ChurnIt-logos_black_eguxks.png" alt="ChurnIt logo" class="header-img">
       </div>
-        <span>Methodology</span> | <span>Card Rank</span> | <span>About Us</span>
+        <span>Methodology</span> | <span>Card Rank</span>
     </div>
   </div>
 
