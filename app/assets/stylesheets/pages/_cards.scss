@@ -1,35 +1,30 @@
 
-body {
-  margin: 0;
-  font-family: 'Varela Round', sans-serif;
-  font-size: 18px;
-  background: #F4F4F4;
-}
-
-.credit-card {
-  background-size: cover;
-  background-position: center;
-  height: 190px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+// .credit-card {
+//   background-size: cover;
+//   background-position: center;
+//   height: 190px;
+//   border-radius: 1px;
+//   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   font-size: 22px;
+//   color: whitesmoke;
+//   font-weight: bolder;
+//   text-shadow: 0 0 10px rgba(0,0,0,0.7);
+// }
+.credit-card-item {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-around;
-  font-size: 22px;
-  color: whitesmoke;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
-.content-card {
-  display: flex;
-}
-.credit-cards {
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 16px;
-}
+// .credit-cards {
+//   flex-grow: 1;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   grid-gap: 16px;
+//   padding: 16px;
+// }
 
 /*Media Queries*/
 
@@ -52,4 +47,74 @@ body {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: sans-serif;
+}
+
+/* ---- button ---- */
+
+.button {
+  display: inline-block;
+  padding: 0.5em 1.0em;
+  margin-bottom: 10px;
+  background: #EEE;
+  border: none;
+  border-radius: 7px;
+  background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+  color: #222;
+  font-family: sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #8CF;
+  color: #222;
+}
+
+.button:active,
+.button.is-checked {
+  background-color: #28F;
+}
+
+.button.is-checked {
+  color: white;
+}
+
+.button:active {
+  box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+}
+
+/* ---- button-group ---- */
+
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.button-group .button {
+  float: left;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 1px;
+}
+
+.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+
+/* ---- grid ---- */
+
+.grid {
+  border: 1px solid #333;
+  margin: 0 auto;
+}
+
+.credit-card-item {
+  margin: 10px;
 }
