@@ -1,5 +1,14 @@
+.modal-header{
+  background-color: rgb(0, 0, 0);
+}
+
+.modal-header h2{
+  color: white;
+}
+
 .icon {
   font-size: 8vw;
+  color: linear-gradient(45deg, #e81c8a 0%, #516ad0 100%) !important;
 }
 
 .fa-regular fa-credit-card {
