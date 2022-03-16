@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_214651) do
     t.decimal "minimum_income"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.decimal "annual_fee_after"
+    t.integer "annual_fee_after"
     t.decimal "cashback_reward"
     t.decimal "cashback_spend"
     t.decimal "cashback_time"
