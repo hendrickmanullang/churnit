@@ -34,8 +34,8 @@
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 48px;
-  margin: 56px 0px;
+  grid-gap: 24px;
+  margin: 24px;
 }
 
 // flex-middle is for forms etc. It doesn't stretch to edges of screen so form fields aren't huge.
