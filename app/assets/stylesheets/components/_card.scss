@@ -130,3 +130,20 @@
 #headers-card {
   width: 250px;
 }
+
+.card-compare {
+  height: 680px;
+  width: 320px;
+  padding: 20px;
+  border-radius: 40px;
+  border: 4px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
+}
+
+.card-compare img {
+  max-height: 120px;
+  width: auto;
+  border-radius: 20px;
+}
