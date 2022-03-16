@@ -51,7 +51,7 @@
     <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
           <div class="card-compare">
             <div data-controller="select-card">
-              <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel">
+              <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                 <div class="carousel-inner" data-select-card-target="carousel">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -180,7 +180,7 @@
       <% carousel_two = @recommended_cards.each_slice(3).to_a.second.take(3) %>
           <div class="card-compare">
             <div data-controller="select-card">
-              <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel">
+              <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                 <div class="carousel-inner" data-select-card-target="carousel">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls2" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -308,7 +308,7 @@
       <% carousel_three = @recommended_cards.each_slice(3).to_a.third.take(3) %>
           <div class="card-compare">
             <div data-controller="select-card">
-              <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel">
+              <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                 <div class="carousel-inner" data-select-card-target="carousel">
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls3" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
