@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
   # For additional in app/views/devise/registrations/edit.html.erb
 
-  # def default_url_options
-  #   { host: ENV["DOMAIN"] || "localhost:3000" }
-  # end
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end
