@@ -1,44 +1,80 @@
-body {
-  background: url('https://neufeldinstitute.org/wp-content/uploads/2022/01/white-paper-background-cardboard-texture-hd1.jpg') no-repeat center fixed;
-  background-size: cover;
-}
-
-.compare-container {
-  margin: 60px;
-}
-
 .compare-headers {
   display: flex;
   justify-content: space-between;
 }
 
-.line {
-  border-bottom: 6px solid black;
-}
-
-.right-text {
-  text-align: right;
-}
-
-.right-text h2 {
-  margin-bottom: 30px;
-}
-
-.container-cards {
+.compare-card-grid {
+  padding: 20px 0 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin: 56px 0px;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px
 }
 
-.header-img {
-  width: 200px;
-  margin-bottom: 0px;
-  align-items: center;
-}
-
-.line-sml {
-  border-bottom: 2px solid black;
-  z-index: -1;
+// .compare-content-sq are the grid squares for compare page cards
+.compare-con-sq {
   display: flex;
+  flex-direction: column;
+  height: 96px;
+  width: 128px;
+  text-align: center;
+}
+
+//grid rectangles for compare page cards (for reward category and bonus point criteria)
+.compare-con-req {
+  display: flex;
+  flex-direction: column;
+  height: 96px;
+  width: 100%;
+  text-align: center;
+}
+
+// row-cat-text is for the row category names in the compare page cards
+.row-cat-text {
+  font-size: smaller;
+  text-align: center;
+  line-height: 2px;
+}
+
+// row-con text is for the content squares in the compare page cards
+.row-con-text {
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+  max-height: 64px;
+}
+
+// backgrounds for each content square/rectangle in the compare cards
+#reward-category {
+  background: rgb(31,100,228); /* fallback for old browsers */
+  background: linear-gradient(45deg, rgba(31,100,228,1) 0%, rgba(76,224,63,1) 100%);
+}
+
+#interest-rate {
+  background: #e81c8a; /* fallback for old browsers */
+  background: linear-gradient(45deg, #e81c8a 0%, #516ad0 100%);
+}
+
+#interest-free-period {
+  background-color: #FF9A8B; /* fallback for old browsers */
+background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+
+}
+
+#annual-fee {
+  background-color: #08AEEA; /* fallback for old browsers */
+  background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+}
+
+#foreign-transfer-fee {
+  background: rgb(31,100,228); /* fallback for old browsers */
+  background: linear-gradient(45deg, rgba(31,100,228,1) 0%, rgba(76,224,63,1) 100%);
+}
+
+#bonus-criteria {
+  background: #B993D6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);
+  background: linear-gradient(to right, #8CA6DB, #B993D6);
 }
