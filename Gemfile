@@ -69,3 +69,6 @@ gem 'devise'
 gem 'pundit'
 # file validate
 gem 'file_validators'
+
+# search
+gem 'pg_search', '~> 2.3.0'
