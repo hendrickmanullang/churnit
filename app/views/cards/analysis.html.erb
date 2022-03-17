@@ -18,16 +18,16 @@
             <h5>Annual Fee</h3>
           </div>
           <div class="analysis-factor" id="interest-rate">
-            <h5>Second factor</h3>
+            <h5>Interest Rate</h3>
           </div>
           <div class="analysis-factor" id="annual-fee">
-            <h5>Third factor</h3>
+            <h5>Interest Free Period</h3>
+          </div>
+          <div class="analysis-factor" id="interest-free-period">
+            <h5>Foreign Transfer Fee</h3>
           </div>
         </div>
-        <!-- cancel your card by... -->
-        <div class="text-white">
-          Cancel your card by...
-        </div>
+        <!-- Put back button to here -->
       </div>
       <!-- right/second section -->
       <div class="analysis-second">
@@ -35,21 +35,90 @@
           <!-- bootstrap tabbed section tabs -->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="true">Fees</button>
+              <button class="nav-link active" id="rewards-tab" data-bs-toggle="tab" data-bs-target="#rewards" type="button" role="tab" aria-controls="rewards" aria-selected="false">Rewards</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="rewards-tab" data-bs-toggle="tab" data-bs-target="#rewards" type="button" role="tab" aria-controls="rewards" aria-selected="false">Rewards</button>
+              <button class="nav-link" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="true">Fees</button>
             </li>
           </ul>
         </div>
         <div class="analysis-second-inner rounded">
           <!-- tab content -->
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="fees" role="tabpanel" aria-labelledby="fees-tab">
-              <h2>Detailed Fee Breakdown</h2>
+            <div class="tab-pane fade show active" id="rewards" role="tabpanel" aria-labelledby="rewards-tab">
+              <h2>Rewards Breakdown</h2>
+              <br>
+              <% if (@card_compare.reward_category == "N/A") && (@card_compare.cashback_reward == 0)%>
+                This card doesn't seem to offer any points reward 🙁
+              <% end %>
+              <% if @card_compare.cashback_reward > 0 %>
+                <h5>Cashback</h5>
+                You can earn up to $<%=  number_with_delimiter(@card_compare.cashback_reward.to_i) %> in cashback rewards, provided you spend at least $<%=  number_with_delimiter(@card_compare.cashback_spend.to_i) %> within <%= number_with_delimiter(@card_compare.cashback_time.to_i) %> days.
+                <br><br>
+              <% end %>
+              <% if @card_compare.bonus_point_reward > 0 %>
+                <h5>Bonus Points</h5>
+                You can earn up to <%=  number_with_delimiter(@card_compare.bonus_point_reward.to_i) %> <%= @card_compare.reward_category %> points on sign up, provided you spend at least $<%=  number_with_delimiter(@card_compare.bonus_point_spend.to_i) %> within <%= number_with_delimiter(@card_compare.bonus_point_time.to_i) %> days.
+              <% end %>
+              <br><br>
+
+              <% if (@card_compare.bonus_point_reward > 0) && ((@spending.to_i/30 * @card_compare.bonus_point_time) < @card_compare.bonus_point_spend) %>
+                <h4>You can earn bonus points on sign up, however, it could stretch your monthly budget</h4>
+                Based on your montly spend of $<%=  number_with_delimiter(@spending) %>, you'll need to increase your spending by $<%= number_with_delimiter(((@card_compare.bonus_point_spend.fdiv(@card_compare.bonus_point_time)*30).to_f - (@spending.to_f)).to_i) %> per month to meet the bonus criteria
+              <% end %>
+
+              <% if (@card_compare.cashback_reward > 0) && ((@spending.to_i/30 * @card_compare.cashback_time) < @card_compare.cashback_spend) %>
+                <h4>You may be eligible for a cashback bonus, however, it could stretch your monthly budget</h4>
+                Based on your montly spend of $<%=  number_with_delimiter(@spending) %>, you'll need to increase your spending by $<%= number_with_delimiter(((@card_compare.cashback_spend.fdiv(@card_compare.cashback_time)*30).to_f - (@spending.to_f)).to_i) %> per month to meet the bonus criteria
+              <% end %>
+
+              <% if (@card_compare.bonus_point_reward > 0) && ((@spending.to_i/30 * @card_compare.bonus_point_time) >= @card_compare.bonus_point_spend) %>
+                Based on your montly spending of $<%=  number_with_delimiter(@spending) %>, you can expect to meet the bonus criteria within <%= @card_compare.bonus_point_spend.fdiv(@spending.to_i/30).to_i %> days.
+                You may need to keep the card active until the end of the qualifying period (<%= number_with_delimiter(@card_compare.bonus_point_time.to_i) %> days).
+              <% end %>
+              <br><br>
+
+              <% if @card_compare.reward_rate > 0 %>
+                <h5>Ongoing Rewards</h5>
+                You can earn up to <%= @card_compare.reward_rate.to_f %> <%= @card_compare.reward_category %> points for every $1 you spend with this card.
+                <br><br>
+                <h6>There <em>may</em> be other benefits to this card (e.g. airport lounge access, discounted movie tickets, etc). We have excluded these from the analysis as we don't know enough about you (we're working on it though!).</h6>
+              <% end %>
             </div>
-            <div class="tab-pane fade" id="rewards" role="tabpanel" aria-labelledby="rewards-tab">
-              <h2>Detailed Reward Breakdown</h2>
+            <div class="tab-pane fade" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+              <div class="fees-div"></div>
+                <h2>Fee Breakdown</h2>
+                <br>
+                Here's everything you need to know about this card's fees (and how it compares to your current card):
+                <br><br>
+                <div>
+                  <div>
+                    <strong>Ongoing Annual Fees</strong>
+                    <br>$<%= number_with_delimiter(@card_compare.annual_fee_after.to_i) %> ($<%= number_with_delimiter(@card_selected.annual_fee_after.to_i) %>)<br><br>
+                  </div>
+                  <div>
+                    <strong>Interest Free Period</strong>
+                    <br><%= @card_compare.interest_free_period.to_i %> days (<%= @card_selected.interest_free_period.to_i %> days)<br><br>
+                  </div>
+                  <div>
+                    <strong>Late Payment Fees</strong>
+                    <br>$<%= @card_compare.late_payment_fee.to_i %> ($<%= @card_selected.late_payment_fee.to_i %>)<br><br>
+                  </div>
+                  <div>
+                    <strong>Interest Rate</strong>
+                    <br><%= @card_compare.interest_rate * 100 %>% (<%= @card_selected.interest_rate * 100 %>%)<br><br>
+                  </div>
+                  <div>
+                    <strong>Foreign Transaction fee</strong>
+                    <br><%= @card_compare.foreign_transaction_fee * 100 %>% (<%= @card_selected.foreign_transaction_fee * 100 %>%)<br>
+                  </div>
+                </div>
+                <% if @card_compare.annual_fee_init < @card_compare.annual_fee_after %>
+                  <br>
+                    This card’s annual fee is $<%= @card_compare.annual_fee_init.to_i %> in the first year (promo), but will increase to $<%= @card_compare.annual_fee_after.to_i %> the following year.
+                    Cancel this card before <strong><%= (Date.today + 364).strftime("%d %B %Y") %></strong> to avoid the fee increase.
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -91,7 +160,7 @@
         </div>
           <div class="right-content">
             <h4>Fees _Partial</h4>
-            <p>Here's all you need to know about this card's fees (and how it compares vs your card):</p>
+            Here's all you need to know about this card's fees (and how it compares vs your card):
             <ul>
               <li><strong>Ongoing Annual Fees</strong> <br> $<%= number_with_delimiter(@card_compare.annual_fee_after.to_i) %> ($<%= number_with_delimiter(@card_selected.annual_fee_after.to_i) %>)</li>
               <li><strong>Interest Free Period</strong> <br> <%= @card_compare.interest_free_period.to_i %> days (<%= @card_selected.interest_free_period.to_i %> days)</li>
@@ -102,19 +171,19 @@
               <div></div>
               <h4>Rewards _Partial</h4>
               <% if (@card_compare.reward_category == "N/A") && (@card_compare.cashback_reward == 0)%>
-                <p>This card doesn't seem to offer any points reward 🙁</p>
+                This card doesn't seem to offer any points reward 🙁
               <% end %>
               <% if @card_compare.cashback_reward > 0 %>
                 <h5>Cashback</h5>
-                <p>You can earn up to $<%=  number_with_delimiter(@card_compare.cashback_reward.to_i) %> in cashback rewards, provided you spend at least $<%=  number_with_delimiter(@card_compare.cashback_spend.to_i) %> within <%= number_with_delimiter(@card_compare.cashback_time.to_i) %> days.</p>
+                You can earn up to $<%=  number_with_delimiter(@card_compare.cashback_reward.to_i) %> in cashback rewards, provided you spend at least $<%=  number_with_delimiter(@card_compare.cashback_spend.to_i) %> within <%= number_with_delimiter(@card_compare.cashback_time.to_i) %> days.
               <% end %>
               <% if @card_compare.bonus_point_reward > 0 %>
                 <h5>Bonus Points</h5>
-                <p>You can earn up to <%=  number_with_delimiter(@card_compare.bonus_point_reward.to_i) %> <%= @card_compare.reward_category %> points on sign up, provided you spend at least $<%=  number_with_delimiter(@card_compare.bonus_point_spend.to_i) %> within <%= number_with_delimiter(@card_compare.bonus_point_time.to_i) %> days.</p>
+                You can earn up to <%=  number_with_delimiter(@card_compare.bonus_point_reward.to_i) %> <%= @card_compare.reward_category %> points on sign up, provided you spend at least $<%=  number_with_delimiter(@card_compare.bonus_point_spend.to_i) %> within <%= number_with_delimiter(@card_compare.bonus_point_time.to_i) %> days.
               <% end %>
               <% if @card_compare.reward_rate > 0 %>
                 <h5>Ongoing Rewards</h5>
-                <p>You can earn up to <%= @card_compare.reward_rate.to_f %> <%= @card_compare.reward_category %> points for every $1 spent.</p>
+                <p>You can earn up to <%= @card_compare.reward_rate.to_f %> <%= @card_compare.reward_category %> points for every $1 spent.
                 <h6>There <em>may</em> be other benefits to this card (e.g. airport lounge access, discounted movie tickets, etc). We have excluded these from the analysis as we don't know enough about you (we're working on it though!).</h6>
               <% end %>
               <div></div>
@@ -144,60 +213,60 @@
         <div class="container">
           <% if (@card_compare.bonus_point_reward > 0) && ((@spending.to_i/30 * @card_compare.bonus_point_time) < @card_compare.bonus_point_spend) %>
             <h4>You can earn bonus points on sign up, however, it could stretch your monthly budget</h4>
-              <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i></p>
-              <p>Based on your montly spend of $<%=  number_with_delimiter(@spending) %>, you'll need to increase your spending by $<%= number_with_delimiter(((@card_compare.bonus_point_spend.fdiv(@card_compare.bonus_point_time)*30).to_f - (@spending.to_f)).to_i) %> per month to meet the bonus criteria</p>
+              <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i>
+              <p>Based on your montly spend of $<%=  number_with_delimiter(@spending) %>, you'll need to increase your spending by $<%= number_with_delimiter(((@card_compare.bonus_point_spend.fdiv(@card_compare.bonus_point_time)*30).to_f - (@spending.to_f)).to_i) %> per month to meet the bonus criteria
           <% end %>
         </div>
 
         <div class="container">
           <% if (@card_compare.cashback_reward > 0) && ((@spending.to_i/30 * @card_compare.cashback_time) < @card_compare.cashback_spend) %>
             <h4>You may be eligible for a cashback bonus, however, it could stretch your monthly budget</h4>
-              <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i></p>
-              <p>Based on your montly spend of $<%=  number_with_delimiter(@spending) %>, you'll need to increase your spending by $<%= number_with_delimiter(((@card_compare.cashback_spend.fdiv(@card_compare.cashback_time)*30).to_f - (@spending.to_f)).to_i) %> per month to meet the bonus criteria</p>
+              <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i>
+              <p>Based on your montly spend of $<%=  number_with_delimiter(@spending) %>, you'll need to increase your spending by $<%= number_with_delimiter(((@card_compare.cashback_spend.fdiv(@card_compare.cashback_time)*30).to_f - (@spending.to_f)).to_i) %> per month to meet the bonus criteria
           <% end %>
         </div>
 
         <div class="container">
           <% if (@card_compare.bonus_point_reward > 0) && ((@spending.to_i/30 * @card_compare.bonus_point_time) >= @card_compare.bonus_point_spend) %>
             <h4>You should consider looking at other cards after:</h4>
-            <p><%= (Date.today + @card_compare.bonus_point_time).strftime("%d %B %Y") %></p>
+            <p><%= (Date.today + @card_compare.bonus_point_time).strftime("%d %B %Y") %>
             <a href='url' class="btn btn-primary hvr-icon-buzz"><i class="fa-solid fa-calendar-days hvr-icon"></i>Add Calendar reminder</a>
           <% end %>
           <br>
           <% if (@card_compare.bonus_point_reward > 0) && ((@spending.to_i/30 * @card_compare.bonus_point_time) >= @card_compare.bonus_point_spend) %>
-              <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i></p>
-              <p>Based on your montly spending of $<%=  number_with_delimiter(@spending) %>, you can expect to meet the bonus criteria within <%= @card_compare.bonus_point_spend.fdiv(@spending.to_i/30).to_i %> days.</p>
-              <p>You may need to keep the card active until the end of the qualifying period (<%= number_with_delimiter(@card_compare.bonus_point_time.to_i) %> days).</p>
+              <p class="hvr-pulse-grow">More Info<i class="fa-solid fa-angle-down"></i>
+              <p>Based on your montly spending of $<%=  number_with_delimiter(@spending) %>, you can expect to meet the bonus criteria within <%= @card_compare.bonus_point_spend.fdiv(@spending.to_i/30).to_i %> days.
+              <p>You may need to keep the card active until the end of the qualifying period to be eligible for the bonus (<%= number_with_delimiter(@card_compare.bonus_point_time.to_i) %> days).
           <% end %>
         </div>
 
         <div class="container">
           <% if (@card_compare.cashback_reward > 0) && ((@spending.to_i/30 * @card_compare.cashback_time) > @card_compare.cashback_spend) %>
           <h4>You should consider looking at other cards after:</h4>
-          <p><%= (Date.today + @card_compare.cashback_time).strftime("%d %B %Y") %></p>
+          <p><%= (Date.today + @card_compare.cashback_time).strftime("%d %B %Y") %>
           <a href='url' class="btn btn-primary hvr-icon-buzz"><i class="fa-solid fa-calendar-days hvr-icon"></i>Add Calendar reminder</a>
           <% end %>
           <br>
           <% if (@card_compare.cashback_reward > 0) && ((@spending.to_i/30 * @card_compare.cashback_time) > @card_compare.cashback_spend) %>
               <h5>Cashback</h5>
-              <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i></p>
-              <p>Based on your monthly of $<%=  number_with_delimiter(@spending) %>, you can expect to meet the cashback criteria within <%= @card_compare.cashback_spend.fdiv(@spending.to_i/30).to_i %> days.</p>
-              <p>You may need to keep the card active until the end of the qualifying period (<%= number_with_delimiter(@card_compare.cashback_time.to_i) %> days)</p>
+              <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i>
+              <p>Based on your monthly of $<%=  number_with_delimiter(@spending) %>, you can expect to meet the cashback criteria within <%= @card_compare.cashback_spend.fdiv(@spending.to_i/30).to_i %> days.
+              <p>You may need to keep the card active until the end of the qualifying period (<%= number_with_delimiter(@card_compare.cashback_time.to_i) %> days)
           <% end %>
         </div>
 
         <div class="container">
           <% if @card_compare.annual_fee_init < @card_compare.annual_fee_after %>
           <h4>You should definitely cancel this card before:</h4>
-          <p><%= (Date.today + 364).strftime("%d %B %Y") %></p>
+          <p><%= (Date.today + 364).strftime("%d %B %Y") %>
           <a href='url' class="btn btn-primary hvr-icon-buzz"><i class="fa-solid fa-calendar-days hvr-icon"></i>Add Calendar reminder</a>
           <% end %>
           <br>
           <% if @card_compare.annual_fee_init < @card_compare.annual_fee_after %>
             <h5>Annual fees</h5>
-            <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i></p>
-            <p>This card’s annual fee is $<%= @card_compare.annual_fee_init.to_i %> in the first year (promo), but will increase to $<%= @card_compare.annual_fee_after.to_i %> in the subsequent years.</p>
-            <p>If you cancel anytime before <%= (Date.today + 364).strftime("%d %B %Y") %>, you will avoid the fee increase.</p>
+            <p class="hvr-pulse-grow">More info<i class="fa-solid fa-angle-down"></i>
+            <p>This card’s annual fee is $<%= @card_compare.annual_fee_init.to_i %> in the first year (promo), but will increase to $<%= @card_compare.annual_fee_after.to_i %> in the subsequent years.
+            <p>If you cancel anytime before <%= (Date.today + 364).strftime("%d %B %Y") %>, you will avoid the fee increase.
           <% end %>
         </div>
       </div>
