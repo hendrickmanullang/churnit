@@ -49,13 +49,13 @@ document.addEventListener('turbolinks:load', () => {
   const iso = initIsotope(grid)
   initSortButtons(iso)
   initFilterButtons(iso)
+  const buttonGroups = document.querySelectorAll('.button-group');
+  for ( let i=0, len = buttonGroups.length; i < len; i++ ) {
+    let buttonGroup = buttonGroups[i];
+    radioButtonGroup( buttonGroup );
+  }
 })
 // change is checked
-const buttonGroups = document.querySelectorAll('.button-group');
-for ( let i=0, len = buttonGroups.length; i < len; i++ ) {
-  let buttonGroup = buttonGroups[i];
-  radioButtonGroup( buttonGroup );
-}
 
 function radioButtonGroup( buttonGroup ) {
   buttonGroup.addEventListener( 'click', (e) => {
