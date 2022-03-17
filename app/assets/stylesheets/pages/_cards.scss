@@ -176,30 +176,44 @@ body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   background: #e6e6e6;
 }
-@media all and (min-width: 60em) {
-  .col-1  { width: 12%; }
-  .col-2  { width: 16.66666667%; }
-  .col-3  { width: 25%; }
-  .col-4  { width: 33.33%; }
-  .col-5  { width: 41.66666667%; }
-  .col-6  { width: 50%; }
-  .col-7  { width: 58.33333333%; }
-  .col-8  { width: 66.66666667%; }
-  .col-9  { width: 75; }
-  .col-10 { width: 83.33333333%; }
-  .col-11 { width: 91.66666667%; }
-  .col-12 { width: 100%; }
-}
-// // flexbox grid system - roughly based on bootstrap grid
+
 .container {
-  max-width: 1600px;
+  max-width: 1000px;
   padding: 0 15px;
   margin: 0 auto;
   margin-top: 30px;
 }
+.card {
+  width: 100%;
+}
 
 #credit-card-items {
-  margin: 10px;
+  padding: 10px;
+  .credit-card-img {
+    object-fit: cover;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    img {
+      width: 100%;
+      height: unset;
+
+    }
+  }
+  .card-body {
+    min-height: 145px;
+    .card-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    li {
+      font-size: 1.2rem;
+    }
+
+  }
 }
 
 /* Float Shadow */
