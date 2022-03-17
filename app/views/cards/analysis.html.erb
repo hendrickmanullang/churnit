@@ -11,6 +11,8 @@
           <h1><%= @card_compare.card_name %></h1>
         </div>
         <!-- card factors -->
+        <br><br>
+        <h3 class="text-white">Factors</h2>
         <div class="compare-card-grid text-white text-center">
           <div class="analysis-factor" id="interest-free-period">
             <h5>Annual Fee</h3>
@@ -23,32 +25,33 @@
           </div>
         </div>
         <!-- cancel your card by... -->
-        <div class="text-white padding">
+        <div class="text-white">
           Cancel your card by...
         </div>
       </div>
       <!-- right/second section -->
       <div class="analysis-second">
-        <!-- bootstrap tabbed section tabs -->
-        <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#fees">Fees</a></li>
-          <li><a data-toggle="tab" href="#rewards">Rewards</a></li>
-          <%# <li><a data-toggle="tab" href="#menu2">Forecast</a></li> %>
-        </ul>
-        <!-- content within tabs -->
-        <div class="tab-content">
-          <div id="fees" class="tab-pane fade in active">
-            <h3>Fees</h3>
-            <p>Some content.</p>
+        <div class="analysis-header">
+          <!-- bootstrap tabbed section tabs -->
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="fees-tab" data-bs-toggle="tab" data-bs-target="#fees" type="button" role="tab" aria-controls="fees" aria-selected="true">Fees</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="rewards-tab" data-bs-toggle="tab" data-bs-target="#rewards" type="button" role="tab" aria-controls="rewards" aria-selected="false">Rewards</button>
+            </li>
+          </ul>
+        </div>
+        <div class="analysis-second-inner rounded">
+          <!-- tab content -->
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="fees" role="tabpanel" aria-labelledby="fees-tab">
+              <h2>Detailed Fee Breakdown</h2>
+            </div>
+            <div class="tab-pane fade" id="rewards" role="tabpanel" aria-labelledby="rewards-tab">
+              <h2>Detailed Reward Breakdown</h2>
+            </div>
           </div>
-          <div id="rewards" class="tab-pane fade">
-            <h3>Rewards</h3>
-            <p>Some content in menu 1.</p>
-          </div>
-          <%# <div id="menu2" class="tab-pane fade">
-            <h3>Forecast</h3>
-            <p>Some content in menu 2.</p>
-          </div> %>
         </div>
       </div>
     </div>

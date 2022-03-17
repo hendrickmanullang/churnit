@@ -1,4 +1,12 @@
 // This file is for generic app-wide CSS classes ('text-center' etc.)
+// padding, rounding, etc
+.rounded {
+  border-radius: 32px;
+}
+
+.padding {
+  padding: 32px;
+}
 
 // Text
 .text-center {
@@ -9,6 +17,10 @@
   color: white
 }
 
+.text-gray {
+  color: #6d6d6d;
+}
+
 h1, h2, h3, h4, h5, h6, p, a {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -16,6 +28,10 @@ h1, h2, h3, h4, h5, h6, p, a {
 // backgrounds
 .bg-dark {
   background: #2b2a2a;
+}
+
+.bg-light {
+  background: #dbdada;
 }
 
 // Gradients (for landing page, buttons, analysis page and how you use your card page)
