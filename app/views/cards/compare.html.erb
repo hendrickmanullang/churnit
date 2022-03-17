@@ -25,26 +25,26 @@
         <div>
           <div class="compare-card-grid">
             <div class="compare-con-sq">
-              <div><p class="row-cat-text">Interest rate</p></div>
-              <div class="row-con-text" id="interest-rate"><p><%= @card.interest_rate*100 %>%</p></div>
+              <div><p class="row-cat-text">Bonus Points</p></div>
+              <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(@card.bonus_point_reward.to_i) %></div>
             </div>
             <div class="compare-con-sq">
-              <div><p class="row-cat-text">Annual fee</p></div>
-              <div class="row-con-text" id="annual-fee">$<%= @card.annual_fee_init.to_i %></div>
+              <div><p class="row-cat-text">Cashback</p></div>
+              <div class="row-con-text" id="cashback-bonus">$<%= @card.cashback_reward.to_i %></div>
             </div>
             <div class="compare-con-sq">
               <div><p class="row-cat-text">Interest free period</p></div>
               <div class="row-con-text" id="interest-free-period"><%= @card.interest_free_period.to_i %> days</div>
             </div>
              <div class="compare-con-sq">
-              <div><p class="row-cat-text">Foreign transfer fee</p></div>
-              <div class="row-con-text" id="foreign-transfer-fee"><%= (@card.foreign_transaction_fee * 100).to_i %>%</div>
+              <div><p class="row-cat-text">Foreign transaction fee</p></div>
+              <div class="row-con-text" id="foreign-transfer-fee"><%= (@card.foreign_transaction_fee * 100) %>%</div>
             </div>
           </div>
         </div>
         <div class="compare-con-rec">
-          <div><p class="row-cat-text">Bonus point eligibility</p></div>
-          <div class="row-con-text" id="bonus-criteria"><p>$<%= @card.bonus_point_spend.to_i %> / <%= @card.bonus_point_time.to_i %> days</p></div>
+          <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+          <div class="row-con-text" id="card-annual-fee"><p>$<%= @card.annual_fee_init.to_i %></p></div>
         </div>
       </div>
       <%# 1st comparison card %>
@@ -68,26 +68,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_one.first.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.first.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_one.first.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.first.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_one.first.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.first.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.first.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_one.first.bonus_point_spend.to_i %> / <%= carousel_one.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.first.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                   <!-- second carousel item -->
@@ -102,26 +102,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_one.second.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.second.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_one.second.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.second.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_one.second.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.second.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.second.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_one.second.bonus_point_spend.to_i %> / <%= carousel_one.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.second.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                   <!-- third carousel item -->
@@ -136,26 +136,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_one.third.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.third.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_one.third.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.third.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_one.third.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.third.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.third.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_one.third.bonus_point_spend.to_i %> / <%= carousel_one.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.third.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                 </div>
@@ -197,26 +197,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_two.first.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.first.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_two.first.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.first.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_two.first.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.first.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.first.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_two.first.bonus_point_spend.to_i %> / <%= carousel_two.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.first.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                   <!-- second carousel item -->
@@ -231,26 +231,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_two.second.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.second.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_two.second.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.second.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_two.second.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.second.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.second.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_two.second.bonus_point_spend.to_i %> / <%= carousel_two.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.second.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                   <!-- third carousel item -->
@@ -265,26 +265,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_two.third.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.third.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_two.third.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.third.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_two.third.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.third.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.third.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_two.third.bonus_point_spend.to_i %> / <%= carousel_one.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.third.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                 </div>
@@ -325,26 +325,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_three.first.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.first.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_three.first.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.first.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_three.first.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.first.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.first.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_three.first.bonus_point_spend.to_i %> / <%= carousel_three.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.first.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                   <!-- second carousel item -->
@@ -359,26 +359,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_three.second.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.second.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_three.second.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.second.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_three.second.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.second.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.second.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_three.second.bonus_point_spend.to_i %> / <%= carousel_three.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.second.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                   <!-- third carousel item -->
@@ -393,26 +393,26 @@
                     <div>
                       <div class="compare-card-grid">
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest rate</p></div>
-                          <div class="row-con-text" id="interest-rate"><p><%= carousel_three.third.interest_rate*100 %>%</p></div>
+                          <div><p class="row-cat-text">Bonus Points</p></div>
+                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.third.bonus_point_reward.to_i) %></div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Annual fee</p></div>
-                          <div class="row-con-text" id="annual-fee">$<%= carousel_three.third.annual_fee_init.to_i %></div>
+                          <div><p class="row-cat-text">Cashback</p></div>
+                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.third.cashback_reward.to_i %></div>
                         </div>
                         <div class="compare-con-sq">
                           <div><p class="row-cat-text">Interest free period</p></div>
                           <div class="row-con-text" id="interest-free-period"><%= carousel_three.third.interest_free_period.to_i %> days</div>
                         </div>
                         <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transfer fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.third.foreign_transaction_fee * 100).to_i %>%</div>
+                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
+                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.third.foreign_transaction_fee * 100) %>%</div>
                         </div>
                       </div>
                     </div>
                     <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Bonus point eligibility</p></div>
-                      <div class="row-con-text" id="bonus-criteria"><p>$<%= carousel_three.third.bonus_point_spend.to_i %> / <%= carousel_three.first.bonus_point_time.to_i %> days</p></div>
+                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.third.annual_fee_init.to_i %></p></div>
                     </div>
                   </div>
                 </div>
