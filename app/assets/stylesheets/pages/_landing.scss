@@ -105,3 +105,10 @@ input[type=submit] {
 }
 
 }
+
+.flex-middle {
+  cursor: grab;
+	&:active {
+		cursor: grabbing;
+	}
+}
