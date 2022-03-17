@@ -16,25 +16,25 @@
         <div class="compare-card-grid text-white">
           <div class="text-white">
             <h3>Rewards Rate</h3>
-            <div class="analysis-factor text-center" id="gradient-blue-green">
+            <div class="analysis-factor text-center row align-items-center" id="gradient-blue-green">
               <h4><%= @card_compare.reward_rate %> points per $1 spent</h4>
             </div>
           </div>
           <div class="text-white">
             <h3>Bonus points</h3>
-            <div class="analysis-factor text-center" id="gradient-pink-purple">
+            <div class="analysis-factor text-center row align-items-center" id="gradient-pink-purple">
               <h4><%= number_with_delimiter(@card_compare.bonus_point_reward.to_i) %></h4>
             </div>
           </div>
           <div class="text-white">
             <h3>Ongoing Annual Fee</h3>
-            <div class="analysis-factor text-center" id="gradient-red-orange">
+            <div class="analysis-factor text-center row align-items-center" id="gradient-red-orange">
               <h4>$<%= number_with_delimiter(@card_compare.annual_fee_after.to_i) %></h4>
             </div>
           </div>
           <div class="text-white">
             <h3>Reward Category</h3>
-            <div class="analysis-factor text-center" id="gradient-green-blue">
+            <div class="analysis-factor text-center row align-items-center" id="gradient-green-blue">
               <h4><%= @card_compare.reward_category %></h4>
             </div>
           </div>
