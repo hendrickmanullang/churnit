@@ -7,7 +7,7 @@ p, h1, h2, h3, h4, h5, h6 { margin-top: 0; }
 a { text-decoration: none; }/* ---- button ---- */
 .button-controls {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   margin: 20px;
 }
 #filters {
@@ -168,8 +168,7 @@ a { text-decoration: none; }/* ---- button ---- */
 }
 /* ---- grid ---- */
 
-// test
-// reset
+
 
 // // some basic page styles
 body {
@@ -178,7 +177,7 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
   margin-top: 30px;
@@ -257,4 +256,81 @@ body {
   -webkit-transform: translateY(5px);
   transform: translateY(5px);
   /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+
+
+
+// header
+.churnit-logo {
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight:300;
+  letter-spacing: 2px;
+  font-size:48px;
+}
+.inner-header {
+  height:10vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+.header-index {
+  position:relative;
+  text-align:center;
+  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  color:white;
+}
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
+  }
+  100% {
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:40px;
+    min-height:40px;
+  }
+  .content {
+    height:30vh;
+  }
+  h1 {
+    font-size:24px;
+  }
 }
