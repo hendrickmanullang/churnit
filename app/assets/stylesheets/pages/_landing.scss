@@ -21,7 +21,7 @@
   justify-self: left;
   z-index: 0;
   padding: 40px 20px 40px 0;
-  filter: brightness(60%)
+  // filter: drop-shadow(0.3rem 0.3rem 0.8rem rgba(206, 206, 206, 0.5));
 }
 
 .hero-text-container {
@@ -34,9 +34,9 @@
 
 .hero h1 {
   color: $white;
-  padding: 20px;
-  font-size: 12vw;
+  font-size: 12vmax;
   z-index: 1;
+  text-shadow: 2px 2px 4px #616161;
 }
 
 #landing-content {
