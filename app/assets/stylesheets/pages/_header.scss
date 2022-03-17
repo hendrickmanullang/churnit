@@ -1,0 +1,61 @@
+a:link, a:active, #cardspage a:visited a:hover{
+  text-decoration: none;
+}
+
+// .header {
+//   display: flex;
+//   position: sticky;
+//   z-index: 100;
+// }
+
+
+.header {
+  text-align: center;
+  padding: 15px;
+  background-color: transparent;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: fill;
+  z-index: 10;
+  display: flex;
+}
+
+.header a {
+  font-size: 18px;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+  text-decoration: none;
+}
+
+.header svg {
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header img {
+  height: 80px;
+  padding: 0px 0px 0px 40px;
+}
+
+.links {
+  display: flex;
+}
+
+.links a{
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 0px 0px 0px;
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.links svg {
+  padding: 6px 10px 0px 8px;
+  height: 20px;
+}
