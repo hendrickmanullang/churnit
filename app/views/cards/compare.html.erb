@@ -163,7 +163,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   </button>
               </div>
-              <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
+                <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
                 <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
                 <%= hidden_field(:card, :income, value: params[:income])%>
                 <%= hidden_field(:card, :spending, value: params[:spending])%>

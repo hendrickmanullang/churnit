@@ -26,9 +26,22 @@ const initSubmitLoader =()=>{
       e.preventDefault()
       // show loader
       loader.classList.add('active')
+
+      let i = 0;
+        const txt = 'Churning.....';
+        const speed = 80;
+        document.addEventListener("churning", typeWriter())
+        function typeWriter() {
+          if (i < txt.length) {
+            document.getElementById("churning").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+
       await setTimeout(() => {
         form.submit()
-      }, 3000)
+      }, 2000)
       // continue submit
     })
   });
