@@ -12,6 +12,7 @@
     "fullpage.js": "^3.1.2",
     "google-calendar-url": "^0.0.5",
     "hover.css": "^2.3.2",
+    "imagesloaded": "^5.0.0",
     "isotope": "^1.0.0-alpha.3",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.6.0",
