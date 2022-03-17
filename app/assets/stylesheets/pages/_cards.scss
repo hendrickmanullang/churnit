@@ -1,5 +1,5 @@
 
-html { box-sizing: border-box; font-size: 10px; }
+html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 body, ul, li  { margin: 0; padding: 0; }
 li { list-style: none; }
@@ -95,7 +95,6 @@ body {
     img {
       width: 100%;
       height: unset;
-
     }
   }
   .card-body {
@@ -109,7 +108,7 @@ body {
       -webkit-box-orient: vertical;
     }
     li {
-      font-size: 1.2rem;
+      font-size: 0.8em;
     }
 
   }
