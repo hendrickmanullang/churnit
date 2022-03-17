@@ -18,6 +18,21 @@ import "@fortawesome/fontawesome-free/js/all";
 
 // Importing fullpage.js
 import fullpage from 'fullpage.js';
+const initSubmitLoader =()=>{
+  const loader = document.querySelector(".loader")
+  const forms = document.querySelectorAll('[data-show-loader="true"]')
+  forms.forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      // show loader
+      loader.classList.add('active')
+      await setTimeout(() => {
+        form.submit()
+      }, 3000)
+      // continue submit
+    })
+  });
+}
 
 // Initializing fullpage.js
 document.addEventListener('turbolinks:load', () => {
@@ -25,4 +40,5 @@ document.addEventListener('turbolinks:load', () => {
       navigation: true,
       sectionsColor:['#F6F6F6', '#171924', '#F6F6F6', '#171924', '#F6F6F6', '#171924']
   });
+  initSubmitLoader()
 })
