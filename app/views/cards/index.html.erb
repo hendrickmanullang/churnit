@@ -5,7 +5,7 @@
     <button class="button hvr-buzz-out" data-sort-value="name">name</button>
     <button class="button hvr-buzz-out" data-sort-value="reward_rate">reward_rate</button>
     <button class="button hvr-buzz-out" data-sort-value="interest_free_period">interest_free_period</button>
-    <button class="button hvr-buzz-out" data-sort-value="annual_fee_init ">annual_fee_init</button>
+    <button class="button hvr-buzz-out" data-sort-value="annual_fee_init">annual_fee_init</button>
   </div>
   <div class="button-group" id="filters">
   <h2>Filtering</h2>
@@ -19,16 +19,18 @@
 <div class="container">
   <div class="grid">
     <% @cards.each do |card| %>
-      <div class="<%="credit-card-item #{ card.card_type }" %>" id="credit-card-items">
-        <div class="card hvr-float-shadow hvr-buzz-out">
-          <img src="<%= card.card_image_url %>" class="card-img-top" alt="card">
+      <div class="<%="credit-card-item #{ card.card_type }" %> col-12 col-md-6 col-lg-3" id="credit-card-items">
+        <div class="card hvr-float-shadow">
+          <div class="credit-card-img">
+            <img src="<%= card.card_image_url %>" alt="card">
+          </div>
           <div class="card-body">
             <h5 class="card-title name"><%= card.card_name %></h5>
             <ul>
               <li class="card-text"><%= card.card_type %></li>
-              <li class="card-text reward_rate">reward rate <%= card.reward_rate.to_i %></li>
-              <li class="card-text interest_free_period text-wrap">interest_free_period <%= card.interest_free_period.to_i %></li>
-              <li class="card-text annual_fee_init text-wrap">annual_fee_init <%= card.annual_fee_init.to_i %></li>
+              <li class="card-text">reward rate <span class="reward_rate"><%= (card.reward_rate).to_i %></span></li>
+              <li class="card-text text-wrap">interest_free_period <span class="interest_free_period"><%= card.interest_free_period.to_i %></span></li>
+              <li class="card-text text-wrap">annual_fee_init <span class="annual_fee_init"><%= (card.annual_fee_init * 100).to_i %></span></li>
             </ul>
           </div>
         </div>
