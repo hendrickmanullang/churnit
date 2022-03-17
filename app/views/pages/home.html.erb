@@ -85,7 +85,7 @@
   <div class="section" id="section2" data-anchor='anchor2'>
     <div class="main">
       <div class="wrapper">
-        <h1 class="text-center">What's your annual salary?</h1>
+        <h1 class="text-center text-white">What's your annual salary?</h1>
         <br><br>
         <%= hidden_field_tag :preference, '' %>
         <%# <%= label_tag :income, "What's your annual income?" %>
@@ -115,7 +115,7 @@
   <div class="section" id="section4" data-anchor='anchor4'>
     <div class="main">
       <div class="wrapper">
-        <h1 class="text-center">Which card do you currently use?</h1>
+        <h1 class="text-center text-white">Which card do you currently use?</h1>
         <br><br>
         <%# <%= label_tag :card_selected, "Which card do you currently use?" %>
         <%= select_tag :card_selected, options_for_select(@cards.map {|card| [card.card_name, card.id, { 'data-url' => cards_path(card.id)}]}) %>
