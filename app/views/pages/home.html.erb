@@ -81,7 +81,7 @@
     </div>
   </div>
     <!-- What's your income? -->
-  <%= form_tag(compare_cards_path, method: :get) do |f| %>
+  <%= form_tag(compare_cards_path, method: :get, data: { show_loader: true }) do |f| %>
   <div class="section" id="section2" data-anchor='anchor2'>
     <div class="main">
       <div class="wrapper">

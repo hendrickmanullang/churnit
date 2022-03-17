@@ -1,22 +1,47 @@
+<div class="header-index">
+<!--Content before waves-->
+<div class="inner-header flex">
+</div>
+
+<div>
+  <h1 class="churnit-logo">_Churnit</h1>
+  <p style="font-size: 15px">Credit cards made simple</p>
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+  <defs>
+  <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+  </defs>
+  <g class="parallax">
+  <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+  <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+  <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+  <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+  </g>
+  </svg>
+</div>
+<!--Waves end-->
+
+</div>
+<!--Header ends-->
+<div class="container">
+
 <div class="button-controls">
   <div class="button-group" id="sorts">
   <h2>Sorting</h2>
-    <button class="button is-checked hvr-buzz-out" data-sort-value="original-order" id="first-button">original order</button>
-    <button class="button hvr-buzz-out" data-sort-value="name">name</button>
-    <button class="button hvr-buzz-out" data-sort-value="reward_rate">reward_rate</button>
-    <button class="button hvr-buzz-out" data-sort-value="interest_free_period">interest_free_period</button>
-    <button class="button hvr-buzz-out" data-sort-value="annual_fee_init">annual_fee_init</button>
+    <button class="button is-checked" data-sort-value="original-order" id="first-button">Original Order</button>
+    <button class="button" data-sort-value="name">Name</button>
+    <button class="button" data-sort-value="reward_rate">Reward Rate</button>
+    <button class="button" data-sort-value="interest_free_period">Interest Free Period</button>
+    <button class="button" data-sort-value="annual_fee_init">Annual Fee</button>
   </div>
   <div class="button-group" id="filters">
   <h2>Filtering</h2>
-    <button class="button is-checked hvr-buzz-out" data-filter="*" id="filter-first-button">show all</button>
-    <button class="button hvr-buzz-out" data-filter=".VISA, .Visa">VISA</button>
-    <button class="button hvr-buzz-out" data-filter=".Mastercard">MASTERCARD</button>
-    <button class="button hvr-buzz-out" data-filter=".American">American Express</button>
+    <button class="button is-checked" data-filter="*" id="filter-first-button">show all</button>
+    <button class="button" data-filter=".VISA, .Visa">VISA</button>
+    <button class="button" data-filter=".Mastercard">MASTERCARD</button>
+    <button class="button" data-filter=".American">American Express</button>
   </div>
 </div>
-
-<div class="container">
   <div class="grid">
     <% @cards.each do |card| %>
       <div class="<%="credit-card-item #{ card.card_type }" %> col-12 col-md-6 col-lg-3" id="credit-card-items">
@@ -27,10 +52,11 @@
           <div class="card-body">
             <h5 class="card-title name"><%= card.card_name %></h5>
             <ul>
-              <li class="card-text"><%= card.card_type %></li>
-              <li class="card-text">reward rate <span class="reward_rate"><%= (card.reward_rate).to_i %></span></li>
-              <li class="card-text text-wrap">interest_free_period <span class="interest_free_period"><%= card.interest_free_period.to_i %></span></li>
-              <li class="card-text text-wrap">annual_fee_init <span class="annual_fee_init"><%= (card.annual_fee_init * 100).to_i %></span></li>
+              <li class="card-text"><strong><%= card.card_type.upcase %></strong></li>
+              <li class="card-text">Reward rate <span class="reward_rate"><%= (card.reward_rate).to_i %></span> (Every dollar spent convert to points)</li>
+              <li class="card-text text-wrap">Interest free period <span class="interest_free_period"><%= card.interest_free_period.to_i %> days</span></li>
+              <li class="card-text text-wrap">Initial annual fee <span class="annual_fee_init"><%= (card.annual_fee_init).to_i %></span></li>
+              <li class="card-text text-wrap">Annual fee after <span><%= card.annual_fee_after %></span></li>
             </ul>
           </div>
         </div>

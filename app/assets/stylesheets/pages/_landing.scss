@@ -7,8 +7,7 @@
   height: 60vh;
   width: 100%;
   overflow: hidden;
-  // background-color: $teal;
-  background-color: hsl(297, 100%, 77%);
+  background-color: hsl(297, 100%, 77%); // fallback for older browsers
   background-image: linear-gradient(45deg, hsl(297, 100%, 77%) 0%, hsl(193, 100%, 58%) 52%, hsl(146, 100%, 58%) 90%);
   top: 0;
 }
@@ -21,7 +20,6 @@
   justify-self: left;
   z-index: 0;
   padding: 40px 20px 40px 0;
-  // filter: drop-shadow(0.3rem 0.3rem 0.8rem rgba(206, 206, 206, 0.5));
 }
 
 .hero-text-container {
@@ -104,4 +102,11 @@ input[type=submit] {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+}
+
+.flex-middle {
+  cursor: grab;
+	&:active {
+		cursor: grabbing;
+	}
 }
