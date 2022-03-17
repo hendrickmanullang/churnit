@@ -20,7 +20,7 @@
   text-align: center;
 }
 
-//grid rectangles for compare page cards (for reward category and bonus point criteria)
+// grid rectangles for compare page cards (for reward category and bonus point criteria)
 .compare-con-req {
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@
   background: linear-gradient(45deg, rgba(31,100,228,1) 0%, rgba(76,224,63,1) 100%);
 }
 
-#interest-rate {
+#bonus-points {
   background: #e81c8a; /* fallback for old browsers */
   background: linear-gradient(45deg, #e81c8a 0%, #516ad0 100%);
 }
@@ -63,7 +63,7 @@ background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
 
 }
 
-#annual-fee {
+#cashback-bonus {
   background-color: #08AEEA; /* fallback for old browsers */
   background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
 }
@@ -73,7 +73,7 @@ background-image: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
   background: linear-gradient(45deg, rgba(31,100,228,1) 0%, rgba(76,224,63,1) 100%);
 }
 
-#bonus-criteria {
+#card-annual-fee {
   background: #B993D6;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #8CA6DB, #B993D6);
   background: linear-gradient(to right, #8CA6DB, #B993D6);
