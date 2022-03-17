@@ -53,7 +53,8 @@
             <h5 class="card-title name"><%= card.card_name %></h5>
             <ul>
               <li class="card-text"><strong><%= card.card_type.upcase %></strong></li>
-              <li class="card-text">Reward rate <span class="reward_rate"><%= (card.reward_rate).to_i %></span> (Every dollar spent convert to points)</li>
+              <li class="card-text text-wrap">Reward Category<span class="reward_category"> <%= card.reward_category %></span></li>
+              <li class="card-text">Reward rate <span class="reward_rate"><%= (card.reward_rate).to_i %> points per $1 spent</span></li>
               <li class="card-text text-wrap">Interest free period <span class="interest_free_period"><%= card.interest_free_period.to_i %> days</span></li>
               <li class="card-text text-wrap">Initial annual fee <span class="annual_fee_init"><%= (card.annual_fee_init).to_i %></span></li>
               <li class="card-text text-wrap">Annual fee after <span><%= card.annual_fee_after %></span></li>
