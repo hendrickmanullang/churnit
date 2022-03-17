@@ -50,21 +50,21 @@ document.addEventListener('turbolinks:load', () => {
   initSortButtons(iso)
   initFilterButtons(iso)
 })
-
 // change is checked
 const buttonGroups = document.querySelectorAll('.button-group');
-
-for ( let i=0, length = buttonGroups.length; i < length; i++ ) {
+for ( let i=0, len = buttonGroups.length; i < len; i++ ) {
   let buttonGroup = buttonGroups[i];
   radioButtonGroup( buttonGroup );
 }
 
 function radioButtonGroup( buttonGroup ) {
-  buttonGroup.addEventListener( 'click', ( event ) => {
+  buttonGroup.addEventListener( 'click', (e) => {
     buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-    event.target.classList.add('is-checked');
+    e.target.classList.add('is-checked');
   });
 }
+
+
 
 // isotope
 
@@ -133,9 +133,6 @@ function radioButtonGroup( buttonGroup ) {
   //   });
   // });
   // sorting function
-
-  // layout Isotope after each image loads
-
 
   // $('#filters').on( 'click', 'button', function() {
   //   let filterValue = $( this ).attr('data-filter');
