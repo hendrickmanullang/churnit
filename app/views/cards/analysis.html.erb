@@ -8,26 +8,40 @@
         <!-- title -->
         <div class="text-white">
           <h6>You selected...</h3>
-          <h1><%= @card_compare.card_name %></h1>
+          <h1 style="color: cyan"><%= @card_compare.card_name %></h1>
         </div>
         <!-- card factors -->
         <br><br>
-        <h3 class="text-white">Factors</h2>
-        <div class="compare-card-grid text-white text-center">
-          <div class="analysis-factor" id="interest-free-period">
-            <h5>Annual Fee</h3>
+        <%# <h3 class="text-white">Factors</h2> %>
+        <div class="compare-card-grid text-white">
+          <div class="text-white">
+            <h3>Rewards Rate</h3>
+            <div class="analysis-factor text-center" id="gradient-blue-green">
+              <h4><%= @card_compare.reward_rate %> points / $1</h4>
+            </div>
           </div>
-          <div class="analysis-factor" id="interest-rate">
-            <h5>Interest Rate</h3>
+          <div class="text-white">
+            <h3>Bonus points</h3>
+            <div class="analysis-factor text-center" id="gradient-pink-purple">
+              <h4><%= @card_compare.bonus_point_reward.to_i %></h4>
+            </div>
           </div>
-          <div class="analysis-factor" id="annual-fee">
-            <h5>Interest Free Period</h3>
+          <div class="text-white">
+            <h3>Ongoing Annual Fee</h3>
+            <div class="analysis-factor text-center" id="gradient-red-orange">
+              <h4>$<%= @card_compare.annual_fee_after.to_i %></h4>
+            </div>
           </div>
-          <div class="analysis-factor" id="interest-free-period">
-            <h5>Foreign Transfer Fee</h3>
+          <div class="text-white">
+            <h3>Minimum Income</h3>
+            <div class="analysis-factor text-center" id="gradient-green-blue">
+              <h4>$<%= @card_compare.minimum_income.to_i %></h4>
+            </div>
           </div>
         </div>
         <!-- Put back button to here -->
+        <br><br><br>
+        <button onclick="history.back()" class="btn-main">Go Back</button>
       </div>
       <!-- right/second section -->
       <div class="analysis-second">
