@@ -8,7 +8,7 @@
       <img src="https://res.cloudinary.com/fantastic-four/image/upload/v1647078307/landing-banner-desktop-purple_yoytsa.png" alt="Person reaching for credit card">
       <!-- title -->
         <div class="hero-text-container">
-          <h1>ChurnIt</h1>
+          <h1><strong>ChurnIt</strong></h1>
         </div>
     </div>
     <!-- h2, button, how it works section -->
@@ -16,7 +16,7 @@
       <h2 id="demo"></h2>
       <script>
         let i = 0;
-        const txt = 'Credit cards made simple.';
+        const txt = 'Credit cards made simple';
         const speed = 60;
         document.addEventListener("load", typeWriter())
         function typeWriter() {
@@ -30,10 +30,12 @@
       <br><br>
       <a href="#anchor1" target="_parent" class="text-white btn-main">Get started</a>
       <br><br>
-  <!-- How It Works section -->
+      <!-- How It Works section -->
       <button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#howItWorksModal">
         How does it work?
       </button>
+      <br><br>
+      <%= render "shared/footer" %>
     </div>
   </div>
   <!-- personalisation questions -->
@@ -79,7 +81,7 @@
     </div>
   </div>
     <!-- What's your income? -->
-  <%= form_tag(compare_cards_path, method: :get) do |f| %>
+  <%= form_tag(compare_cards_path, method: :get, data: { show_loader: true }) do |f| %>
   <div class="section" id="section2" data-anchor='anchor2'>
     <div class="main">
       <div class="wrapper">

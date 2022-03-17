@@ -163,7 +163,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   </button>
               </div>
-              <%= form_tag(analysis_cards_path, method: :get) do %>
+                <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
                 <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
                 <%= hidden_field(:card, :income, value: params[:income])%>
                 <%= hidden_field(:card, :spending, value: params[:spending])%>
@@ -292,7 +292,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   </button>
               </div>
-              <%= form_tag(analysis_cards_path, method: :get) do %>
+              <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
                 <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
                 <%= hidden_field(:card, :income, value: params[:income])%>
                 <%= hidden_field(:card, :spending, value: params[:spending])%>
@@ -420,7 +420,7 @@
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   </button>
               </div>
-              <%= form_tag(analysis_cards_path, method: :get) do %>
+              <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
                 <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
                 <%= hidden_field(:card, :income, value: params[:income])%>
                 <%= hidden_field(:card, :spending, value: params[:spending])%>
@@ -431,6 +431,11 @@
             </div>
           </div>
       <%# 3rd comparison card end %>
+    </div>
+  </div>
+  <div class="d-flex text-center">
+    <div class="container align-middle">
+      <%= render "shared/footer" %>
     </div>
   </div>
 </div>

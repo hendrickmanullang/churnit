@@ -20,7 +20,6 @@
   justify-self: left;
   z-index: 0;
   padding: 40px 20px 40px 0;
-  // filter: brightness(90%);
 }
 
 .hero-text-container {
@@ -33,9 +32,9 @@
 
 .hero h1 {
   color: $white;
-  padding: 20px;
-  font-size: 12vw;
+  font-size: 12vmax;
   z-index: 1;
+  text-shadow: 2px 2px 4px #616161;
 }
 
 #landing-content {
@@ -71,4 +70,43 @@
 // Extra large devices (large desktops)
 @media (min-width: 1200px) {
 
+}
+
+input[type=submit] {
+  background-color: $teal;
+  color: $white;
+  font-weight: 600;
+  padding: 8px 30px;
+  border-radius: 40px;
+  text-decoration: none;
+  // animation: moveInBottom 5s ease-out;
+  // animation-fill-mode: backwards;
+
+.btn-main:link,
+.btn-main:visited {
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-main:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+}
+
+.flex-middle {
+  cursor: grab;
+	&:active {
+		cursor: grabbing;
+	}
 }
