@@ -1,7 +1,11 @@
+<%= render "shared/header" %>
+<br>
+<br>
+<br>
 <!-- render navbar here?? maybe not if we want to follow Julian's design -->
 
 <body class="bg-dark">
-  <div class="main">
+  <div class="main2">
     <div class="wrapper-analysis">
       <!-- left/first section -->
       <div class="analysis-first">
@@ -16,26 +20,26 @@
         <div class="compare-card-grid text-white">
           <div class="text-white">
             <h3>Rewards Rate</h3>
-            <div class="analysis-factor text-center" id="gradient-blue-green">
-              <h4><%= @card_compare.reward_rate %> points / $1</h4>
+            <div class="analysis-factor text-center row align-items-center" id="gradient-blue-green">
+              <h4><%= @card_compare.reward_rate %> points per $1 spent</h4>
             </div>
           </div>
           <div class="text-white">
             <h3>Bonus points</h3>
-            <div class="analysis-factor text-center" id="gradient-pink-purple">
-              <h4><%= @card_compare.bonus_point_reward.to_i %></h4>
+            <div class="analysis-factor text-center row align-items-center" id="gradient-pink-purple">
+              <h4><%= number_with_delimiter(@card_compare.bonus_point_reward.to_i) %></h4>
             </div>
           </div>
           <div class="text-white">
             <h3>Ongoing Annual Fee</h3>
-            <div class="analysis-factor text-center" id="gradient-red-orange">
-              <h4>$<%= @card_compare.annual_fee_after.to_i %></h4>
+            <div class="analysis-factor text-center row align-items-center" id="gradient-red-orange">
+              <h4>$<%= number_with_delimiter(@card_compare.annual_fee_after.to_i) %></h4>
             </div>
           </div>
           <div class="text-white">
-            <h3>Minimum Income</h3>
-            <div class="analysis-factor text-center" id="gradient-green-blue">
-              <h4>$<%= @card_compare.minimum_income.to_i %></h4>
+            <h3>Reward Category</h3>
+            <div class="analysis-factor text-center row align-items-center" id="gradient-green-blue">
+              <h4><%= @card_compare.reward_category %></h4>
             </div>
           </div>
         </div>
@@ -108,23 +112,58 @@
                 <div>
                   <div>
                     <strong>Ongoing Annual Fees</strong>
-                    <br>$<%= number_with_delimiter(@card_compare.annual_fee_after.to_i) %> ($<%= number_with_delimiter(@card_selected.annual_fee_after.to_i) %>)<br><br>
+                    <br><% if @card_compare.annual_fee_after > @card_selected.annual_fee_after %>
+                          <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                        <% elsif @card_compare.annual_fee_after < @card_selected.annual_fee_after%>
+                          <i class="fa-solid fa-arrow-down" color="green"></i>
+                        <% else %>
+                          <i class="fa-solid fa-equals"></i>
+                        <% end %>
+                        $<%= number_with_delimiter(@card_compare.annual_fee_after.to_i) %> ($<%= number_with_delimiter(@card_selected.annual_fee_after.to_i) %>) <br><br>
                   </div>
                   <div>
                     <strong>Interest Free Period</strong>
-                    <br><%= @card_compare.interest_free_period.to_i %> days (<%= @card_selected.interest_free_period.to_i %> days)<br><br>
+                    <br><% if @card_compare.interest_free_period > @card_selected.interest_free_period %>
+                          <i class="fa-solid fa-arrow-up" color="green"></i>
+                        <% elsif @card_compare.interest_free_period < @card_selected.interest_free_period%>
+                          <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                        <% else %>
+                          <i class="fa-solid fa-equals"></i>
+                        <% end %>
+                        <%= @card_compare.interest_free_period.to_i %> days (<%= @card_selected.interest_free_period.to_i %> days)<br><br>
                   </div>
                   <div>
                     <strong>Late Payment Fees</strong>
-                    <br>$<%= @card_compare.late_payment_fee.to_i %> ($<%= @card_selected.late_payment_fee.to_i %>)<br><br>
+                    <br><% if @card_compare.late_payment_fee > @card_selected.late_payment_fee %>
+                          <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                        <% elsif @card_compare.late_payment_fee < @card_selected.late_payment_fee%>
+                          <i class="fa-solid fa-arrow-down" color="green"></i>
+                        <% else %>
+                          <i class="fa-solid fa-equals"></i>
+                        <% end %>
+                        $<%= @card_compare.late_payment_fee.to_i %> ($<%= @card_selected.late_payment_fee.to_i %>)<br><br>
                   </div>
                   <div>
                     <strong>Interest Rate</strong>
-                    <br><%= @card_compare.interest_rate * 100 %>% (<%= @card_selected.interest_rate * 100 %>%)<br><br>
+                    <br><% if @card_compare.interest_rate > @card_selected.interest_rate %>
+                          <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                        <% elsif @card_compare.interest_rate < @card_selected.interest_rate%>
+                          <i class="fa-solid fa-arrow-down" color="green"></i>
+                        <% else %>
+                          <i class="fa-solid fa-equals"></i>
+                        <% end %>
+                        <%= @card_compare.interest_rate * 100 %>% (<%= @card_selected.interest_rate * 100 %>%)<br><br>
                   </div>
                   <div>
                     <strong>Foreign Transaction fee</strong>
-                    <br><%= @card_compare.foreign_transaction_fee * 100 %>% (<%= @card_selected.foreign_transaction_fee * 100 %>%)<br>
+                    <br><% if @card_compare.foreign_transaction_fee > @card_selected.foreign_transaction_fee %>
+                          <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                        <% elsif @card_compare.foreign_transaction_fee < @card_selected.foreign_transaction_fee%>
+                          <i class="fa-solid fa-arrow-down" color="green"></i>
+                        <% else %>
+                          <i class="fa-solid fa-equals"></i>
+                        <% end %>
+                        <%= @card_compare.foreign_transaction_fee * 100 %>% (<%= @card_selected.foreign_transaction_fee * 100 %>%)<br>
                   </div>
                 </div>
                 <% if @card_compare.annual_fee_init < @card_compare.annual_fee_after %>

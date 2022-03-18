@@ -5,14 +5,17 @@ a:hover, a:visited, a:active {
  }
 
 .btn-main {
-  background-color: $teal;
+  background-color: #9404b8e6;
   color: $white;
   font-weight: 600;
   padding: 15px 40px;
   border-radius: 40px;
   text-decoration: none;
+  position: relative;
+  border: 0px !important;
   // animation: moveInBottom 5s ease-out;
   // animation-fill-mode: backwards;
+}
 
 .btn-main:link,
 .btn-main:visited {
@@ -22,18 +25,20 @@ a:hover, a:visited, a:active {
   border-radius: 100px;
   transition: all .2s;
   position: relative;
+  color: white;
 }
 
 .btn-main:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  position: relative;
 }
 
 .btn-main:active {
   transform: translateY(-1px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
+  position: relative;
 }
 
 // .btn-main::after {
@@ -48,10 +53,6 @@ a:hover, a:visited, a:active {
 //   z-index: -1;
 //   transition: all .4s;
 // }
-
-.btn-main::after {
-  // background-color: #F72585 ;
-}
 
 .btn-main:hover::after {
   transform: scaleX(1.4) scaleY(1.6);

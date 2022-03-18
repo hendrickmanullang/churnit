@@ -72,13 +72,14 @@
 
 }
 
-input[type=submit] {
-  background-color: $teal;
+.btn-main, input[type=submit] {
+  background-color: #9404b8e6;
   color: $white;
   font-weight: 600;
-  padding: 8px 30px;
+  padding: 12px 34px;
   border-radius: 40px;
   text-decoration: none;
+  border: 0px !important;
   // animation: moveInBottom 5s ease-out;
   // animation-fill-mode: backwards;
 
@@ -95,6 +96,7 @@ input[type=submit] {
   .btn-main:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #2e003ae6;
   }
 
   .btn-main:active {

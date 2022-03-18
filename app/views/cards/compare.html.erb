@@ -1,444 +1,452 @@
-<div class="main">
-  <div class="wrapper-compare">
-    <div class="compare-headers">
-      <div>
-        <h1>Card Facts</h1>
+<div class="bg-dark">
+  <div class="main">
+    <div class="wrapper-compare">
+      <div class="container-cards">
+        <div class="card-wrapper">
+          <h2 class="text-center" style="color: cyan">Your card</h2>
+          <div class="card-compare" id="first-card-height">
+            <% @card = Card.find(session[:onboarding][:card_selected]) %>
+            <h4 class="text-white"><%= @card.card_name %></h4>
+            <div class="card-img">
+                <%= image_tag @card.card_image_url %>
+            </div>
+            <div class="compare-con-rec">
+              <div><p class="row-cat-text">Reward category</p></div>
+              <div class="row-con-text" id="reward-category"><p><%= @card.reward_category %></p></div>
+            </div>
+            <div>
+              <div class="compare-card-grid">
+                <div class="compare-con-sq">
+                  <div><p class="row-cat-text">Bonus Points</p></div>
+                  <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(@card.bonus_point_reward.to_i) %></div>
+                </div>
+                <div class="compare-con-sq">
+                  <div><p class="row-cat-text">Cashback</p></div>
+                  <div class="row-con-text" id="cashback-bonus">$<%= @card.cashback_reward.to_i %></div>
+                </div>
+                <div class="compare-con-sq">
+                  <div><p class="row-cat-text">Interest free period</p></div>
+                  <div class="row-con-text" id="interest-free-period"><%= @card.interest_free_period.to_i %> days</div>
+                </div>
+                <div class="compare-con-sq">
+                  <div><p class="row-cat-text">Int. transaction fee</p></div>
+                  <div class="row-con-text" id="foreign-transfer-fee"><%= (@card.foreign_transaction_fee * 100) %>%</div>
+                </div>
+              </div>
+            </div>
+            <div class="compare-con-rec">
+              <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+              <div class="row-con-text" id="card-annual-fee"><p>$<%= @card.annual_fee_init.to_i %></p></div>
+            </div>
+          </div>
+        </div>
+        <%# 1st comparison card %>
+      <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
+          <div class="card-wrapper">
+            <h2 style=>Option 1</h2>
+            <div class="card-compare">
+              <div data-controller="select-card">
+                <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                  <div class="carousel-inner" data-select-card-target="carousel">
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </button>
+                      <!-- first carousel item -->
+                    <div class="carousel-item active">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_one.first.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_one.first.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_one.first.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_one.first.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.first.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.first.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.first.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.first.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.first.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                    <!-- second carousel item -->
+                    <div class="carousel-item">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_one.second.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_one.second.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_one.second.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_one.second.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.second.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.second.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.second.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.second.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.second.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                    <!-- third carousel item -->
+                    <div class="carousel-item">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_one.third.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_one.third.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_one.third.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_one.third.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.third.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.third.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.third.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.third.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.third.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                  </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselControls1" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <br>
+                <div class="compare-select">
+                <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
+                  <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
+                  <%= hidden_field(:card, :income, value: params[:income])%>
+                  <%= hidden_field(:card, :spending, value: params[:spending])%>
+                  <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
+                  <%# need to add a stimulus function to change the value of card_compare value to the active card%>
+                  <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
+                <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <%# 1st comparison card end%>
+
+        <%# 2nd comparison card %>
+        <% carousel_two = @recommended_cards.each_slice(3).to_a.second.take(3) %>
+          <div class="card-wrapper">
+            <h2> Option 2</h2>
+            <div class="card-compare">
+              <div data-controller="select-card">
+                <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                  <div class="carousel-inner" data-select-card-target="carousel">
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </button>
+                      <!-- first carousel item -->
+                    <div class="carousel-item active">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_two.first.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_two.first.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_two.first.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_two.first.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.first.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.first.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.first.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.first.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.first.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                    <!-- second carousel item -->
+                    <div class="carousel-item">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_two.second.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_two.second.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_two.second.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_two.second.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.second.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.second.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.second.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.second.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.second.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                    <!-- third carousel item -->
+                    <div class="carousel-item">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_two.third.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_two.third.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_two.third.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_two.third.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.third.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.third.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.third.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.third.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.third.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                  </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselControls2" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <br>
+                <div class="compare-select">
+                <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
+                  <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
+                  <%= hidden_field(:card, :income, value: params[:income])%>
+                  <%= hidden_field(:card, :spending, value: params[:spending])%>
+                  <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
+                  <%# need to add a stimulus function to change the value of card_compare value to the active card%>
+                  <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
+                <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%# 2nd comparison card end%>
+
+        <%# 3rd comparison card %>
+        <% carousel_three = @recommended_cards.each_slice(3).to_a.third.take(3) %>
+          <div class="card-wrapper">
+            <h2 style=> Option 3</h2>
+            <div class="card-compare">
+              <div data-controller="select-card">
+                <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                  <div class="carousel-inner" data-select-card-target="carousel">
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls3" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </button>
+                      <!-- first carousel item -->
+                    <div class="carousel-item active">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_three.first.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_three.first.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_three.first.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_three.first.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.first.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.first.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.first.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.first.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.first.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                    <!-- second carousel item -->
+                    <div class="carousel-item">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_three.second.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_three.second.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_three.second.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_three.second.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.second.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.second.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.second.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.second.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.second.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                    <!-- third carousel item -->
+                    <div class="carousel-item">
+                      <h3 class="d-none card-carousel-selector-id"><%= carousel_three.third.id %></h3>
+                      <div class="compare-card-header"><h4 class="text-white"><%= carousel_three.third.card_name %></h4></div>
+                      <div class="card-img"><%= image_tag carousel_three.third.card_image_url %></div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Reward category</p></div>
+                        <div class="row-con-text" id="reward-category"><p><%= carousel_three.third.reward_category %></p></div>
+                      </div>
+                      <div>
+                        <div class="compare-card-grid">
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Bonus Points</p></div>
+                            <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.third.bonus_point_reward.to_i) %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Cashback</p></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.third.cashback_reward.to_i %></div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Interest free period</p></div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.third.interest_free_period.to_i %> days</div>
+                          </div>
+                          <div class="compare-con-sq">
+                            <div><p class="row-cat-text">Int. transaction fee</p></div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.third.foreign_transaction_fee * 100) %>%</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compare-con-rec">
+                        <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
+                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.third.annual_fee_init.to_i %></p></div>
+                      </div>
+                    </div>
+                  </div>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselControls3" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <br>
+                <div class="compare-select">
+                <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
+                  <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
+                  <%= hidden_field(:card, :income, value: params[:income])%>
+                  <%= hidden_field(:card, :spending, value: params[:spending])%>
+                  <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
+                  <%# need to add a stimulus function to change the value of card_compare value to the active card%>
+                  <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
+                <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%# 3rd comparison card end %>
       </div>
-      <%# <div class="right-text">
-        <div>
-          <img src="https://res.cloudinary.com/fantastic-four/image/upload/v1646970819/ChurnIt-logos_black_eguxks.png" alt="ChurnIt logo" class="header-img">
-        </div>
-          <span>Methodology</span> | <span>Card Rank</span> | <span>About Us</span>
-      </div> %>
-    </div>
-    <div class="container-cards">
-      <div class="card-compare">
-        <% @card = Card.find(session[:onboarding][:card_selected]) %>
-        <h4><%= @card.card_name %></h4>
-        <div class="card-img">
-            <%= image_tag @card.card_image_url %>
-        </div>
-        <div class="compare-con-rec">
-          <div><p class="row-cat-text">Reward category</p></div>
-          <div class="row-con-text" id="reward-category"><p><%= @card.reward_category %></p></div>
-        </div>
-        <div>
-          <div class="compare-card-grid">
-            <div class="compare-con-sq">
-              <div><p class="row-cat-text">Bonus Points</p></div>
-              <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(@card.bonus_point_reward.to_i) %></div>
-            </div>
-            <div class="compare-con-sq">
-              <div><p class="row-cat-text">Cashback</p></div>
-              <div class="row-con-text" id="cashback-bonus">$<%= @card.cashback_reward.to_i %></div>
-            </div>
-            <div class="compare-con-sq">
-              <div><p class="row-cat-text">Interest free period</p></div>
-              <div class="row-con-text" id="interest-free-period"><%= @card.interest_free_period.to_i %> days</div>
-            </div>
-             <div class="compare-con-sq">
-              <div><p class="row-cat-text">Foreign transaction fee</p></div>
-              <div class="row-con-text" id="foreign-transfer-fee"><%= (@card.foreign_transaction_fee * 100) %>%</div>
-            </div>
-          </div>
-        </div>
-        <div class="compare-con-rec">
-          <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-          <div class="row-con-text" id="card-annual-fee"><p>$<%= @card.annual_fee_init.to_i %></p></div>
-        </div>
-      </div>
-      <%# 1st comparison card %>
-    <% carousel_one = @recommended_cards.each_slice(3).to_a.first.take(3) %>
-          <div class="card-compare">
-            <div data-controller="select-card">
-              <div id="carouselControls1" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-                <div class="carousel-inner" data-select-card-target="carousel">
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls1" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <!-- first carousel item -->
-                  <div class="carousel-item active">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_one.first.id %></h3>
-                    <h4><%= carousel_one.first.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_one.first.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_one.first.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.first.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.first.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_one.first.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.first.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.first.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                  <!-- second carousel item -->
-                  <div class="carousel-item">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_one.second.id %></h3>
-                    <h4><%= carousel_one.second.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_one.second.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_one.second.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.second.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.second.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_one.second.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.second.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.second.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                  <!-- third carousel item -->
-                  <div class="carousel-item">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_one.third.id %></h3>
-                    <h4><%= carousel_one.third.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_one.third.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_one.third.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_one.third.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.third.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_one.third.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.third.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.third.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                </div>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselControls1" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
-              </div>
-              <br>
-              <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
-                <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
-                <%= hidden_field(:card, :income, value: params[:income])%>
-                <%= hidden_field(:card, :spending, value: params[:spending])%>
-                <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
-                <%# need to add a stimulus function to change the value of card_compare value to the active card%>
-                <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
-              <% end %>
-            </div>
-          </div>
-
-      <%# 1st comparison card end%>
-
-      <%# 2nd comparison card %>
-      <% carousel_two = @recommended_cards.each_slice(3).to_a.second.take(3) %>
-          <div class="card-compare">
-            <div data-controller="select-card">
-              <div id="carouselControls2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-                <div class="carousel-inner" data-select-card-target="carousel">
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls2" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <!-- first carousel item -->
-                  <div class="carousel-item active">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_two.first.id %></h3>
-                    <h4><%= carousel_two.first.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_two.first.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_two.first.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.first.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.first.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_two.first.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.first.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.first.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                  <!-- second carousel item -->
-                  <div class="carousel-item">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_two.second.id %></h3>
-                    <h4><%= carousel_two.second.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_two.second.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_two.second.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.second.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.second.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_two.second.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.second.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.second.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                  <!-- third carousel item -->
-                  <div class="carousel-item">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_two.third.id %></h3>
-                    <h4><%= carousel_two.third.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_two.third.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_two.third.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_two.third.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.third.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_two.third.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.third.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.third.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                </div>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselControls2" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
-              </div>
-              <br>
-              <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
-                <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
-                <%= hidden_field(:card, :income, value: params[:income])%>
-                <%= hidden_field(:card, :spending, value: params[:spending])%>
-                <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
-                <%# need to add a stimulus function to change the value of card_compare value to the active card%>
-                <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
-              <% end %>
-            </div>
-          </div>
-      <%# 2nd comparison card end%>
-
-      <%# 3rd comparison card %>
-      <% carousel_three = @recommended_cards.each_slice(3).to_a.third.take(3) %>
-          <div class="card-compare">
-            <div data-controller="select-card">
-              <div id="carouselControls3" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-                <div class="carousel-inner" data-select-card-target="carousel">
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls3" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <!-- first carousel item -->
-                  <div class="carousel-item active">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_three.first.id %></h3>
-                    <h4><%= carousel_three.first.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_three.first.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_three.first.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.first.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.first.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_three.first.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.first.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.first.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                  <!-- second carousel item -->
-                  <div class="carousel-item">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_three.second.id %></h3>
-                    <h4><%= carousel_three.second.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_three.second.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_three.second.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.second.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.second.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_three.second.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.second.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.second.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                  <!-- third carousel item -->
-                  <div class="carousel-item">
-                    <h3 class="d-none card-carousel-selector-id"><%= carousel_three.third.id %></h3>
-                    <h4><%= carousel_three.third.card_name %></h4>
-                    <div class="card-img"><%= image_tag carousel_three.third.card_image_url %></div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Reward category</p></div>
-                      <div class="row-con-text" id="reward-category"><p><%= carousel_three.third.reward_category %></p></div>
-                    </div>
-                    <div>
-                      <div class="compare-card-grid">
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Bonus Points</p></div>
-                          <div class="row-con-text" id="bonus-points"><%= number_with_delimiter(carousel_three.third.bonus_point_reward.to_i) %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Cashback</p></div>
-                          <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.third.cashback_reward.to_i %></div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Interest free period</p></div>
-                          <div class="row-con-text" id="interest-free-period"><%= carousel_three.third.interest_free_period.to_i %> days</div>
-                        </div>
-                        <div class="compare-con-sq">
-                          <div><p class="row-cat-text">Foreign transaction fee</p></div>
-                          <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.third.foreign_transaction_fee * 100) %>%</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="compare-con-rec">
-                      <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                      <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.third.annual_fee_init.to_i %></p></div>
-                    </div>
-                  </div>
-                </div>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselControls3" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  </button>
-              </div>
-              <br>
-              <%= form_tag(analysis_cards_path, method: :get, data: { show_loader: true }) do %>
-                <%= hidden_field(:card, :card_selected, value: params[:card_selected])%>
-                <%= hidden_field(:card, :income, value: params[:income])%>
-                <%= hidden_field(:card, :spending, value: params[:spending])%>
-                <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
-                <%# need to add a stimulus function to change the value of card_compare value to the active card%>
-                <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
-              <% end %>
-            </div>
-          </div>
-      <%# 3rd comparison card end %>
     </div>
   </div>
   <div class="d-flex text-center">
     <div class="container align-middle">
-      <%= render "shared/footer" %>
     </div>
   </div>
 </div>
