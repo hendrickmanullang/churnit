@@ -34,16 +34,27 @@
   font-size: smaller;
   text-align: center;
   line-height: 2px;
+  color: white;
 }
 
 // row-con text is for the content squares in the compare page cards
 .row-con-text {
-  padding: 20px;
+  padding: 8px;
   border-radius: 20px;
   color: white;
   font-weight: bold;
   font-size: larger;
   max-height: 64px;
+}
+
+.compare-card-header {
+  min-height: 64px;
+}
+
+.card-wrapper {
+  width: 320px;
+  text-align: center;
+  color: lime;
 }
 
 // backgrounds for each content square/rectangle in the compare cards

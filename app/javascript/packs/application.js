@@ -51,7 +51,7 @@ const initSubmitLoader =()=>{
 document.addEventListener('turbolinks:load', () => {
   const fullPageInstance = new fullpage('#fullpage', {
       navigation: true,
-      sectionsColor:['#F6F6F6', '#171924', '#F6F6F6', '#171924', '#F6F6F6', '#171924']
+      sectionsColor:['#F6F6F6', '#171924', '#171924', '#171924', '#171924', '#171924']
   });
   initSubmitLoader()
 })
