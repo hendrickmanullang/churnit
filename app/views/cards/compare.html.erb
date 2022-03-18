@@ -4,7 +4,7 @@
       <div class="container-cards">
         <div class="card-wrapper">
           <h2 class="text-center" style="color: cyan">Your card</h2>
-          <div class="card-compare">
+          <div class="card-compare" id="first-card-height">
             <% @card = Card.find(session[:onboarding][:card_selected]) %>
             <h4 class="text-white"><%= @card.card_name %></h4>
             <div class="card-img">
