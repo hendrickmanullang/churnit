@@ -12,6 +12,9 @@ a:hover, a:visited, a:active {
   border-radius: 40px;
   text-decoration: none;
   position: relative;
+  border: 0px !important;
+  // animation: moveInBottom 5s ease-out;
+  // animation-fill-mode: backwards;
 }
 
 .btn-main:link,
