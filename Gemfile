@@ -72,3 +72,6 @@ gem 'file_validators'
 
 # search
 gem 'pg_search', '~> 2.3.0'
+
+# new relic
+gem 'newrelic_rpm'
