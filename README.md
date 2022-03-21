@@ -25,4 +25,4 @@ _Built with [Rails Le Wagon Template](https://github.com/lewagon/rails-templates
 - [ ] Calendar integration
 
 # Source #
-Based on publicly available information available at [Finder](https://www.finder.com.au/credit-cards) (last updated 18 Mar 2022)
+Based on credit card data made available by [Finder](https://www.finder.com.au/credit-cards) (last updated 18 Mar 2022).
