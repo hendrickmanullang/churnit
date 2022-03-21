@@ -1,6 +1,5 @@
 A credit card comparison site. Check out -> http://www.churnit.me/
 
-Collaborators:
 Max Wang - https://github.com/jlmaxwang
 Todd Evans - https://github.com/tomiev
 Alex Wade - https://github.com/AlexWade555
