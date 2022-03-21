@@ -1,5 +1,19 @@
-A credit card comparison site built using rails, in collaboration with [Max Wang](https://github.com/jlmaxwang), [Todd Evans](https://github.com/tomiev), and [Alex Wade](https://github.com/AlexWade555).
+http://www.churnit.me/ (best viewed on Desktop)
 
-Check out -> http://www.churnit.me/ (best viewed on Desktop - mobile responsiveness is a work in progress)
+# About #
 
-Built with [Rails Le Wagon Template](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+A simple credit card comparison site.
+
+# Authors # 
+
+Developers:
+* [Hendrick Manullang](https://github.com/diplobrat)
+* [Max Wang](https://github.com/jlmaxwang)
+* [Todd Evans](https://github.com/tomiev)
+* [Alex Wade](https://github.com/AlexWade555)
+
+...with the help of Le Wagon teaching staff (batch 788).
+
+_Built with [Rails Le Wagon Template](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team._
+
+
