@@ -1,5 +1,5 @@
 meta_product_name: "ChurnIt"
 meta_title: "ChurnIt - Credit cards made simple."
 meta_description: "Helping you compare credit card deals to churn through cards and maximise value."
-meta_image: "ChurnIt-logo_colour_white_bg.png" # should exist in `app/assets/images/`
+meta_image: "HeroPage.png" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
