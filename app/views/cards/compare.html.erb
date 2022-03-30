@@ -40,7 +40,7 @@
             </div>
             <div class="compare-con-rec">
               <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-              <div class="row-con-text" id="card-annual-fee"><p>$<%= @card.annual_fee_init.to_i %></p></div>
+              <div class="row-con-text" id="card-annual-fee">$<%= @card.annual_fee_init.to_i %></div>
             </div>
           </div>
         </div>
@@ -72,21 +72,45 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.first.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.first.cashback_reward.to_i %>
+                              <% if @card.cashback_reward > carousel_one.first.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_one.first.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.first.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.first.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_one.first.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_one.first.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.first.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.first.foreign_transaction_fee * 100) %>%
+                              <% if @card.foreign_transaction_fee > carousel_one.first.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_one.first.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.first.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_one.first.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_one.first.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_one.first.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                     <!-- second carousel item -->
@@ -106,21 +130,45 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.second.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.second.cashback_reward.to_i %>
+                              <% if @card.cashback_reward > carousel_one.second.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_one.second.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.second.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.second.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_one.second.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_one.second.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.second.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.second.foreign_transaction_fee * 100) %>%
+                              <% if @card.foreign_transaction_fee > carousel_one.second.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_one.second.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.second.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_one.second.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_one.second.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_one.second.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                     <!-- third carousel item -->
@@ -141,20 +189,42 @@
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
                             <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.third.cashback_reward.to_i %></div>
+                              <% if @card.cashback_reward > carousel_one.third.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_one.third.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.third.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_one.third.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_one.third.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_one.third.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
                             <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.third.foreign_transaction_fee * 100) %>%</div>
+                              <% if @card.foreign_transaction_fee > carousel_one.third.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_one.third.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_one.third.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_one.third.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_one.third.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_one.third.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -169,7 +239,6 @@
                   <%= hidden_field(:card, :income, value: params[:income])%>
                   <%= hidden_field(:card, :spending, value: params[:spending])%>
                   <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
-                  <%# need to add a stimulus function to change the value of card_compare value to the active card%>
                   <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
                 <% end %>
                 </div>
@@ -207,21 +276,45 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.first.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.first.cashback_reward.to_i %>
+                              <% if @card.cashback_reward > carousel_two.first.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_two.first.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.first.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.first.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_two.first.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_two.first.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.first.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.first.foreign_transaction_fee * 100) %>%
+                              <% if @card.foreign_transaction_fee > carousel_two.first.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_two.first.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.first.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_two.first.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_two.first.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_two.first.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                     <!-- second carousel item -->
@@ -241,21 +334,45 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.second.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.second.cashback_reward.to_i %>
+                              <% if @card.cashback_reward > carousel_two.second.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_two.second.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.second.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.second.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_two.second.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_two.second.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.second.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.second.foreign_transaction_fee * 100) %>%
+                              <% if @card.foreign_transaction_fee > carousel_two.second.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_two.second.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.second.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_two.second.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_two.second.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_two.second.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                     <!-- third carousel item -->
@@ -275,21 +392,45 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.third.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_two.third.cashback_reward.to_i %>
+                              <% if @card.cashback_reward > carousel_two.third.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_two.third.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.third.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_two.third.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_two.third.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_two.third.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.third.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_two.third.foreign_transaction_fee * 100) %>%
+                              <% if @card.foreign_transaction_fee > carousel_two.third.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_two.third.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_two.third.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_two.third.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_two.third.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_two.third.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -304,7 +445,6 @@
                   <%= hidden_field(:card, :income, value: params[:income])%>
                   <%= hidden_field(:card, :spending, value: params[:spending])%>
                   <%= hidden_field(:card, :card_compare, value: "", 'data-select-card-target' => 'field')%>
-                  <%# need to add a stimulus function to change the value of card_compare value to the active card%>
                   <%= submit_tag "Select", 'data-action' => 'click->select-card#getcardid' %>
                 <% end %>
                 </div>
@@ -341,21 +481,45 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.first.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.first.cashback_reward.to_i %>
+                              <% if @card.cashback_reward > carousel_three.first.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_three.first.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.first.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.first.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_three.first.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_three.first.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.first.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.first.foreign_transaction_fee * 100) %>%
+                              <% if @card.foreign_transaction_fee > carousel_three.first.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_three.first.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.first.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_three.first.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_three.first.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_three.first.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                     <!-- second carousel item -->
@@ -375,21 +539,45 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.second.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.second.cashback_reward.to_i %>
+                              <% if @card.cashback_reward > carousel_three.second.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_three.second.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.second.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.second.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_three.second.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_three.second.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.second.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.second.foreign_transaction_fee * 100) %>%
+                              <% if @card.foreign_transaction_fee > carousel_three.second.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_three.second.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.second.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_three.second.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_three.second.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_three.second.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                     <!-- third carousel item -->
@@ -409,21 +597,45 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.third.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_three.third.cashback_reward.to_i %>
+                              <% if @card.cashback_reward > carousel_three.third.cashback_reward %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.cashback_reward < carousel_three.third.cashback_reward %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
-                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.third.interest_free_period.to_i %> days</div>
+                            <div class="row-con-text" id="interest-free-period"><%= carousel_three.third.interest_free_period.to_i %> days
+                              <% if @card.interest_free_period > carousel_three.third.interest_free_period %>
+                                <i class="fa-solid fa-arrow-down" color="crimson"></i>
+                              <% elsif @card.interest_free_period < carousel_three.third.interest_free_period %>
+                                <i class="fa-solid fa-arrow-up" color="green"></i>
+                              <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.third.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_three.third.foreign_transaction_fee * 100) %>%
+                              <% if @card.foreign_transaction_fee > carousel_three.third.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-down" color="green"></i>
+                              <% elsif @card.foreign_transaction_fee < carousel_three.third.foreign_transaction_fee %>
+                                <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                              <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="compare-con-rec">
                         <div><p class="row-cat-text">Annual Fees (1st year)</p></div>
-                        <div class="row-con-text" id="card-annual-fee"><p>$<%= carousel_three.third.annual_fee_init.to_i %></p></div>
+                        <div class="row-con-text" id="card-annual-fee">$<%= carousel_three.third.annual_fee_init.to_i %>
+                          <% if @card.annual_fee_init > carousel_three.third.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-down" color="green"></i>
+                          <% elsif @card.annual_fee_init < carousel_three.third.annual_fee_init %>
+                            <i class="fa-solid fa-arrow-up" color="crimson"></i>
+                          <% end %>
+                        </div>
                       </div>
                     </div>
                   </div>
