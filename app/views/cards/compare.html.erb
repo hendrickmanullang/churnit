@@ -188,12 +188,13 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Cashback</p></div>
-                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.third.cashback_reward.to_i %></div>
+                            <div class="row-con-text" id="cashback-bonus">$<%= carousel_one.third.cashback_reward.to_i %>
                               <% if @card.cashback_reward > carousel_one.third.cashback_reward %>
                                 <i class="fa-solid fa-arrow-down" color="crimson"></i>
                               <% elsif @card.cashback_reward < carousel_one.third.cashback_reward %>
                                 <i class="fa-solid fa-arrow-up" color="green"></i>
                               <% end %>
+                            </div>
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Interest free period</p></div>
@@ -207,12 +208,13 @@
                           </div>
                           <div class="compare-con-sq">
                             <div><p class="row-cat-text">Int. transaction fee</p></div>
-                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.third.foreign_transaction_fee * 100) %>%</div>
+                            <div class="row-con-text" id="foreign-transfer-fee"><%= (carousel_one.third.foreign_transaction_fee * 100) %>%
                               <% if @card.foreign_transaction_fee > carousel_one.third.foreign_transaction_fee %>
                                 <i class="fa-solid fa-arrow-down" color="green"></i>
                               <% elsif @card.foreign_transaction_fee < carousel_one.third.foreign_transaction_fee %>
                                 <i class="fa-solid fa-arrow-up" color="crimson"></i>
                               <% end %>
+                            </div>
                           </div>
                         </div>
                       </div>
