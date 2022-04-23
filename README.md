@@ -19,6 +19,7 @@ _Built with [Rails Le Wagon Template](https://github.com/lewagon/rails-templates
 
 # Future Considerations #
 
+- [ ] Automated Database Update
 - [ ] Mobile port
 - [ ] Open Banking API connectivity for spending analysis
 - [ ] User dashboard
