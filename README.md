@@ -1,7 +1,7 @@
 http://www.churnit.me/ 
 _(best viewed on Desktop)_
 
-Watch a demo of the app on Youtube (https://www.youtube.com/watch?v=1RnXYYraiQc)
+Watch a demo of the app on Youtube => https://www.youtube.com/watch?v=1RnXYYraiQc
 
 # About #
 
