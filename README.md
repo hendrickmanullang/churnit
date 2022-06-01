@@ -1,15 +1,13 @@
 # [🔗App*](http://www.churnit.me/) | [▶️Walkthrough](https://www.youtube.com/watch?v=1RnXYYraiQc) | [✏️Wireframe](https://www.figma.com/file/Yp653rY8BBTi3twc78XWkJ/UI-Kit%2FPage-Mockup?node-id=138%3A1107)
 _*Best viewed on Desktop [@media width >= 1200px]_
 
-A webapp created for seasoned credit card [churners](https://www.reddit.com/r/churning/) looking to quickly compare AUS credit card offers. All card specs are based on data made pubclicly available by [Finder](https://www.finder.com.au/credit-cards) (last updated 18 Mar 2022).
-
-Created by [Hendrick Manullang](https://github.com/diplobrat), [Max Wang](https://github.com/jlmaxwang), [Todd Evans](https://github.com/tomiev), and [Alex Wade](https://github.com/AlexWade555) as part of [Le Wagon](https://www.lewagon.com/) bootcamp.
-
-# Preview
-
 ![Main Page Scrolling Preview](/app/assets/images/mainPageScroll.gif?raw=true "Main Page Scrolling Preview")
 ![Drag & Drop Card preference](/app/assets/images/dragAndDrop.gif?raw=true "Drag and Drop Card Preference")
 ![Compare cards and view alternatives](/app/assets/images/compareCards.gif?raw=true "Compare cards and view alternatives")
+
+A webapp created for seasoned credit card [churners](https://www.reddit.com/r/churning/) looking to quickly compare AUS credit card offers. All card specs are based on data made pubclicly available by [Finder](https://www.finder.com.au/credit-cards) (last updated 18 Mar 2022).
+
+Created by [Hendrick Manullang](https://github.com/diplobrat), [Max Wang](https://github.com/jlmaxwang), [Todd Evans](https://github.com/tomiev), and [Alex Wade](https://github.com/AlexWade555) as part of [Le Wagon](https://www.lewagon.com/) bootcamp.
 
 # Setup
 Clone repo
