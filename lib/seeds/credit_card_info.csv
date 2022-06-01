@@ -1,7 +1,7 @@
 card_name,card_type,reward_category,reward_rate,interest_free_period,annual_fee_init,annual_fee_after,interest_rate,late_payment_fee,foreign_transaction_fee,minimum_income,bonus_point_reward,bonus_point_spend,bonus_point_time,cashback_reward,cashback_spend,cashback_time,card_image_url
 American Express Cashback,American Express,N/A,0,55,0,120,0.2074,0,0,40000,0,0,0,200,4000,90,https://www.finder.com.au/niche-builder/607fc5ca1c97c.png
 American Express Essential,American Express,Membership Rewards,1.25,55,0,0,0.1499,30,0.03,40000,0,0,0,200,1500,90,https://www.finder.com.au/niche-builder/5f20c475e8318.jpg
-American Express Explorer,American Express,Membership Rewards,2,55,395,395,0.2074,30,0.03,65000,100000,4000,30,0,0,0,https://www.finder.com.au/niche-builder/5f20b81659d8e.jpg
+American Express Explorer,Acdmerican Express,Membership Rewards,2,55,395,395,0.2074,30,0.03,65000,100000,4000,30,0,0,0,https://www.finder.com.au/niche-builder/5f20b81659d8e.jpg
 American Express Low Rate,American Express,N/A,0,55,0,0,0.0899,30,0.03,50000,0,0,0,0,0,0,https://dvh1deh6tagwk.cloudfront.net/credit-cards/images/product/amex-low-rate-sml-15-jun-2018.jpg
 American Express Platinum,American Express,Membership Rewards,2.25,44,1450,1450,0,30,0.03,100000,200000,5000,90,0,0,0,https://www.finder.com.au/niche-builder/5f20c1a4d297b.jpg
 American Express Platinum Edge,American Express,Membership Rewards,1,55,0,195,0.2074,30,0.03,50000,0,0,0,0,0,0,https://www.finder.com.au/niche-builder/603733da8257a.png
