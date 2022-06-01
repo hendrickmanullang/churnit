@@ -4,7 +4,7 @@
 ![Drag & Drop Card preference](/app/assets/images/dragAndDrop.gif?raw=true "Drag and Drop Card Preference")
 <br><sub>_Best viewed on Desktop (@media width >= 1200px)_</sub>
 
-A webapp created for seasoned credit card [churners](https://www.reddit.com/r/churning/) looking to quickly compare AUS credit card offers. All card specs are based on data made pubclicly available by [Finder](https://www.finder.com.au/credit-cards) (last updated 18 Mar 2022).
+A webapp created for seasoned credit card [churners](https://www.reddit.com/r/churning/) looking to quickly compare AUS credit card offers. All card specs are based on public data made available by [Finder](https://www.finder.com.au/credit-cards) (last updated 18 Mar 2022).
 
 Created by [Hendrick Manullang](https://github.com/diplobrat), [Max Wang](https://github.com/jlmaxwang), [Todd Evans](https://github.com/tomiev), and [Alex Wade](https://github.com/AlexWade555) as part of [Le Wagon](https://www.lewagon.com/) bootcamp.
 
