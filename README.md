@@ -3,7 +3,6 @@ _*Best viewed on Desktop [@media width >= 1200px]_
 
 ![Main Page Scrolling Preview](/app/assets/images/mainPageScroll.gif?raw=true "Main Page Scrolling Preview")
 ![Drag & Drop Card preference](/app/assets/images/dragAndDrop.gif?raw=true "Drag and Drop Card Preference")
-![Compare cards and view alternatives](/app/assets/images/compareCards.gif?raw=true "Compare cards and view alternatives")
 
 A webapp created for seasoned credit card [churners](https://www.reddit.com/r/churning/) looking to quickly compare AUS credit card offers. All card specs are based on data made pubclicly available by [Finder](https://www.finder.com.au/credit-cards) (last updated 18 Mar 2022).
 
