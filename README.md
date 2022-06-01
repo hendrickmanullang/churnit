@@ -20,7 +20,7 @@ Run server on local host (type in http://localhost:3000/ into your browser and h
 Make changes to the seed file
 <pre><code>code lib/seeds/credit_card_info.csv</code></pre>
 
-# Tech/Frameworks Used
+# Tech
 
 Framework
 * Rails
@@ -40,8 +40,9 @@ Hosted on
 
 # Future Considerations #
 
-- [ ] Automate database update process
-- [ ] Mobile port
-- [ ] Open Banking API connectivity for spending analysis
+- [ ] Automated scraping
+- [ ] Mobile responsiveness
+- [ ] Connectivity to Open Banking for spending analysis & curated recommendations
 - [ ] User dashboard
 - [ ] Calendar integration
+- [ ] Export API
