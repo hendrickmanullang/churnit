@@ -45,4 +45,4 @@ Hosted on
 - [ ] Connectivity to Open Banking for spending analysis & curated recommendations
 - [ ] User dashboard
 - [ ] Calendar integration
-- [ ] Export API
+- [ ] Export data via API
