@@ -17,7 +17,7 @@ Set up active records & run seed file
 <pre><code>rails db:create db:migrate db:seed</code></pre>
 Run server on local host (type in http://localhost:3000/ into your browser and hack away!)
 <pre><code>rails s</code></pre>
-Make changes to the seed file
+Make changes to the seed file _(optional)_
 <pre><code>code lib/seeds/credit_card_info.csv</code></pre>
 
 # Tech
